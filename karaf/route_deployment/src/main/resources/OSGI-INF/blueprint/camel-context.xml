@@ -9,9 +9,10 @@
              http://cxf.apache.org/blueprint/jaxws http://cxf.apache.org/schemas/blueprint/jaxws.xsd
              http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
              ">
-  
+  <!-- The bean for our route -->
   <bean id="sampleRoute" class="com.redhat.consulting.fusequickstarts.karaf.deployment.route.SampleRoute"/>
-             
+              
+  <!-- The camel context which registers the route-->
   <camel:camelContext id="camel" xmlns="http://camel.apache.org/schema/blueprint">
     <camel:routeBuilder ref="sampleRoute"/>
   </camel:camelContext>

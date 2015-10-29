@@ -7,7 +7,8 @@ public class SampleRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer://myTimer?fixedRate=true&period=2000").log(LoggingLevel.INFO, "com.redhat.consulting.fusequickstarts.karaf.deployment.route", "Hellow World").to(
+        // Logs Hello World every 2000 milliseconds
+        from("timer://myTimer?fixedRate=true&period=2000").log(LoggingLevel.INFO, "com.redhat.consulting.fusequickstarts.karaf.deployment.route", "Hello World").to(
             "log:HelloWorldLog?level=INFO");
 
     }
