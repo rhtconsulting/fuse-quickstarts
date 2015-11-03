@@ -9,9 +9,10 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<groupId>com.redhat.consulting.fusequickstarts.karaf.rest.dsl</groupId>
-	<packaging>bundle</packaging>
+	<artifactId>rest.dsl</artifactId>
 	<name>rest-dsl</name>
+	
+	<packaging>bundle</packaging>
 	<!-- Any dependencies needed by your project -->
 	<dependencies>
 		<dependency>
@@ -66,5 +67,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<artifactId>rest-dsl</artifactId>
 </project>

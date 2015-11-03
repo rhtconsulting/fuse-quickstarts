@@ -9,10 +9,11 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<groupId>com.redhat.consulting.fusequickstarts.karaf.deployment</groupId>
 	<artifactId>route-deployment</artifactId>
-	<packaging>bundle</packaging>
 	<name>route-deployment</name>
+	
+	<packaging>bundle</packaging>
+	
 	<!-- Any dependencies needed by your project -->
 	<dependencies>
 		<dependency>
