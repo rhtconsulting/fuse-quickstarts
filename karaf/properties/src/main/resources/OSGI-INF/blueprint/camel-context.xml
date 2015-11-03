@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+	xmlns:jaxws="http://cxf.apache.org/blueprint/jaxws" xmlns:camel="http://camel.apache.org/schema/blueprint"
+	xsi:schemaLocation="
+             http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+             http://cxf.apache.org/blueprint/jaxws http://cxf.apache.org/schemas/blueprint/jaxws.xsd
+             http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
+             ">
+
+	<!-- Property Placeholder for Config Admin Service -->
+	<!-- Set updatestrategy to reload if you want the properties to automatically reload when changed -->
+	<cm:property-placeholder persistent-id="com.redhat.consulting.fusequickstarts.karaf" update-strategy="reload">
+		<!-- Optionally Setting a Default Property -->
+		<cm:default-properties>
+			<cm:property name="timer.milliseconds" value="2000" />
+		</cm:default-properties>
+	</cm:property-placeholder>
+
+	<!-- The bean for our route -->
+	<bean id="sampleRoute"
+		class="com.redhat.consulting.fusequickstarts.karaf.properties.route.PropertiesRoute">
+		<property name="milliseconds" value="${timer.milliseconds}" />
+	</bean>
+
+	<!-- The camel context which registers the route -->
+	<camel:camelContext id="camel"
+		xmlns="http://camel.apache.org/schema/blueprint">
+		<camel:routeBuilder ref="sampleRoute" />
+	</camel:camelContext>
+
+</blueprint>

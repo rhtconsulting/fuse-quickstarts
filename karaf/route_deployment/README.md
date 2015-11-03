@@ -29,9 +29,9 @@ This will bring up the fuse console.  Once in the console you will be able to in
 Usually we would install multiple bundles using a feature file, but in this case since we only have one
 bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file.  Then you can use the mvn syntax below.
 
-     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/deployment/route-deployment/1.0.0/route-deployment-1.0.0.jar
+     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/route-deployment/1.0.0/route-deployment-1.0.0.jar
         OR
-     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf.deployment/route-deployment/1.0.0
+     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/route-deployment/1.0.0
 
  The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
 
