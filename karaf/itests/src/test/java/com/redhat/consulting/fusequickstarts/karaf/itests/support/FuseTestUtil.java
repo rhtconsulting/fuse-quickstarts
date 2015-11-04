@@ -38,20 +38,24 @@ import org.osgi.util.tracker.ServiceTracker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Utilities for Configuring a Fuse Test with Pax Exam.
+ * @author Bryan Saunders <bsaunder@redhat.com>
+ *
+ */
 public class FuseTestUtil {
     private static Logger log = LoggerFactory.getLogger(FuseTestUtil.class);
-    
-    // note, for this to work, you must download and put fuse in the location
-    // specified by the maven coordinates here
+
+    // Set Maven Coordinates for Fuse Zip
     public static final String GROUP_ID = "org.jboss.fuse";
     public static final String ARTIFACT_ID = "jboss-fuse";
     public static final String VERSION = "6.2.0.GA";
 
-    // can further enhance this to auto discover the ports at run time
-    // so they don't conflict with other tests/running versions of Fuse
+    // Adjust ports so they don't conflict with other tests/running versions of Fuse
     public static final String RMI_SERVER_PORT = "44445";
     public static final String HTTP_PORT = "9081";
     public static final String RMI_REG_PORT = "1100";
+    public static final String AMQ_PORT = "62626";
 
     public static final Long COMMAND_TIMEOUT = 10000L;
     public static final Long DEFAULT_TIMEOUT = 20000L;
@@ -67,29 +71,38 @@ public class FuseTestUtil {
         StringBuffer result = new StringBuffer();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
-            result.append(String.format("%s=%s", key, dictionary.get(key)));
+            result.append(String.format("%s = %s", key, dictionary.get(key)));
             if (keys.hasMoreElements()) {
                 result.append(", ");
             }
         }
         return result.toString();
     }
-    
+
+    /**
+     * Configured the Fuse container for the Tests. This should install all of the Bundles/Features/Configurations
+     * needed for testing.
+     * 
+     * @return
+     */
     public static Option[] container() {
         return new Option[] {
                 karafDistributionConfiguration()
+                        // Extract/Install Fuse
                         .frameworkUrl(maven().groupId(GROUP_ID).artifactId(ARTIFACT_ID).version(VERSION).type("zip"))
                         .karafVersion("2.3.0").useDeployFolder(false).name("JBoss Fuse")
                         .unpackDirectory(new File("target/paxexam/unpack")),
                 configureConsole().ignoreLocalConsole(),
+
+                // Edit Fuse Configurations
                 editConfigurationFilePut("etc/config.properties", "karaf.startup.message",
                         "Loading Fabric from: ${karaf.home}"),
                 editConfigurationFilePut("etc/org.ops4j.pax.web.cfg", "org.osgi.service.http.port", HTTP_PORT),
+                editConfigurationFilePut("etc/org.ops4j.pax.web.cfg", "activemq.port", AMQ_PORT),
                 editConfigurationFilePut("etc/org.apache.karaf.management.cfg", "rmiRegistryPort", RMI_REG_PORT),
                 editConfigurationFilePut("etc/org.apache.karaf.management.cfg", "rmiServerPort", RMI_SERVER_PORT),
                 editConfigurationFilePut("etc/users.properties", "admin",
                         "admin,admin,manager,viewer,Monitor, Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser"),
-                // TODO: Change ActiveMQ Broker Port
 
                 // Install Required Features
                 features("camel-blueprint", "camel-test"),
@@ -105,8 +118,8 @@ public class FuseTestUtil {
                 // Set Logging Level
                 logLevel(LogLevelOption.LogLevel.INFO),
 
-        // enable this if you want to keep the exploded directories of fuse after the tests are run
-        // keepRuntimeFolder(),
+                // Uncomment to keep Exploded Fuse Installation Directory after Testing
+                // keepRuntimeFolder(),
 
         };
     };
@@ -116,14 +129,35 @@ public class FuseTestUtil {
         return references != null ? Arrays.asList(references) : Collections.<ServiceReference> emptyList();
     }
 
+    /**
+     * Get an OSGi Service
+     * @param type
+     * @param timeout
+     * @param bundleContext
+     * @return
+     */
     public static <T> T getOsgiService(Class<T> type, long timeout, BundleContext bundleContext) {
         return getOsgiService(type, null, timeout, bundleContext);
     }
 
+    /**
+     * Get an OSGi Service
+     * @param type
+     * @param bundleContext
+     * @return
+     */
     public static <T> T getOsgiService(Class<T> type, BundleContext bundleContext) {
         return getOsgiService(type, null, SERVICE_TIMEOUT, bundleContext);
     }
 
+    /**
+     * Get an OSGi Service
+     * @param type
+     * @param filter
+     * @param timeout
+     * @param bundleContext
+     * @return
+     */
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public static <T> T getOsgiService(Class<T> type, String filter, long timeout, BundleContext bundleContext) {
         ServiceTracker tracker = null;
@@ -146,13 +180,12 @@ public class FuseTestUtil {
             Object svc = type.cast(tracker.waitForService(timeout));
             if (svc == null) {
 
-                for (ServiceReference ref : FuseTestUtil.asCollection(bundleContext.getAllServiceReferences(null,
-                        null))) {
+                for (ServiceReference ref : FuseTestUtil
+                        .asCollection(bundleContext.getAllServiceReferences(null, null))) {
                     System.err.println("ServiceReference: " + ref);
                 }
 
-                for (ServiceReference ref : FuseTestUtil.asCollection(bundleContext.getAllServiceReferences(null,
-                        flt))) {
+                for (ServiceReference ref : FuseTestUtil.asCollection(bundleContext.getAllServiceReferences(null, flt))) {
                     System.err.println("Filtered ServiceReference: " + ref);
                 }
 
@@ -166,6 +199,11 @@ public class FuseTestUtil {
         }
     }
 
+    /**
+     * Asserts that the Given Bundle is Active. 
+     * @param bundleName
+     * @param bundleContext
+     */
     public static void assertBundleActive(String bundleName, BundleContext bundleContext) {
         log.info("Asserting {} is active", bundleName);
         Bundle[] bundles = bundleContext.getBundles();
@@ -188,10 +226,26 @@ public class FuseTestUtil {
         Assert.assertTrue(bundleName + " not active", active);
     }
 
+    /**
+     * Executes a Karaf Shell Command
+     * @param command
+     * @param executor
+     * @param bundleContext
+     * @return
+     */
     public static String executeCommand(final String command, ExecutorService executor, BundleContext bundleContext) {
         return executeCommand(command, COMMAND_TIMEOUT, false, executor, bundleContext);
     }
 
+    /**
+     * Executes a Karaf Shell Command
+     * @param command
+     * @param timeout
+     * @param silent
+     * @param executor
+     * @param bundleContext
+     * @return
+     */
     public static String executeCommand(final String command, final Long timeout, final Boolean silent,
             ExecutorService executor, BundleContext bundleContext) {
         String response;

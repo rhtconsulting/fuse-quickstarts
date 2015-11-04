@@ -25,6 +25,7 @@ public class PropertiesIT extends CamelTestSupport {
     /**
      * Executor Service for Executing Karaf Shell Commands
      */
+    // Since we are not Executing any Commands in this test, this commented out.
     // private ExecutorService executor = Executors.newCachedThreadPool();
 
     /**
