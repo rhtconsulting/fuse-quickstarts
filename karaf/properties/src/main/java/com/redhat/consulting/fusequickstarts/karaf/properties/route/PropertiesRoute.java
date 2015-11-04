@@ -19,8 +19,12 @@ public class PropertiesRoute extends RouteBuilder {
         // @formatter:off
 
         // Logs Value of Property every 2000 milliseconds
-        from("timer://myTimer?fixedRate=true&period=" + this.milliseconds).log(
-                "Reading Property 'test.foo': {{test.foo}}").log("Reading Property 'test.bar': {{test.bar}}");
+        from("timer://myTimer?fixedRate=true&period=" + this.milliseconds)
+            .routeId("propertiesRoute")
+            .setBody(simple("Reading Property 'test.foo': {{test.foo}}"))
+            .to("log:PropertiesLog?level=INFO")
+            .setBody(simple("Reading Property 'test.bar': {{test.bar}}"))
+            .to("log:PropertiesLog?level=INFO");
 
     }
 

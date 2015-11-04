@@ -12,7 +12,7 @@ public class SampleRoute extends RouteBuilder {
         // Logs Hello World every 2000 milliseconds
         from("timer://myTimer?fixedRate=true&period=2000")
             .log(LoggingLevel.INFO, "com.redhat.consulting.fusequickstarts.karaf.deployment.route", "Hello World")
-                .to("log:HelloWorldLog?level=INFO");
+            .to("log:HelloWorldLog?level=INFO");
 
     }
 

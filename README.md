@@ -3,12 +3,13 @@
 This project contains multiple Quick Starts intended for use with JBoss Fuse 6.2. This Quick starts are intended to be very basic beginner level projects that demonstrate a single concept at a time. They are designed to get someone started quickly with a given component and are not designed to be full solutions. Quick starts are provided for both Fuse on Karaf as well as Fuse on EAP.
 
 The following quick starts are provided for Fuse on Karaf:
- * Blueprint - Basic Route Deployment
- * Blueprint - Config Admin Service
+
+ * [Blueprint - Basic Route Deployment](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/route_deployment)
+ * [Blueprint - Config Admin Service](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/properties)
  * Blueprint - Encrypting Properties with Jasypt
  * Blueprint - JMS
  * Blueprint - A-MQ
- * Blueprint - REST DSL
+ * [Blueprint - REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl)
  * Blueprint - REST with CXF-RS
  * Blueprint - REST Security with CXF-RS
  * Blueprint - SOAP with CXF (Contract First)
@@ -23,6 +24,7 @@ The following quick starts are provided for Fuse on Karaf:
  * Declarative Services - OSGi Services
 
 The following quick starts are provided for Fuse on EAP:
+
  * Camel on EAP - Basic Route Deployment
  * Camel on EAP - JMS using a Message Driven Bean
  * Camel on EAP - JMS using Camel-JMS

@@ -9,8 +9,8 @@
              ">
 
 	<!-- Property Placeholder for Config Admin Service -->
-	<!-- Set updatestrategy to reload if you want the properties to automatically reload when changed -->
-	<cm:property-placeholder persistent-id="com.redhat.consulting.fusequickstarts.karaf" update-strategy="reload">
+	<!-- Set update-strategy to reload if you want the properties to automatically reload when changed -->
+	<cm:property-placeholder persistent-id="com.redhat.consulting.fusequickstarts.karaf.properties" update-strategy="reload">
 		<!-- Optionally Setting a Default Property -->
 		<cm:default-properties>
 			<cm:property name="timer.milliseconds" value="2000" />
@@ -18,15 +18,15 @@
 	</cm:property-placeholder>
 
 	<!-- The bean for our route -->
-	<bean id="sampleRoute"
+	<bean id="propertiesRoute"
 		class="com.redhat.consulting.fusequickstarts.karaf.properties.route.PropertiesRoute">
 		<property name="milliseconds" value="${timer.milliseconds}" />
 	</bean>
 
 	<!-- The camel context which registers the route -->
-	<camel:camelContext id="camel"
+	<camel:camelContext id="fusequickstart-properties-camel"
 		xmlns="http://camel.apache.org/schema/blueprint">
-		<camel:routeBuilder ref="sampleRoute" />
+		<camel:routeBuilder ref="propertiesRoute" />
 	</camel:camelContext>
 
 </blueprint>
