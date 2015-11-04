@@ -22,6 +22,7 @@ The following quick starts are provided for Fuse on Karaf:
  * Blueprint - Feature File
  * Declarative Services - Basic Route Deployment
  * Declarative Services - OSGi Services
+ * [Integration Test Suite](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/itests)
 
 The following quick starts are provided for Fuse on EAP:
 
