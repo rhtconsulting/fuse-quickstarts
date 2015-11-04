@@ -6,7 +6,7 @@ The following quick starts are provided for Fuse on Karaf:
 
  * [Blueprint - Basic Route Deployment](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/route_deployment)
  * [Blueprint - Config Admin Service](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/properties)
- * Blueprint - Encrypting Properties with Jasypt
+ * [Blueprint - Encrypting Properties with Jasypt](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/properties_encryption)
  * Blueprint - JMS
  * Blueprint - A-MQ
  * [Blueprint - REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl)

@@ -6,7 +6,7 @@ Rest DSL Camel OSGi example
  
 ### Requirements:
  * JBoss Fuse 6.2.0 
- * Maven 3.2.3 (http://maven.apache.org/)
+ * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
  
 Building
