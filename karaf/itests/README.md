@@ -16,6 +16,8 @@ The following Bundles are currently tested bu the Integration Test Suite.
 
  * [Blueprint - Config Admin Service](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/properties)
   * This bundle contains a single Pax Exam test that makes use of camel-test's adviceWith functionality to create mock endpoints for testing.
+ * [Blueprint - REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl)
+  * This bundle contains tests for the provided REST endpoints using Pax Exam. In this case Pax Exam is running in server mode to perform blackbox testing.
 
 Setup
 -----------------------

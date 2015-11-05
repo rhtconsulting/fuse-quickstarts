@@ -105,7 +105,7 @@ public class FuseTestUtil {
                         "admin,admin,manager,viewer,Monitor, Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser"),
 
                 // Install Required Features
-                features("camel-blueprint", "camel-core", "camel-test", "camel-jasypt", "jasypt-encryption"),
+                features("camel-blueprint", "camel-core", "camel-test", "camel-jasypt", "jasypt-encryption", "camel-http4", "camel-restlet", "camel-jackson"),
 
                 // Install Configuration File(s) for Testing
                 KarafDistributionOption.replaceConfigurationFile(
@@ -118,6 +118,7 @@ public class FuseTestUtil {
                 // Install Bundles for Testing
                 mavenBundle("com.redhat.consulting.fusequickstarts.karaf", "properties").versionAsInProject(),
                 mavenBundle("com.redhat.consulting.fusequickstarts.karaf", "properties-encryption").versionAsInProject(),
+                mavenBundle("com.redhat.consulting.fusequickstarts.karaf", "rest-dsl").versionAsInProject(),
 
                 // Set Logging Level
                 logLevel(LogLevelOption.LogLevel.INFO),

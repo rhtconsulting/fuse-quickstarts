@@ -22,6 +22,11 @@
 			<artifactId>properties-encryption</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
+			<artifactId>rest-dsl</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 		<!-- Testing Deps -->
 		<dependency>
