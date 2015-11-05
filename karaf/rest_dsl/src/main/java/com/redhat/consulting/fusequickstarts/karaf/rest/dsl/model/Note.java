@@ -1,12 +1,12 @@
 package com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model;
 
 /**
- * Simple Message POJO for use with REST DSL.
+ * Simple Note POJO for use with REST DSL.
  * 
  * @author Bryan Saunders <btsaunde@gmail.com>
  *
  */
-public class Message {
+public class Note {
 
     private String message;
     private String to;

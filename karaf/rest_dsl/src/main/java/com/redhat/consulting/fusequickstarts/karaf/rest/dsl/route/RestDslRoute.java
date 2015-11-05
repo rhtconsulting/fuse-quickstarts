@@ -5,7 +5,7 @@ import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
 
-import com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message;
+import com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Note;
 
 public class RestDslRoute extends RouteBuilder {
 
@@ -13,7 +13,7 @@ public class RestDslRoute extends RouteBuilder {
     public void configure() throws Exception {
         
         // Create a Sample Message to Return from the GET Endpoint
-        final Message sampleMessage = new Message();
+        final Note sampleMessage = new Note();
         sampleMessage.setFrom("Developer");
         sampleMessage.setTo("User");
         sampleMessage.setMessage("REST is Awesome");
@@ -27,10 +27,10 @@ public class RestDslRoute extends RouteBuilder {
             .consumes("application/json") // Consume JSON Only
             .produces("application/json") // Return JSON Only
             .get("/message") // GET request
-                .outType(Message.class) // Outgoing Type
+                .outType(Note.class) // Outgoing Type
                 .to("direct:get") 
             .post("/message") // POST request
-                .type(Message.class) // Incoming Type
+                .type(Note.class) // Incoming Type
                 .to("direct:post"); 
 
         // Casts the Simple POJO to JSON and Returns it

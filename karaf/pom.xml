@@ -1,56 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
-  <artifactId>karaf-parent</artifactId>
-  <version>1.0.0</version>
-  <packaging>pom</packaging>
+	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
+	<artifactId>karaf-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
 
-  <name>karaf-parent</name>
-  <description>The pom that all karaf fuse quickstart projects should inherit from either directly or via its parent pom hierarchy</description>
+	<name>karaf-parent</name>
+	<description>The pom that all karaf fuse quickstart projects should inherit from either directly or via its parent pom hierarchy</description>
 
-  <properties>
-    <version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
-    <version.slf4j>1.7.6</version.slf4j>
-    <jboss.fuse.bom.version>6.2.0.redhat-133</jboss.fuse.bom.version>
-  </properties>
+	<properties>
+		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
+		<version.slf4j>1.7.6</version.slf4j>
+		<version.rest-assured>2.7.0</version.rest-assured>
+		<jboss.fuse.bom.version>6.2.0.redhat-133</jboss.fuse.bom.version>
+	</properties>
 
-  <dependencyManagement>
-    <dependencies>
-     <dependency>
-        <groupId>org.jboss.fuse.bom</groupId>
-        <artifactId>jboss-fuse-parent</artifactId>
-        <version>${jboss.fuse.bom.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-       </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>${version.slf4j}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${version.slf4j}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.fuse.bom</groupId>
+				<artifactId>jboss-fuse-parent</artifactId>
+				<version>${jboss.fuse.bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${version.slf4j}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${version.slf4j}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.jayway.restassured</groupId>
+				<artifactId>rest-assured</artifactId>
+				<version>${version.rest-assured}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${version.maven.compiler.plugin}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-  
-  <repositories>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${version.maven.compiler.plugin}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<repositories>
 		<repository>
 			<id>redhat-techpreview-all-repository</id>
 			<name>Red Hat Tech Preview repository (all)</name>

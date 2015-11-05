@@ -6,7 +6,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.http4.HttpMethods;
 import org.apache.camel.model.dataformat.JsonLibrary;
 
-import com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message;
+import com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Note;
 
 public class RestConsumerRoute extends RouteBuilder {
 
@@ -14,7 +14,7 @@ public class RestConsumerRoute extends RouteBuilder {
     public void configure() throws Exception {
         
         // Create a Sample Message to Post to the POST Endpoint
-        final Message sampleMessage = new Message();
+        final Note sampleMessage = new Note();
         sampleMessage.setFrom("Developer");
         sampleMessage.setTo("User");
         sampleMessage.setMessage("REST is Awesome");
