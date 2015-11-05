@@ -28,7 +28,6 @@
 			</property>
 		</enc:encryptor>
 	</enc:property-placeholder>
-	
 		
 	<!-- Create the Jasypt Parser that the Camel Jasypt Component will use -->
     <bean id="jasypt" class="org.apache.camel.component.jasypt.JasyptPropertiesParser">
@@ -38,7 +37,7 @@
 
 	<!-- The bean for our route -->
 	<bean id="encPropertiesRoute"
-		class="com.redhat.consulting.fusequickstarts.karaf.properties.encrypted.route.EncryptedPropertiesRoute">
+		class="com.redhat.consulting.fusequickstarts.karaf.properties.encryption.route.EncryptedPropertiesRoute">
 		<property name="message" value="${test.message.enc}" />
 	</bean>
 

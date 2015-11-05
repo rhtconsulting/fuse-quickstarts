@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstarts.karaf.itests.properties;
+package com.redhat.consulting.fusequickstarts.karaf.itests.properties.encryption;
 
 import javax.inject.Inject;
 
@@ -20,8 +20,9 @@ import org.osgi.framework.BundleContext;
 
 import com.redhat.consulting.fusequickstarts.karaf.itests.support.FuseTestUtil;
 
+@Ignore
 @RunWith(PaxExam.class)
-public class PropertiesIT extends CamelTestSupport {
+public class EncryptedPropertiesIT extends CamelTestSupport {
 
     /**
      * Executor Service for Executing Karaf Shell Commands
@@ -46,7 +47,7 @@ public class PropertiesIT extends CamelTestSupport {
      * under Test.
      */
     @Inject
-    @Filter("(camel.context.name=fusequickstart-properties-camel)")
+    @Filter("(camel.context.name=fusequickstart-enc-properties-camel)")
     protected CamelContext camelContext;
 
     /**
@@ -83,13 +84,16 @@ public class PropertiesIT extends CamelTestSupport {
         // Assert Camel Features Installed
         assertTrue(featuresService.isInstalled(featuresService.getFeature("camel-core")));
         assertTrue(featuresService.isInstalled(featuresService.getFeature("camel-blueprint")));
+        assertTrue(featuresService.isInstalled(featuresService.getFeature("camel-jasypt")));
+        assertTrue(featuresService.isInstalled(featuresService.getFeature("jasypt-encryption")));
 
         // Assert Bundle is Activated
-        FuseTestUtil.assertBundleActive("com.redhat.consulting.fusequickstarts.karaf.properties", bundleContext);
+        FuseTestUtil.assertBundleActive("com.redhat.consulting.fusequickstarts.karaf.properties-encryption",
+                bundleContext);
 
         // Assert Camel Context Injected
         Assert.assertNotNull("Camel Context was Null", camelContext);
-        Assert.assertEquals("Injected Incorrect Camel Context", "fusequickstart-properties-camel",
+        Assert.assertEquals("Injected Incorrect Camel Context", "fusequickstart-enc-properties-camel",
                 camelContext.getName());
     }
 
@@ -102,8 +106,8 @@ public class PropertiesIT extends CamelTestSupport {
     public void testPropertyValues() throws Exception {
 
         // Mock Endpoints using Route Advice With
-        camelContext.getRouteDefinition("propertiesRoute").adviceWith(camelContext.adapt(ModelCamelContext.class),
-                new AdviceWithRouteBuilder() {
+        camelContext.getRouteDefinition("encryptedPropertiesRoute").adviceWith(
+                camelContext.adapt(ModelCamelContext.class), new AdviceWithRouteBuilder() {
                     @Override
                     public void configure() throws Exception {
                         // Mock All Endpoints
@@ -116,9 +120,9 @@ public class PropertiesIT extends CamelTestSupport {
         camelContext.start();
 
         // Set Assertions on Mock Endpoint
-        getMockEndpoint("mock:log:PropertiesLog").expectedBodiesReceived(
-                "Reading Property 'test.foo': Hello",
-                "Reading Property 'test.bar': World");
+        getMockEndpoint("mock:log:EncryptedPropertiesLog").expectedBodiesReceived(
+                "Displaying Injected Property 'message': SecretMessage",
+                "Reading Property 'test.message.enc': SecretMessage");
 
         // Wait for Message to be Sent by Timer
         Thread.sleep(1000);

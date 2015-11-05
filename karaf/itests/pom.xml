@@ -17,6 +17,11 @@
 			<artifactId>properties</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
+			<artifactId>properties-encryption</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 		<!-- Testing Deps -->
 		<dependency>
@@ -114,6 +119,9 @@
 					<includes>
 						<include>**/*IT.java</include>
 					</includes>
+					<systemPropertyVariables>
+						<JASYPT_ENCRYPTION_PASSWORD>password</JASYPT_ENCRYPTION_PASSWORD>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 		</plugins>

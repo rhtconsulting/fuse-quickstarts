@@ -98,22 +98,26 @@ public class FuseTestUtil {
                 editConfigurationFilePut("etc/config.properties", "karaf.startup.message",
                         "Loading Fabric from: ${karaf.home}"),
                 editConfigurationFilePut("etc/org.ops4j.pax.web.cfg", "org.osgi.service.http.port", HTTP_PORT),
-                editConfigurationFilePut("etc/org.ops4j.pax.web.cfg", "activemq.port", AMQ_PORT),
+                editConfigurationFilePut("etc/system.properties", "activemq.port", AMQ_PORT),
                 editConfigurationFilePut("etc/org.apache.karaf.management.cfg", "rmiRegistryPort", RMI_REG_PORT),
                 editConfigurationFilePut("etc/org.apache.karaf.management.cfg", "rmiServerPort", RMI_SERVER_PORT),
                 editConfigurationFilePut("etc/users.properties", "admin",
                         "admin,admin,manager,viewer,Monitor, Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser"),
 
                 // Install Required Features
-                features("camel-blueprint", "camel-test"),
+                features("camel-blueprint", "camel-core", "camel-test", "camel-jasypt", "jasypt-encryption"),
 
                 // Install Configuration File(s) for Testing
                 KarafDistributionOption.replaceConfigurationFile(
                         "etc/com.redhat.consulting.fusequickstarts.karaf.properties.cfg", new File(
                                 "src/test/resources/com.redhat.consulting.fusequickstarts.karaf.properties.cfg")),
+                KarafDistributionOption.replaceConfigurationFile(
+                        "etc/com.redhat.consulting.fusequickstarts.karaf.properties.enc.cfg", new File(
+                                "src/test/resources/com.redhat.consulting.fusequickstarts.karaf.properties.enc.cfg")),
 
                 // Install Bundles for Testing
                 mavenBundle("com.redhat.consulting.fusequickstarts.karaf", "properties").versionAsInProject(),
+                mavenBundle("com.redhat.consulting.fusequickstarts.karaf", "properties-encryption").versionAsInProject(),
 
                 // Set Logging Level
                 logLevel(LogLevelOption.LogLevel.INFO),

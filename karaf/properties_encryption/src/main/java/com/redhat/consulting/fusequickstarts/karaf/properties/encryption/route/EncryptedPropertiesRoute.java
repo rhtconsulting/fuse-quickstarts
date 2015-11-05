@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstarts.karaf.properties.encrypted.route;
+package com.redhat.consulting.fusequickstarts.karaf.properties.encryption.route;
 
 import org.apache.camel.builder.RouteBuilder;
 
