@@ -6,12 +6,13 @@
 	xsi:schemaLocation=" http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd ">
 
 	<!-- Define the CXF Endpoint -->
+	<!-- The serviceClass `CustomerOrderServicePortType` is the Interface that is Generated from the WSDL. -->
 	<cxf:cxfEndpoint id="customerOrderEndpoint"
-		address="/fusequickstarts-camelcxf-codefirst/customerorder"
-		serviceClass="com.redhat.consulting.fusequickstarts.karaf.soap.service.ws.CustomerOrderService" />
+		address="/fusequickstarts-camelcxf-contractfirst/customerorder"
+		serviceClass="com.redhat.consulting.fusequickstarts.karaf.soap.service.ws.CustomerOrderServicePortType" />
 
 	<!-- The camel context which registers the route -->
-	<camel:camelContext id="fusequickstart-soap-camel"
+	<camel:camelContext id="fusequickstart-soap-cf-camel"
 		xmlns="http://camel.apache.org/schema/blueprint">
 
 		<!-- Package Scanning finds the Routes -->

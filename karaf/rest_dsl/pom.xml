@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>rest-dsl</artifactId>
-	<name>rest-dsl</name>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Camel REST DSL</name>
 
 	<packaging>bundle</packaging>
 	<!-- Any dependencies needed by your project -->

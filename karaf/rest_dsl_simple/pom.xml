@@ -11,7 +11,7 @@
 
   <groupId>com.redhat.consulting.fusequickstarts.karaf.rest.dsl.simple</groupId>
   <packaging>bundle</packaging>
-  <name>rest-dsl-simple</name>
+  <name>Fuse Quickstart :: Karaf :: Blueprint :: Camel REST DSL (Simple)</name>
   <!-- Any dependencies needed by your project -->
   <dependencies>
     <dependency>

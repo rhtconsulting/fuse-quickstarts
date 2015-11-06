@@ -8,6 +8,7 @@
 	</parent>
 
 	<artifactId>itests</artifactId>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Integration Test Suite</name>
 
 	<dependencies>
 
@@ -151,4 +152,5 @@
 		</profile>
 	</profiles>
 
+	<name>Fuse Quickstart :: Karaf :: Blueprint ::</name>
 </project>

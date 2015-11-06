@@ -8,7 +8,7 @@
 	</parent>
 
 	<artifactId>soap</artifactId>
-	<name>soap</name>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Camel-CXF SOAP (Code First)</name>
 
 	<packaging>bundle</packaging>
 

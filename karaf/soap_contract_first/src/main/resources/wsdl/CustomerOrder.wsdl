@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://ws.service.soap.karaf.fusequickstarts.consulting.redhat.com/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+	name="CustomerOrderService"
+	targetNamespace="http://ws.service.soap.karaf.fusequickstarts.consulting.redhat.com/">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://ws.service.soap.karaf.fusequickstarts.consulting.redhat.com/"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://ws.service.soap.karaf.fusequickstarts.consulting.redhat.com/">
+			<xs:complexType name="customerOrder">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="item" type="xs:string"></xs:element>
+					<xs:element minOccurs="0" name="orderId" type="xs:string"></xs:element>
+					<xs:element minOccurs="0" name="quantity" type="xs:int"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="customerOrderResponse">
+				<xs:sequence>
+					<xs:element name="completed" type="xs:boolean"></xs:element>
+					<xs:element minOccurs="0" name="order" type="tns:customerOrder"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="placeOrder" type="tns:placeOrder"></xs:element>
+			<xs:complexType name="placeOrder">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="customerOrder" type="tns:customerOrder"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="placeOrderResponse" type="tns:placeOrderResponse"></xs:element>
+			<xs:complexType name="placeOrderResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return"
+						type="tns:customerOrderResponse"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="getOrder" type="tns:getOrder"></xs:element>
+			<xs:complexType name="getOrder">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="orderId" type="xs:string"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="getOrderResponse" type="tns:getOrderResponse"></xs:element>
+			<xs:complexType name="getOrderResponse">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="return" type="tns:customerOrder"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="placeOrderResponse">
+		<wsdl:part element="tns:placeOrderResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getOrder">
+		<wsdl:part element="tns:getOrder" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getOrderResponse">
+		<wsdl:part element="tns:getOrderResponse" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="placeOrder">
+		<wsdl:part element="tns:placeOrder" name="parameters">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CustomerOrderServicePortType">
+		<wsdl:operation name="placeOrder">
+			<wsdl:input message="tns:placeOrder" name="placeOrder">
+			</wsdl:input>
+			<wsdl:output message="tns:placeOrderResponse" name="placeOrderResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getOrder">
+			<wsdl:input message="tns:getOrder" name="getOrder">
+			</wsdl:input>
+			<wsdl:output message="tns:getOrderResponse" name="getOrderResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CustomerOrderServiceSoapBinding" type="tns:CustomerOrderServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+		<wsdl:operation name="placeOrder">
+			<soap:operation soapAction="" style="document"></soap:operation>
+			<wsdl:input name="placeOrder">
+				<soap:body use="literal"></soap:body>
+			</wsdl:input>
+			<wsdl:output name="placeOrderResponse">
+				<soap:body use="literal"></soap:body>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getOrder">
+			<soap:operation soapAction="" style="document"></soap:operation>
+			<wsdl:input name="getOrder">
+				<soap:body use="literal"></soap:body>
+			</wsdl:input>
+			<wsdl:output name="getOrderResponse">
+				<soap:body use="literal"></soap:body>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CustomerOrderService">
+		<wsdl:port binding="tns:CustomerOrderServiceSoapBinding"
+			name="CustomerOrderServicePort">
+			<soap:address
+				location="http://localhost:8181/cxf/fusequickstarts-cxf-codefirst/customerorder"></soap:address>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

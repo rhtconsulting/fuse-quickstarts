@@ -1,6 +1,6 @@
-Camel-CXF SOAP (Code First) example
+Camel-CXF SOAP (Contract First) example
 ====================================
-This project creates a simple Customer Order SOAP service with 2 operations and exposes them via CXF. It uses a code-first approach that allows the WSDL to be automatically generated at run-time.
+This project creates a simple Customer Order SOAP service with 2 operations and exposes them via CXF. It uses a contract-first approach that requires the WSDL be hand written ahead of time.
  
 ### Requirements:
  * JBoss Fuse 6.2.0 
@@ -23,9 +23,9 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the Fuse console and from there you can install your bundle. To install the bundle, use one of the following commands:
  
-	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap/1.0.0/soap-1.0.0.jar
+	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap-contract-first/1.0.0/soap-contract-first-1.0.0.jar
         OR
-	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap/1.0.0
+	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap-contract-first/1.0.0
  
 The `-s` indicates that the bundle should be started after it is installed. If you leave it off you can start the bundle using the following command:
     
@@ -35,23 +35,23 @@ Testing
 -----------------------
 Once the bundle is deployed you can validate that Web Service was created and started by checking the CXF Service List at [http://localhost:8181/cxf](http://localhost:8181/cxf). Here you should see the Customer Order service listed under **Available SOAP services**. You may view the generated WSDL at:
 
-- [http://localhost:8181/cxf/fusequickstarts-camelcxf-codefirst/customerorder?wsdl](http://localhost:8181/cxf/fusequickstarts-camelcxf-codefirst/customerorder?wsdl)
+- [http://localhost:8181/cxf/fusequickstarts-camelcxf-contractfirst/customerorder?wsdl](http://localhost:8181/cxf/fusequickstarts-camelcxf-contractfirst/customerorder?wsdl)
 
 You can test the services using the following SOAP Requests using a tool such as [SoapUI](http://www.soapui.org/).
 
 For Place Order use 
 
 	<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.service.soap.karaf.fusequickstarts.consulting.redhat.com/">
-	   <soapenv:Header/>
-	   <soapenv:Body>
-	      <ws:placeOrder>
-	         <arg0>
-	            <item>Widget</item>
-	            <orderId>ORD56X</orderId>
-	            <quantity>34</quantity>
-	         </arg0>
-	      </ws:placeOrder>
-	   </soapenv:Body>
+	<soapenv:Header/>
+	<soapenv:Body>
+	  <ws:placeOrder>
+	     <customerOrder>
+	        <item>Widget</item>
+	        <orderId>ORD78K</orderId>
+	        <quantity>3</quantity>
+	     </customerOrder>
+	  </ws:placeOrder>
+	</soapenv:Body>
 	</soapenv:Envelope>
 
 or for Get Order use
@@ -60,16 +60,16 @@ or for Get Order use
 	   <soapenv:Header/>
 	   <soapenv:Body>
 	      <ws:getOrder>
-	         <arg0>ORD34B</arg0>
+	         <orderId>ORD36X</orderId>
 	      </ws:getOrder>
 	   </soapenv:Body>
 	</soapenv:Envelope>
 
 Additional Reading
 -----------------------
-More information about creating a Code First SOAP Web Service can be found here:
+More information about creating a Contract First SOAP Web Service can be found here:
 
-- [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/ImplWs-JavaFirst.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/ImplWs-JavaFirst.html)
+- [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/ImplWs-WsdlFirst.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/ImplWs-WsdlFirst.html)
 - [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Component_Reference/IDU-CXF.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Component_Reference/IDU-CXF.html)
 
 Troubleshooting

@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>properties-encryption</artifactId>
-	<name>properties-encryption</name>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Property Encryption with Jasypt</name>
 
 	<packaging>bundle</packaging>
 

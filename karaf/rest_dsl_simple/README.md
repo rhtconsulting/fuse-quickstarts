@@ -1,8 +1,7 @@
 Simple Camel Rest DSL example
 ====================================
- 
-This project is a simple Rest DSL Camel route. It is an osgi bundle that can be install on 
-Fuse Karaf. It is very minimal and configured with Blueprint. 
+This project is a simple Rest DSL Camel route. It is an osgi bundle that can be installed on 
+Fuse. It is very minimal and configured with Blueprint. 
 
 ### Requirements:
  * JBoss Fuse 6.2.0 

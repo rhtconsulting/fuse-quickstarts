@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>route-deployment</artifactId>
-	<name>route-deployment</name>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Camel Route Deployment</name>
 	
 	<packaging>bundle</packaging>
 	

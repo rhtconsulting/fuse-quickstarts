@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
 
-	<artifactId>properties</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGi Config Admin Service</name>
-	
+	<artifactId>soap-contract-first</artifactId>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Camel-CXF SOAP (Contract First)</name>
+
 	<packaging>bundle</packaging>
-	
+
 	<!-- Any dependencies needed by your project -->
 	<dependencies>
 		<dependency>
@@ -24,9 +22,14 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-cxf</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -36,6 +39,31 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
+			
+			<!-- CXF Plugin to build Java Code from WSDL -->
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<!-- Maven auto-compiles any source files under target/generated-sources/ -->
+							<sourceRoot>${basedir}/target/generated-sources/jaxws</sourceRoot>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/../src/main/resources/wsdl/CustomerOrder.wsdl</wsdl>
+								</wsdlOption>
+							</wsdlOptions>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
 			<!-- Bundle plugin which builds the bundle to install on karaf -->
 			<plugin>
 				<groupId>org.apache.felix</groupId>
@@ -50,7 +78,9 @@
 						<!-- Any packages needed by your bundle -->
 						<Import-Package>
 							org.apache.camel.*,
-							org.osgi.service.*
+							org.osgi.service.*,
+							javax.jws,
+							javax.xml.*
 						</Import-Package>
 					</instructions>
 				</configuration>
