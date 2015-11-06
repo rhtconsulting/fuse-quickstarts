@@ -105,8 +105,6 @@
 	<wsdl:service name="CustomerOrderService">
 		<wsdl:port binding="tns:CustomerOrderServiceSoapBinding"
 			name="CustomerOrderServicePort">
-			<soap:address
-				location="http://localhost:8181/cxf/fusequickstarts-cxf-codefirst/customerorder"></soap:address>
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
