@@ -13,7 +13,7 @@ The following quick starts are provided for Fuse on Karaf:
  * [Blueprint - REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl)
  * Blueprint - REST with Camel CXF-RS
  * Blueprint - REST Security with Camel CXF-RS
- * Blueprint - SOAP with Camel CXF (Contract First)
+ * [Blueprint - SOAP with Camel CXF (Contract First)](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/soap_contract_first)
  * [Blueprint - SOAP with Camel CXF (Code First)](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/soap)
  * Blueprint - SOAP Security with Camel CXF
  * Blueprint - SOAP Client
@@ -24,7 +24,7 @@ The following quick starts are provided for Fuse on Karaf:
  * Blueprint - Feature File
  * Declarative Services - Basic Route Deployment
  * Declarative Services - OSGi Services
- * [Integration Test Suite](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/itests)
+ * [Pax Exam Integration Test Suite](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/itests)
 
 The following quick starts are provided for Fuse on EAP:
 
@@ -42,6 +42,7 @@ The following quick starts are provided for Fuse on EAP:
  * Camel on EAP - JPA
  * Camel on EAP - Infinispan / Data Grid
  * Camel on EAP - Drools/BxMS
+ * Arquillian Integration Test Suite
 
 
 If you are looking for more complex solutions or larger examples, please see the [FuseByExample GitHub](https://github.com/FuseByExample) account.
