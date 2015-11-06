@@ -11,11 +11,12 @@ The following quick starts are provided for Fuse on Karaf:
  * Blueprint - A-MQ
  * [Blueprint - Simple REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl_simple)
  * [Blueprint - REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl)
- * Blueprint - REST with CXF-RS
- * Blueprint - REST Security with CXF-RS
- * Blueprint - SOAP with CXF (Contract First)
- * Blueprint - SOAP with CXF (Code First)
- * Blueprint - SOAP Security with CXF
+ * Blueprint - REST with Camel CXF-RS
+ * Blueprint - REST Security with Camel CXF-RS
+ * Blueprint - SOAP with Camel CXF (Contract First)
+ * [Blueprint - SOAP with Camel CXF (Code First)](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/soap)
+ * Blueprint - SOAP Security with Camel CXF
+ * Blueprint - SOAP Client
  * Blueprint - JPA
  * Blueprint - Infinispan / Data Grid
  * Blueprint - Drools/BxMS
