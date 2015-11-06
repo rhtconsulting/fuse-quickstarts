@@ -6,7 +6,7 @@ OSGi Config Admin Service example
 
 ### Requirements:
  * JBoss Fuse 6.2.0
- * Maven 3.2.3 (http://maven.apache.org/)
+ * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
 Building
@@ -29,7 +29,7 @@ Deploying to JBoss Fuse
 
 To start up Fuse Karaf browse to your fuse install directory. Then run
 
-     /bin/fuse or /bin/karaf
+     /bin/fuse
 
 This will bring up the fuse console.  Once in the console you will be able to install your bundle.
 Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2  repository in fuse in the `fuse/etc/org.ops4j.pax.url.mvn.cfg` file.  Then you can use the mvn syntax below.
@@ -47,8 +47,8 @@ Testing
 
 Once you have the route started you should be able to look in fuse/data/log/fuse.log and see the following logging:
 
-    2015-11-03 15:15:36,947 | INFO  |  timer://myTimer | PropertiesLog                    | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.foo': Hello]
-	2015-11-03 15:15:36,948 | INFO  |  timer://myTimer | PropertiesLog                    | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.bar': World]
+    2015-11-03 15:15:36,947 | INFO  |  timer://myTimer | PropertiesLog    | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.foo': Hello]
+	2015-11-03 15:15:36,948 | INFO  |  timer://myTimer | PropertiesLog    | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.bar': World]
 
 You can test the Auto Reload for the properties by making changes to the property file either directly or through the fuse console. The following commands can be used to edit the property inside the console:
 
@@ -62,3 +62,11 @@ You can test the Auto Reload for the properties by making changes to the propert
 	JBossFuse:karaf@root> config:update
 
 After making the change, you should see the updated values in your log output.
+
+Additional Reading
+-----------------------
+Additional information about Externalizing Properties with Fuse can be found here:
+
+ * [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Deploying_into_the_Container/DeployCamel-OsgiConfigProps.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Deploying_into_the_Container/DeployCamel-OsgiConfigProps.html)
+ * [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Console_Reference/Consoleconfig.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Console_Reference/Consoleconfig.html)
+

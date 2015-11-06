@@ -69,8 +69,8 @@ Testing
 -----------------------
 Once you have the route started you should be able to look in fuse/data/log/fuse.log and see the following logging:
 
-    2015-11-04 16:12:23,504 | INFO  |  timer://myTimer | EncryptedPropertiesLog           | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Displaying Injected Property 'message': SecretMessage]
-	2015-11-04 16:12:23,505 | INFO  |  timer://myTimer | EncryptedPropertiesLog           | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.message.enc': SecretMessage]
+    2015-11-04 16:12:23,504 | INFO  |  timer://myTimer | EncryptedPropertiesLog     | ?    ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Displaying Injected Property 'message': SecretMessage]
+	2015-11-04 16:12:23,505 | INFO  |  timer://myTimer | EncryptedPropertiesLog     | ?    ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.message.enc': SecretMessage]
 
 Additional Reading
 -----------------------

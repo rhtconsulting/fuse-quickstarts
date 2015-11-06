@@ -9,6 +9,7 @@ The following quick starts are provided for Fuse on Karaf:
  * [Blueprint - Encrypting Properties with Jasypt](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/properties_encryption)
  * Blueprint - JMS
  * Blueprint - A-MQ
+ * [Blueprint - Simple REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl_simple)
  * [Blueprint - REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl)
  * Blueprint - REST with CXF-RS
  * Blueprint - REST Security with CXF-RS

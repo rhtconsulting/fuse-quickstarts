@@ -1,8 +1,7 @@
 Rest DSL Camel OSGi example
 ====================================
  
- This project is a simple Rest DSL Camel route.  It is an osgi bundle that can be install on 
- Fuse Karaf.  It is very minimal and configured with Blueprint. 
+This project demonstrates how to publish a GET and POST REST Webservice using the DSL as well as how to work with JSON Objects and marshall them to a Pojo. It also has seperate routes that demonstrate how to call a REST endpoint using the HTTP4 Component. 
  
 ### Requirements:
  * JBoss Fuse 6.2.0 
@@ -23,7 +22,7 @@ Deploying to JBoss Fuse
  
 To start up Fuse Karaf browse to your fuse install directory. Then run
      
-	/bin/fuse or /bin/karaf
+	/bin/fuse
 
 This will bring up the fuse console.  Once in the console you will be able to install your bundle.
 Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file.  Then you can use the mvn syntax below.
@@ -40,14 +39,26 @@ Testing
 -----------------------
 After you deploy the route you can confirm that the endpoints are deployed and working by checking the log for the following output
 
-	2015-11-05 12:25:37,138 | INFO  | imer://restTimer | route57                          | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Calling REST Endpoint at http://localhost:8182/rest/message with Method GET and Body:
-	2015-11-05 12:25:37,144 | INFO  | stlet-2117440026 | route59                          | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful GET Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message@44101b7c
-	2015-11-05 12:25:37,150 | INFO  | imer://restTimer | route57                          | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | HTTP Resonse Code: 200 and Body: {"message":"REST is Awesome","to":"User","from":"Developer"}
-	2015-11-05 12:25:37,154 | INFO  | imer://restTimer | route58                          | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Calling REST Endpoint at http://localhost:8182/rest/message with Method POST and Body: {"message":"REST is Awesome","to":"User","from":"Developer"}
-	2015-11-05 12:25:37,160 | INFO  | stlet-2117440026 | route60                          | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful POST Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message@114360cc
-	2015-11-05 12:25:37,164 | INFO  | imer://restTimer | route58                          | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | HTTP Resonse Code: 201
+	2015-11-05 12:25:37,138 | INFO  | imer://restTimer | route57    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Calling REST Endpoint at http://localhost:8182/rest/message with Method GET and Body:
+	2015-11-05 12:25:37,144 | INFO  | stlet-2117440026 | route59    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful GET Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message@44101b7c
+	2015-11-05 12:25:37,150 | INFO  | imer://restTimer | route57    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | HTTP Resonse Code: 200 and Body: {"message":"REST is Awesome","to":"User","from":"Developer"}
+	2015-11-05 12:25:37,154 | INFO  | imer://restTimer | route58    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Calling REST Endpoint at http://localhost:8182/rest/message with Method POST and Body: {"message":"REST is Awesome","to":"User","from":"Developer"}
+	2015-11-05 12:25:37,160 | INFO  | stlet-2117440026 | route60    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful POST Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message@114360cc
+	2015-11-05 12:25:37,164 | INFO  | imer://restTimer | route58    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | HTTP Resonse Code: 201
 
 There is also a set of Unit Tests that run during the build process to test the Routes logic using the camel-test framework in addition to PaxExam based Integrated tests in the Integration Test Suite.
+
+Additional Reading
+-----------------------
+Additional information about using the REST DSL with Fuse can be found here:
+
+- [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/RestServices-RestDSL.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/RestServices-RestDSL.html)
+- [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/RestServices-Config.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/RestServices-Config.html)
+- [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/RestServices-Binding.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Development_Guide/RestServices-Binding.html)
+
+Information about Calling a REST Endpoint using HTTP4 can be found here:
+
+- [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Component_Reference/IDU-HTTP4.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2/html/Apache_Camel_Component_Reference/IDU-HTTP4.html)
 
 Troubleshooting
 -----------------------
