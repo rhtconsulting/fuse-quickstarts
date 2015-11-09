@@ -70,8 +70,7 @@
 						<!-- Any packages needed by your bundle -->
 						<Import-Package>
 							org.apache.camel.*,
-							org.osgi.service.*,
-							org.apache.camel.component.http4
+							org.osgi.service.*
 						</Import-Package>
 					</instructions>
 				</configuration>
