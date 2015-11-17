@@ -21,7 +21,7 @@ The following quick starts are provided for Fuse on Karaf:
  * Blueprint - Infinispan / Data Grid
  * Blueprint - Drools/BxMS
  * Blueprint - OSGi Services
- * Blueprint - Feature File
+ * [Blueprint - Feature File](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/feature)
  * Declarative Services - Basic Route Deployment
  * Declarative Services - OSGi Services
  * [Pax Exam Integration Test Suite](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/itests)
