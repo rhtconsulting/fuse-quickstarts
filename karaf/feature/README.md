@@ -34,7 +34,7 @@ Results
 -----------------------
 After running the above commands you should see your services started:
 
-[ 291] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: Camel REST DSL (1.0.0)
-[ 292] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: OSGi Config Admin Service (1.0.0)
-[ 293] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: Camel-CXF SOAP (Code First) (1.0.0)
+     [ 291] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: Camel REST DSL (1.0.0)
+     [ 292] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: OSGi Config Admin Service (1.0.0)
+     [ 293] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: Camel-CXF SOAP (Code First) (1.0.0)
 
