@@ -1,6 +1,6 @@
 AMQ Camel OSGi example
 ====================================
-This example deploy two basic Camel routes using ActiveMQ. They are both deployed using package scanning.  The one produces the message and sends it to the queue.  The other picks it up from the queue and logs it. 
+This example deploys two basic Camel routes using ActiveMQ. Both deployed using package scanning. The first one produces a simple text message and sends it to the queue. The second route picks up the message from the queue and logs it. 
 
 ### Requirements:
  * JBoss Fuse 6.2.0
@@ -34,11 +34,12 @@ This will bring up the fuse console. Once in the console you will be able to ins
 
 Results
 -----------------------
-Once you have the route started you should be able to look in fuse/data/log/fuse.log and see the following logging:
+Once you have the route started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
-21:08:52,563 | INFO  | onsumer[myQueue] | route1                           | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Produced Message
+     21:08:52,563 | INFO  | onsumer[myQueue] | route1                           | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Produced Message
 
 Inside the console you can also run and see the following:
+
      JBossFuse:karaf@root> activemq:dstat
      Name                                                Queue Size  Producer #  Consumer #   Enqueue #   Dequeue #   Forward #
      ActiveMQ.Advisory.Connection                                 0           0           0           1           0           0
