@@ -19,6 +19,7 @@ public class RequestProcessor implements Processor {
 
         // creating the request
         MessageContentsList req = new MessageContentsList();
+        req.add(1);
         inMessage.setBody(req);
 
     }

@@ -73,6 +73,7 @@
                         <!-- Any packages needed by your bundle -->
             <Import-Package>
               org.apache.camel.*,
+              org.osgi.service.*,
             </Import-Package>
           </instructions>
         </configuration>
