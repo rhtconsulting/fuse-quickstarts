@@ -36,7 +36,8 @@ Results
 -----------------------
 Once you have the route started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
-     21:08:52,563 | INFO  | onsumer[myQueue] | route1                           | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Produced Message
+	2015-11-18 13:38:26,204 | INFO  |  timer://myTimer | route4                           | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Created Message: Sample Message
+	2015-11-18 13:38:26,206 | INFO  | onsumer[myQueue] | route3                           | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Received Message: Sample Message
 
 Inside the console you can also run and see the following:
 

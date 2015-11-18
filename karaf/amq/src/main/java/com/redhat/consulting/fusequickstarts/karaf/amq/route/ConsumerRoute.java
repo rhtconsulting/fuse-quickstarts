@@ -14,7 +14,7 @@ public class ConsumerRoute extends RouteBuilder {
     public void configure() throws Exception {
         // @formatter:off
         from("activemq:queue:myQueue")
-            .log(LoggingLevel.INFO, "${body}");
+            .log(LoggingLevel.INFO, "Received Message: ${body}");
     }
 
 }
