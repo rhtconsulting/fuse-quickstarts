@@ -42,10 +42,10 @@ Testing
 -----------------------
 You can test the Bundle by accessing the following URL's
 
-* **[http://localhost:8182/rest/get](http://localhost:8182/rest/get)**
+* **[http://localhost:8182/simplerest/get](http://localhost:8182/simplerest/get)**
  * HTTP Method: GET
  * Should return "Successful GET Request"
-* **[http://localhost:8182/rest/post](http://localhost:8182/rest/post)**
+* **[http://localhost:8182/simplerest/post](http://localhost:8182/simplerest/post)**
  * HTTP Method: POST
  * Should see a similar line to the one below in data/log/fuse.log
   * `10:16:26,669 | INFO  | stlet-1836600637 | route  | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful POST Request`
