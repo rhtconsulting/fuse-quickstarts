@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+	xmlns:jaxws="http://cxf.apache.org/blueprint/jaxws" xmlns:camel="http://camel.apache.org/schema/blueprint"
+	xsi:schemaLocation="
+             http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+             http://cxf.apache.org/blueprint/jaxws http://cxf.apache.org/schemas/blueprint/jaxws.xsd
+             http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
+             ">
+
+	<!-- The camel context which registers the route -->
+	<camel:camelContext id="fusequickstart-jms"
+		xmlns="http://camel.apache.org/schema/blueprint">
+
+		<!-- Package Scanning finds the Routes -->
+		<packageScan>
+			<package>com.redhat.consulting.fusequickstarts.karaf.jms.route</package>
+		</packageScan>
+	</camel:camelContext>
+
+	<!-- Configures the JMS Component -->
+	<bean id="jms" class="org.apache.camel.component.jms.JmsComponent">
+		<property name="configuration" ref="jmsConfig" />
+	</bean>
+
+	<!-- Set the JMS Configuration -->
+	<bean id="jmsConfig" class="org.apache.camel.component.jms.JmsConfiguration">
+		<property name="connectionFactory" ref="amqConnectionFactory" />
+		<property name="transactionManager" ref="jmsTransactionManager" />
+		<property name="transacted" value="true" />
+		<property name="cacheLevelName" value="CACHE_CONNECTION" />
+	</bean>
+
+	<!-- Configure the JMS Transaction Factory -->
+	<bean id="jmsTransactionManager"
+		class="org.springframework.jms.connection.JmsTransactionManager">
+		<property name="connectionFactory" ref="amqConnectionFactory" />
+	</bean>
+
+	<!-- Configure the JMS Connection Factory for ActiveMQ -->
+	<bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://localhost:61616" />
+		<property name="userName" value="admin" />
+		<property name="password" value="admin" />
+	</bean>
+
+</blueprint>

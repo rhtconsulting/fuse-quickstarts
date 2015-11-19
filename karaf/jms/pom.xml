@@ -9,8 +9,8 @@
     <version>1.0.0</version>
   </parent>
 
-  <artifactId>amq</artifactId>
-  <name>Fuse Quickstart :: Karaf :: Blueprint :: OSGI A-MQ (ActiveMQ)</name>
+  <artifactId>jms</artifactId>
+  <name>Fuse Quickstart :: Karaf :: Blueprint :: OSGI JMS</name>
   
   <packaging>bundle</packaging>
     <!-- Any dependencies needed by your project -->
@@ -26,6 +26,14 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jms</artifactId>
         </dependency>
     </dependencies>
 
@@ -49,7 +57,8 @@
                         <!-- Any packages needed by your bundle -->
                         <Import-Package>
                             org.apache.camel.*,
-                            org.apache.activemq.*,
+                            org.apache.activemq,
+                            org.springframework.jms.*,
                             org.osgi.service.*
                         </Import-Package>
                     </instructions>
