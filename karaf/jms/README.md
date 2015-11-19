@@ -36,8 +36,9 @@ Results
 -----------------------
 Once you have the route started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
-	2015-11-18 19:21:01,498 | INFO  |  timer://myTimer | route4   | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Created Message: Sample JMS Message
-	2015-11-18 19:21:01,527 | INFO  | er[jmsTestQueue] | route3   | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Received Message: Sample JMS Message
+	2015-11-18 19:21:01,498 | INFO  |  timer://myTimer | route4          | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Created Message: Sample JMS Message
+	2015-11-18 20:51:42,095 | INFO  | er[jmsTestQueue] | jmsConsumerLog  | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Received Message: Sample JMS Message]
+
 
 Inside the console you can also run and see the following:
 

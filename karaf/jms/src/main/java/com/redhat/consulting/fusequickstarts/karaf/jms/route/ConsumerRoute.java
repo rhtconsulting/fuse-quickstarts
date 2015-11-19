@@ -14,7 +14,13 @@ public class ConsumerRoute extends RouteBuilder {
     public void configure() throws Exception {
         // @formatter:off
         from("jms:queue:jmsTestQueue?clientId=jmsConsumerRoute")
-            .log("Received Message: ${body}");
+            .routeId("jmsConsumer")
+            .to("direct:jmsConsumer");
+        
+        from("direct:jmsConsumer")
+            .routeId("directJmsConsumer")
+            .setBody().simple("Received Message: ${body}")
+            .to("log:jmsConsumerLog");
     }
 
 }
