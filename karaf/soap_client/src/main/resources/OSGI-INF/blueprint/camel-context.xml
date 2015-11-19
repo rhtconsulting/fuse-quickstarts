@@ -5,32 +5,15 @@
 	xmlns:cxf="http://camel.apache.org/schema/blueprint/cxf"
 	xsi:schemaLocation=" http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd ">
 
-	<!-- Define the CXF Endpoint -->
-	<!-- Outgoing SOAP client endpoint -->
-	<cxf:cxfEndpoint id="cxfClientEndpoint" 
+	<!-- <cxf:cxfEndpoint id="cxfClientEndpoint" 
 		address="http://www.webservicex.net/CurrencyConvertor.asmx"
-		wsdlURL="wsdl/currencyConverter.wsdl"
-		endpointName="{http\://www.webserviceX.NET/}CurrencyConvertorSoap"
-		serviceName="{http\://www.webserviceX.NET/}CurrencyConvertor">
+		wsdlURL="http://www.webservicex.net/CurrencyConvertor.asmx?WSDL"
+		endpointName="{http://www.webserviceX.NET/}CurrencyConvertorSoap"
+		serviceName="{http://www.webserviceX.NET/}CurrencyConvertor">
+	</cxf:cxfEndpoint> -->
 
-		<!-- The interceptors - needed to log the SOAP requests and responses -->
-		<!-- They can be removed, when no logging is needed -->
-		<!-- <cxf:inInterceptors>
-			<ref bean="loggingInInterceptor" />
-		</cxf:inInterceptors>
-		<cxf:outInterceptors>
-			<ref bean="loggingOutInterceptor" />
-		</cxf:outInterceptors>
-		<cxf:outFaultInterceptors>
-			<ref bean="loggingOutInterceptor" />
-		</cxf:outFaultInterceptors>
-		<cxf:inFaultInterceptors>
-			<ref bean="loggingInInterceptor" />
-		</cxf:inFaultInterceptors> -->
-	</cxf:cxfEndpoint>
-
-	<!-- The camel context which registers the route -->
-	<camel:camelContext id="fusequickstart-soap-camel"
+	<!-- The Camel Context -->
+	<camel:camelContext id="fusequickstart-soap-client-camel"
 		xmlns="http://camel.apache.org/schema/blueprint">
 
 		<!-- Package Scanning finds the Routes -->

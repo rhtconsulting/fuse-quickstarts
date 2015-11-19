@@ -22,7 +22,7 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
@@ -43,7 +43,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
-			
+
 			<!-- Bundle plugin which builds the bundle to install on karaf -->
 			<plugin>
 				<groupId>org.apache.felix</groupId>
@@ -59,12 +59,17 @@
 						<Import-Package>
 							org.apache.camel.*,
 							org.osgi.service.*,
+							org.xmlsoap.schemas.soap.envelope,
+							javax.xml.*,
 							javax.jws
 						</Import-Package>
+						<DynamicImport-Package>
+							javax.xml.namespace
+						</DynamicImport-Package>
 					</instructions>
 				</configuration>
 			</plugin>
-			
+
 			<!-- Generate POJO Classes for WSDL -->
 			<plugin>
 				<groupId>org.apache.cxf</groupId>
@@ -77,7 +82,7 @@
 							<goal>wsdl2java</goal>
 						</goals>
 						<configuration>
-						<sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
+							<sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/wsdl/currencyConvertor.wsdl</wsdl>
