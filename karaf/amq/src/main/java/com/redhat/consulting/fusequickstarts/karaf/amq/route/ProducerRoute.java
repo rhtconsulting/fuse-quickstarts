@@ -13,7 +13,8 @@ public class ProducerRoute extends RouteBuilder {
     public void configure() throws Exception {
         // @formatter:off
         from("timer://myTimer?fixedRate=true&period=2000")
-            .transform().simple("Sample Message")
+            .routeId("amqProducer")
+            .transform().simple("Sample AMQ Message")
             .log("Created Message: ${body}")
             .to("activemq:queue:myQueue");
     }
