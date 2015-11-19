@@ -74,6 +74,8 @@
             <Import-Package>
               org.apache.camel.*,
               org.osgi.service.*,
+              org.apache.cxf.*,
+              javax.ws.rs.*
             </Import-Package>
           </instructions>
         </configuration>

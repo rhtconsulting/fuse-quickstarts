@@ -21,22 +21,20 @@
 		</packageScan>
 	</camel:camelContext>
   
-     <bean id="myResource" class="com.redhat.consulting.fusequickstarts.karaf.rest.resource.MyResource" />
+<!--      <bean id="myResource" class="com.redhat.consulting.fusequickstarts.karaf.rest.resource.MyResource" /> -->
      
-     <jaxrs:server id="restService"
-                address="http://localhost:8183" 
-                staticSubresourceResolution="true">
-        <jaxrs:serviceBeans>
-            <ref component-id="myResource"/>
-        </jaxrs:serviceBeans>       
-    </jaxrs:server>
+<!--      <jaxrs:server id="restService" -->
+<!--                 address="http://localhost:8183"  -->
+<!--                 staticSubresourceResolution="true"> -->
+<!--         <jaxrs:serviceBeans> -->
+<!--             <ref component-id="myResource"/> -->
+<!--         </jaxrs:serviceBeans>        -->
+<!--     </jaxrs:server> -->
   
-     <cxf:rsClient id="rsClient" address="http://localhost:8183" 
+     <cxf:rsClient id="rsClient" address="http://localhost:8183/service" 
      serviceClass="com.redhat.consulting.fusequickstarts.karaf.rest.resource.MyResource" loggingFeatureEnabled="true"/>
      
-     <cxf:rsServer id="rsServer" address="http://localhost:8183" 
+     <cxf:rsServer id="rsServer" address="http://localhost:8183/service" 
      serviceClass="com.redhat.consulting.fusequickstarts.karaf.rest.resource.MyResource" loggingFeatureEnabled="true"/>
-     
-
 
 </blueprint>

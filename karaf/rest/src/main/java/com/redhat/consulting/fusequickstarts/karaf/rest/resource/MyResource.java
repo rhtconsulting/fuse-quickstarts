@@ -8,12 +8,14 @@ import javax.ws.rs.core.MediaType;
 
 import com.redhat.consulting.fusequickstarts.karaf.rest.model.User;
 
-@Path(value = "/")
-public interface MyResource {
+@Path("/service")
+public class MyResource {
 
     @GET
-    @Path(value = "/{id}")
+    @Path("/{id}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public User getSampleUser(@PathParam("id") String id);
+    public User getSampleUser(@PathParam("id") String id) {
+        return null;
+    }
 
 }
