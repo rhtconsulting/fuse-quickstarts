@@ -5,7 +5,7 @@ This is a collection of Quick Starts designed to be run on JBoss Fuse on Karaf. 
 These examples are designed to demonstrate a single component or feature without much advanced or complex functionality. This is a good place for beginners to start.
 
  * [Blueprint - Basic Route Deployment](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/route_deployment)
- * Blueprint - OSGi Services
+ * [Blueprint - OSGi Services](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/osgi_service)
  * [Blueprint - Feature File](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/feature)
  * [Blueprint - Config Admin Service](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/properties)
  * [Blueprint - JMS](https://github.com/rhtconsulting/fuse-quickstarts/blob/master/karaf/jms)
