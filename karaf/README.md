@@ -14,7 +14,7 @@ These examples are designed to demonstrate a single component or feature without
  * [Blueprint - REST with Camel CXF-RS](https://github.com/rhtconsulting/fuse-quickstarts/blob/master/karaf/rest)
  * [Blueprint - SOAP with Camel CXF (Contract First)](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/soap_contract_first)
  * [Blueprint - SOAP with Camel CXF (Code First)](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/soap)
- * Blueprint - SOAP Client
+ * [Blueprint - SOAP Client](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/soap_client)
  * Blueprint - JPA
 
 ## Advanced Examples ##
