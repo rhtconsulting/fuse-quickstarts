@@ -8,7 +8,7 @@
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
-	<name>karaf-parent</name>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Parent</name>
 	<description>The pom that all karaf fuse quickstart projects should inherit from either directly or via its parent pom hierarchy</description>
 
 	<properties>
