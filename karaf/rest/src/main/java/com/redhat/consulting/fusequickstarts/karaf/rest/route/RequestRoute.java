@@ -12,14 +12,13 @@ public class RequestRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         // @formatter:off
-//        from("direct:test")
-//        .to("direct:testend");
+        
         from("timer://restRequestTimer?period=5000") //period in milliseconds
             .log(LoggingLevel.INFO, "Starting request")
             .setHeader("type", simple("user"))
             .setBody(simple("1"))
             .process(requestProcessor)
-            .to("cxfrs://bean://rsClient")
-            .log(LoggingLevel.INFO, "${body}");
+            .to("cxfrs://bean://rsClient");
+            //.log(LoggingLevel.INFO, "Message request sent");
     }
 }

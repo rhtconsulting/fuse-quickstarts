@@ -74,8 +74,12 @@
             <Import-Package>
               org.apache.camel.*,
               org.osgi.service.*,
+              org.apache.cxf.jaxrs.client,
               org.apache.cxf.*,
-              javax.ws.rs.*
+              javax.ws.rs,
+              javax.ws.rs.core,
+              net.sf.cglib.proxy,
+              net.sf.cglib.core
             </Import-Package>
           </instructions>
         </configuration>
