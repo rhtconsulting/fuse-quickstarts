@@ -5,15 +5,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
-import com.redhat.consulting.fusequickstarts.karaf.rest.model.User;
-
-@Path(value = "/")
+@Path("/service")
 public interface MyResource {
 
     @GET
-    @Path(value = "/{id}")
+    @Path("/{id}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public User getSampleUser(@PathParam("id") String id);
+    public Response getSampleUser(@PathParam("id") Integer id);
 
 }

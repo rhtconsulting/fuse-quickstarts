@@ -5,6 +5,9 @@ import org.apache.camel.builder.RouteBuilder;
 
 import com.redhat.consulting.fusequickstarts.karaf.rest.processor.RequestProcessor;
 
+/*
+ * The route for sending requests to our cxf endpoint
+ */
 public class RequestRoute extends RouteBuilder {
 
     private final RequestProcessor requestProcessor = new RequestProcessor();
@@ -12,12 +15,10 @@ public class RequestRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         // @formatter:off
+        
         from("timer://restRequestTimer?period=5000") //period in milliseconds
             .log(LoggingLevel.INFO, "Starting request")
-            .setHeader("type", simple("user"))
-            .setBody(simple("1"))
-            .process(requestProcessor)
-            .to("cxfrs:bean:rsClient")
-            .log(LoggingLevel.INFO, "${body}");
+            .process(requestProcessor) //set the appropriate headers
+            .to("cxfrs://bean://rsClient");
     }
 }
