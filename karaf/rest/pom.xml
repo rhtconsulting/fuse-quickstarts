@@ -68,9 +68,9 @@
           <manifestLocation>target/META-INF</manifestLocation>
           <instructions>
             <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-                        <!-- Any packages to be exported for use by another bundle -->
+            <!-- Any packages to be exported for use by another bundle -->
             <Export-Package />
-                        <!-- Any packages needed by your bundle -->
+            <!-- Any packages needed by your bundle -->
             <Import-Package>
               org.apache.camel.*,
               org.osgi.service.*,

@@ -14,16 +14,17 @@
 	<!-- The camel context which registers the route -->
 	<camel:camelContext id="fusequickstart-cxf-rest"
 		xmlns="http://camel.apache.org/schema/blueprint">
-    
 		<!-- Package Scanning finds the Routes -->
 		<packageScan>
 			<package>com.redhat.consulting.fusequickstarts.karaf.rest.route</package>
 		</packageScan>
 	</camel:camelContext>
   
+     <!-- RS Client for requests to endpoint -->
      <cxf:rsClient id="rsClient" address="http://localhost:8183" 
      serviceClass="com.redhat.consulting.fusequickstarts.karaf.rest.resource.MyResource" loggingFeatureEnabled="true"/>
      
+     <!-- RS Service for consuming from the endpoint -->
      <cxf:rsServer id="rsServer" address="http://localhost:8183" 
      serviceClass="com.redhat.consulting.fusequickstarts.karaf.rest.resource.MyResource" loggingFeatureEnabled="true"/>
 

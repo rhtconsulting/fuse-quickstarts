@@ -16,7 +16,6 @@ public class RequestProcessor implements Processor {
         inMessage.setHeader(CxfConstants.OPERATION_NAME, "getSampleUser");
         // using the proxy client API
         inMessage.setHeader(CxfConstants.CAMEL_CXF_RS_USING_HTTP_API, Boolean.FALSE);
-
         // creating the request
         MessageContentsList req = new MessageContentsList();
         req.add(1);
