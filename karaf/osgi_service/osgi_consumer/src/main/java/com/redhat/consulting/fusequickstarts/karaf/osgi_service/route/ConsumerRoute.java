@@ -11,7 +11,10 @@ public class ConsumerRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("timer://serviceTimer?fixedRate=true&period=5000").beanRef("helloService", "sayHello(Jim)")
+        from("timer://serviceTimer?fixedRate=true&period=5000")
+            .beanRef("helloService", "sayMessage")
+            .to("log:helloServiceLog")
+            .beanRef("helloService", "sayHello(Jim)")
             .to("log:helloServiceLog");
     }
 

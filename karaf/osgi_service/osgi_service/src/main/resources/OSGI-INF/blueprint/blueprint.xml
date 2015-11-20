@@ -8,7 +8,9 @@
 
 	<!-- Configures Hello Service -->
 	<bean id="helloService"
-		class="com.redhat.consulting.fusequickstarts.karaf.osgi_service.service.HelloServiceImpl" />
+		class="com.redhat.consulting.fusequickstarts.karaf.osgi_service.service.HelloServiceImpl">
+		<property name="message" value="This is a Default Message"/>
+	</bean>
 
 	<!-- Expose the Hello Service as an OSGI Service -->
 	<service ref="helloService"

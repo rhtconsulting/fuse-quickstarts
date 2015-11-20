@@ -48,7 +48,9 @@ After running the above commands you should see your services started:
 
 Once you have the route started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
-	2015-11-19 17:40:32,106 | INFO  | r://serviceTimer | helloServiceLog   | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Hello Jim, How Are you?]
+2015-11-20 15:36:13,257 | INFO  | r://serviceTimer | helloServiceLog | ?    ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: I Have a Message: This is a Default Message]
+2015-11-20 15:36:13,258 | INFO  | r://serviceTimer | helloServiceLog | ?    ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Hello Jim, How Are you?]
+
      
 Troubleshooting
 -----------------------
