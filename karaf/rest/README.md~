@@ -38,20 +38,22 @@ Testing
 -----------------------
 After you deploy the route you can confirm that the endpoints are deployed and working by checking the log for the following output
 
+--------------------------------------
 21:12:22,118 | INFO  | tp1296672062-339 | LoggingInInterceptor             | 118 - org.apache.cxf.cxf-core - 3.0.4.redhat-620133 | Inbound Message
-
+----------------------------
 ID: 5897
 Address: http://localhost:8183/service/1
 Http-Method: GET
 Content-Type: */*
 Headers: {Accept=[application/json,application/xml], breadcrumbId=[ID-dhcp-192-168-141-42-40384-1447969596266-17-41], Cache-Control=[no-cache], connection=[keep-alive], content-type=[*/*], firedTime=[Thu N      ov 19 21:12:22 EST 2015], Host=[localhost:8183], Pragma=[no-cache], User-Agent=[Apache CXF 3.0.4.redhat-620133]}
-
+--------------------------------------
 21:12:22,118 | INFO  | tp1296672062-339 | route35                          | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Request Recieved
 21:12:22,119 | INFO  | tp1296672062-339 | LoggingOutInterceptor            | 118 - org.apache.cxf.cxf-core - 3.0.4.redhat-620133 | Outbound Message
-
+---------------------------
 ID: 5897
 Response-Code: 200
 Content-Type: application/json
 Headers: {Content-Type=[application/json], Date=[Fri, 20 Nov 2015 02:12:22 GMT]}
 Payload: Sample User
+--------------------------------------
 
