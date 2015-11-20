@@ -3,8 +3,7 @@ package com.redhat.consulting.fusequickstarts.karaf.osgi_service.route;
 import org.apache.camel.builder.RouteBuilder;
 
 /*
- * This route picks up from the activemq queue and logs the body of
- * the message.
+ * This route is triggered by a Timer and called the Hello Service that is exposed from the other bundle.
  */
 
 public class ConsumerRoute extends RouteBuilder {
@@ -12,9 +11,7 @@ public class ConsumerRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("timer://serviceTimer?fixedRate=true&period=5000")
-            .routeId("serviceConsumer")
-            .beanRef("helloService", "sayHello(Jim)")
+        from("timer://serviceTimer?fixedRate=true&period=5000").beanRef("helloService", "sayHello(Jim)")
             .to("log:helloServiceLog");
     }
 
