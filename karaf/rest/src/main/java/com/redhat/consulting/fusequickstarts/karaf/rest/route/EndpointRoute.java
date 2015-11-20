@@ -10,7 +10,7 @@ import com.redhat.consulting.fusequickstarts.karaf.rest.processor.MyResourceImpl
  * The route for receiving requests from out cxf endpoints.
  */
 
-public class EndpointRouter extends RouteBuilder {
+public class EndpointRoute extends RouteBuilder {
 
     private MyResourceImpl myResourceImpl = new MyResourceImpl();
 
@@ -19,6 +19,7 @@ public class EndpointRouter extends RouteBuilder {
         // @formatter:off
         
         from("cxfrs:bean:rsServer?bindingStyle=SimpleConsumer")
+            .routeId("restEndpointConsumer")
             .choice() //selects what to do based on the request
                 .when(header(CxfConstants.OPERATION_NAME).isEqualTo("getSampleUser"))
                     .bean(myResourceImpl, "getSampleUser")
