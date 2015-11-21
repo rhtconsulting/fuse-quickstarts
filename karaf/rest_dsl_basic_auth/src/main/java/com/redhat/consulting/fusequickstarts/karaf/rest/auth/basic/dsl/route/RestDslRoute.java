@@ -18,7 +18,10 @@ public class RestDslRoute extends RouteBuilder {
         sampleMessage.setMessage("REST is Awesome");
         
         // Configure the Rest DSL to use Jetty
-        restConfiguration().component("jetty").host("localhost").port(8183).bindingMode(RestBindingMode.auto).endpointProperty("handlers", "securityHandler");
+        restConfiguration().component("jetty")
+            .host("localhost").port(8183)
+            .bindingMode(RestBindingMode.json)
+            .endpointProperty("handlers", "securityHandler"); // Specifying This is Critical to get the Security Working
 
         // Configure the Root URL of the Endpoint
         rest("/rest")
