@@ -1,6 +1,6 @@
-Rest DSL Camel OSGi example
+Rest DSL w/ Basic Auth Example
 ====================================
- This project demonstrates how to publish a GET and POST REST Webservice using the DSL as well as how to work with JSON Objects and marshall them to a Pojo. It also has seperate routes that demonstrate how to call a REST endpoint using the HTTP4 Component. 
+This project demonstrates how to publish a GET and POST REST Webservice using the DSL as well as how to work with JSON Objects and marshall them to a Pojo. It also has seperate routes that demonstrate how to call a REST endpoint using the HTTP4 Component. 
  
 ### Requirements:
  * JBoss Fuse 6.2.0 
@@ -26,9 +26,9 @@ To start up Fuse Karaf browse to your fuse install directory. Then run
 This will bring up the fuse console.  Once in the console you will be able to install your bundle.
 Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file.  Then you can use the mvn syntax below.
  
-	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-dsl/1.0.0/rest-dsl-1.0.0.jar
+	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-dsl-basic-auth/1.0.0/rest-dsl-basic-auth-1.0.0.jar
         OR
-	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/rest-dsl/1.0.0
+	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/rest-dsl-basic-auth/1.0.0
  
 The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
     
@@ -39,10 +39,10 @@ Testing
 After you deploy the route you can confirm that the endpoints are deployed and working by checking the log for the following output
 
 	2015-11-05 12:25:37,138 | INFO  | imer://restTimer | route57    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Calling REST Endpoint at http://localhost:8182/rest/message with Method GET and Body:
-	2015-11-05 12:25:37,144 | INFO  | stlet-2117440026 | route59    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful GET Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Note@44101b7c
+	2015-11-05 12:25:37,144 | INFO  | stlet-2117440026 | route59    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful GET Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message@44101b7c
 	2015-11-05 12:25:37,150 | INFO  | imer://restTimer | route57    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | HTTP Resonse Code: 200 and Body: {"message":"REST is Awesome","to":"User","from":"Developer"}
 	2015-11-05 12:25:37,154 | INFO  | imer://restTimer | route58    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Calling REST Endpoint at http://localhost:8182/rest/message with Method POST and Body: {"message":"REST is Awesome","to":"User","from":"Developer"}
-	2015-11-05 12:25:37,160 | INFO  | stlet-2117440026 | route60    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful POST Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Note@114360cc
+	2015-11-05 12:25:37,160 | INFO  | stlet-2117440026 | route60    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Successful POST Request: com.redhat.consulting.fusequickstarts.karaf.rest.dsl.model.Message@114360cc
 	2015-11-05 12:25:37,164 | INFO  | imer://restTimer | route58    | ?   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | HTTP Resonse Code: 201
 
 There is also a set of Unit Tests that run during the build process to test the Routes logic using the camel-test framework in addition to PaxExam based Integrated tests in the Integration Test Suite.
