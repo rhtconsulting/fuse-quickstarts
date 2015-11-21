@@ -18,8 +18,7 @@ public class RestDslRoute extends RouteBuilder {
         sampleMessage.setMessage("REST is Awesome");
         
         // Configure the Rest DSL to use Jetty
-        // TODO The Response is not getting Bound to JSON
-        restConfiguration().component("jetty").host("localhost").port(8183).bindingMode(RestBindingMode.auto);
+        restConfiguration().component("jetty").host("localhost").port(8183).bindingMode(RestBindingMode.auto).endpointProperty("handlers", "securityHandler");
 
         // Configure the Root URL of the Endpoint
         rest("/rest")
