@@ -1,6 +1,6 @@
 Rest DSL w/ Basic Auth Example
 ====================================
-This project demonstrates how to publish a GET and POST REST Webservice using the DSL as well as how to work with JSON Objects and marshall them to a Pojo. It also has seperate routes that demonstrate how to call a REST endpoint using the HTTP4 Component. 
+This project demonstrates how to publish a GET and POST REST Webservice using the DSL with Basic Authentication using Fuse's JAAS Realms. It also shows how to work with JSON Objects and marshall them to a Pojos. In addition it has seperate route that demonstrate how to call a REST endpoint using the HTTP4 Component and Basic Auth. 
  
 ### Requirements:
  * JBoss Fuse 6.2.0 
@@ -62,16 +62,6 @@ Information about Calling a REST Endpoint using HTTP4 can be found here:
 Troubleshooting
 -----------------------
 If you run into any problems starting the Quickstart, check out some of the solutions below to get them working.
-
-### No bean could be found in the registry for: restlet
-If you encounter errors similar to the one below when starting the route it is because you do not have the `camel-restlet` features installed.
-
-	Error occurred during starting Camel: CamelContext(fusequickstart-restdsl-camel) due No bean could be found in the registry for: restlet of type: org.apache.camel.spi.RestConsumerFactory
-	org.apache.camel.NoSuchBeanException: No bean could be found in the registry for: restlet of type: org.apache.camel.spi.RestConsumerFactory
-
-To resolve this error, install the `camel-restlet` feature in Fuse with the following command.
-
-	features:install camel-restlet
 
 ### Not getting JSON returned from Endpoint
 If you are not getting JSON returned from the REST endpoints, then it is because no JSON Converters can be found on the classpath. You can resolve this by installing the `camel-jackson` feature using the following command.
