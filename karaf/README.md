@@ -23,6 +23,7 @@ These examples build upon the basic examples to demonstrate more advanced featur
  * [Blueprint - Encrypting Properties with Jasypt](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/properties_encryption)
  * [Blueprint - REST DSL with Transformations](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl)
  * [Blueprint - Sharing a Camel Component across Bundles](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/shared_component)
+ * [Blueprint - REST DSL using BASIC Authentication and the Fuse JAAS Realm](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl_basic_auth)
  * Blueprint - REST Security with Camel CXF-RS
  * Blueprint - SOAP Security with Camel CXF
  * Blueprint - Infinispan / Data Grid

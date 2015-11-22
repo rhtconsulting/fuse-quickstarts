@@ -33,10 +33,8 @@ public class RestConsumerRoute extends RouteBuilder {
             })
             .marshal().json(JsonLibrary.Jackson) // Convert to JSON
             .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.POST)) // Set to POST Call
-            //TODO Set the Username/Password for the POST
-            .setHeader(Exchange.HTTP_URI, simple("http://localhost:8183/rest/message")) // Override URI on Endpoint Below. Used when you need to set Dynamic Properties in a URI
             .log("Calling REST Endpoint at ${header."+Exchange.HTTP_URI+"} with Method ${header."+Exchange.HTTP_METHOD+"} and Body: ${body}")
-            .to("http4://postrequest")
+            .to("http4://localhost:8183/rest/message?authUsername=admin&authPassword=admin&authenticationPreemptive=true")
             .log("HTTP Response Code: ${header."+Exchange.HTTP_RESPONSE_CODE+"}");
     }
 
