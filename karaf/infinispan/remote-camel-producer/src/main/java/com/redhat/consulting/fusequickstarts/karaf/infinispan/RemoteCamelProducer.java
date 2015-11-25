@@ -23,7 +23,7 @@ public class RemoteCamelProducer extends RouteBuilder {
             .to("infinispan://localhost")
             
             // Log
-            .to("remoteCamelProducer?showAll=true");
+            .to("log:remoteCamelProducer?showAll=true");
     }
 
 }

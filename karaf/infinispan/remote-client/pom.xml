@@ -49,7 +49,8 @@
 						<Import-Package>
 							org.apache.camel.*,
 							org.osgi.service.*,
-							org.infinispan.*
+							org.infinispan.*,
+							org.slf4j
 						</Import-Package>
 					</instructions>
 				</configuration>
