@@ -47,7 +47,13 @@ Results
 -----------------------
 Once you have the bundle deployed and started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
-    TODO: ADD OUTPUT HERE
+    2015-11-25 13:45:28,149 | INFO  | r://remoteClient | LocalClient | ?              ? | 285 - com.redhat.consulting.fusequickstarts.karaf.infinispan.local-client - 1.0.0 | Local PUT 2 : Wed Nov 25 13:45:28 EST 2015
+    2015-11-25 13:45:28,150 | INFO  | r://remoteClient | LocalCacheListener               | ?              ? | 284 - com.redhat.consulting.fusequickstarts.karaf.infinispan.local-cache - 1.0.0 | Infinispan event received: CACHE_ENTRY_MODIFIED with key: 2
+    2015-11-25 13:45:28,151 | INFO  | r://remoteClient | localClient | ?              ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-38106-1448474644887-12-4, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Wed Nov 25 13:45:28 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route4, node=to8], DefaultMessageHistory[routeId=route4, node=to9]], CamelTimerCounter=2, CamelTimerFiredTime=Wed Nov 25 13:45:28 EST 2015, CamelTimerName=remoteClient, CamelTimerPeriod=5000, CamelToEndpoint=log://localClient?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-38106-1448474644887-12-3, firedTime=Wed Nov 25 13:45:28 EST 2015}, BodyType: String, Body: Wed Nov 25 13:43:51 EST 2015, Out: null: ]
+    2015-11-25 13:45:28,153 | INFO  | r://remoteClient | LocalClient | ?              ? | 285 - com.redhat.consulting.fusequickstarts.karaf.infinispan.local-client - 1.0.0 | Local GET 2 :  
+    2015-11-25 13:45:28,154 | INFO  | r://remoteClient | LocalCacheListener               | ?              ? | 284 - com.redhat.consulting.fusequickstarts.karaf.infinispan.local-cache - 1.0.0 | Infinispan event received: CACHE_ENTRY_VISITED with key: 2
+    2015-11-25 13:45:28,155 | INFO  | r://remoteClient | localClient | ?              ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-38106-1448474644887-12-4, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Wed Nov 25 13:45:28 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route4, node=to8], DefaultMessageHistory[routeId=route4, node=to9], DefaultMessageHistory[routeId=route4, node=to10], DefaultMessageHistory[routeId=route4, node=to11]], CamelTimerCounter=2, CamelTimerFiredTime=Wed Nov 25 13:45:28 EST 2015, CamelTimerName=remoteClient, CamelTimerPeriod=5000, CamelToEndpoint=log://localClient?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-38106-1448474644887-12-3, firedTime=Wed Nov 25 13:45:28 EST 2015}, BodyType: String, Body: Wed Nov 25 13:45:28 EST 2015, Out: null: ]
+
 
 Troubleshooting
 -----------------------

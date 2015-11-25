@@ -10,6 +10,8 @@ public class LocalClientRoute extends RouteBuilder {
                
         from("timer://remoteClient?fixedRate=true&period=5000")
             .to("bean:localClient?method=process('PUT', ${property.CamelTimerCounter}, ${property.CamelTimerFiredTime})")
+            .to("log:localClient?showAll=true")
+            .to("bean:localClient?method=process('GET', ${property.CamelTimerCounter}, '')")
             .to("log:localClient?showAll=true");
         
     }
