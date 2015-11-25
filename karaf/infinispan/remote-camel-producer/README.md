@@ -20,6 +20,8 @@ Before you can get started with this example, you need to install the JBoss Data
 	features:install infinispan-embedded
 	features:install infinispan-remote
 
+In addition to having the correct features installed, you need to have an instance of JBoss Data Grid 6.5 up and running on `localhost` with the default ports.
+
 Building
 -----------------------
 To build the project.
@@ -49,7 +51,8 @@ Results
 -----------------------
 Once you have the bundle deployed and started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
-    TODO: ADD OUTPUT HERE
+    2015-11-25 13:12:18,812 | INFO  | oteCamelProducer | remoteCamelProducer              | ?                                   ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-38106-1448474644887-3-12, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Wed Nov 25 13:12:18 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route2, node=setHeader5], DefaultMessageHistory[routeId=route2, node=setHeader6], DefaultMessageHistory[routeId=route2, node=to3], DefaultMessageHistory[routeId=route2, node=setHeader7], DefaultMessageHistory[routeId=route2, node=setHeader8], DefaultMessageHistory[routeId=route2, node=to4], DefaultMessageHistory[routeId=route2, node=to5]], CamelTimerCounter=6, CamelTimerFiredTime=Wed Nov 25 13:12:18 EST 2015, CamelTimerName=remoteCamelProducer, CamelTimerPeriod=5000, CamelToEndpoint=log://remoteCamelProducer?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-38106-1448474644887-3-11, CamelInfinispanKey=6, CamelInfinispanOperation=CamelInfinispanOperationGet, CamelInfinispanOperationResult=6, CamelInfinispanValue=6, firedTime=Wed Nov 25 13:12:18 EST 2015}, BodyType: null, Body: [Body is null], Out: null: ]
+
 
 Troubleshooting
 -----------------------
@@ -60,3 +63,6 @@ If you are getting the following error or a similar error when trying to deploy 
     	Error resolving artifact org.infinispan:infinispan-embedded:xml:features:6.3.1.Final-redhat-1: Could not find artifact
 
 You Need to add the Red Hat GA Maven Repo to the Fuse Configuration file `org.ops4j.pax.url.mvn.cfg`. ATo do so append the URL `https://maven.repository.redhat.com/ga/` to the property `org.ops4j.pax.url.mvn.repositories`.
+
+### Connection Errors ###
+If you are seeing connection errors, make sure that you have JBoss Data Gris running on `localhost` in client-server mode and that it is using the default ports.
