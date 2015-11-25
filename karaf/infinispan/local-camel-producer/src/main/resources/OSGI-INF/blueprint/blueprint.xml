@@ -6,19 +6,12 @@
 
 	<reference id="cacheManager" interface="org.infinispan.manager.EmbeddedCacheManager" />
 
-	<camelContext id="local-producer"
+	<camelContext id="local-camel-producer"
 		xmlns="http://camel.apache.org/schema/blueprint">
-		<route>
-			<from uri="timer://local?fixedRate=true&amp;period=5000" />
-			<setHeader headerName="CamelInfinispanKey">
-				<property>CamelTimerCounter</property>
-			</setHeader>
-			<setHeader headerName="CamelInfinispanValue">
-				<property>CamelTimerCounter</property>
-			</setHeader>
-			<to uri="infinispan://foo?cacheContainer=#cacheManager" />
-			<to uri="log:local-put?showAll=true" />
-		</route>
+
+		<packageScan>
+			<package>com.redhat.consulting.fusequickstarts.karaf.infinispan</package>
+		</packageScan>
 	</camelContext>
 
 </blueprint>

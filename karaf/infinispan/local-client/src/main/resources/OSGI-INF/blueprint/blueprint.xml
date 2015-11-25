@@ -11,12 +11,11 @@
 		<property name="cacheManager" ref="cacheManager" />
 	</bean>
 
-	<camelContext id="remote-producer"
+	<camelContext id="local-client"
 		xmlns="http://camel.apache.org/schema/blueprint">
-		<route>
-			<from uri="timer://remote?fixedRate=true&amp;period=5000" />
-			<to
-				uri="bean:localClient?method=process(&#39;PUT&#39;, ${property.CamelTimerCounter}, ${property.CamelTimerFiredTime})" />
-		</route>
+
+		<packageScan>
+			<package>com.redhat.consulting.fusequickstarts.karaf.infinispan</package>
+		</packageScan>
 	</camelContext>
 </blueprint>

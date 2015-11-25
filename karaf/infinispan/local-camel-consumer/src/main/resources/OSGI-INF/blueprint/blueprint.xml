@@ -6,11 +6,11 @@
 
 	<reference id="cacheManager" interface="org.infinispan.manager.EmbeddedCacheManager" />
 
-	<camelContext id="local-consumer"
+	<camelContext id="local-camel-consumer"
 		xmlns="http://camel.apache.org/schema/blueprint">
-		<route>
-			<from uri="infinispan://foo?cacheContainer=#cacheManager" />
-			<to uri="log:local-get?showAll=true" />
-		</route>
+
+		<packageScan>
+			<package>com.redhat.consulting.fusequickstarts.karaf.infinispan</package>
+		</packageScan>
 	</camelContext>
 </blueprint>

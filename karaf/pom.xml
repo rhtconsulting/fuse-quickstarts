@@ -18,6 +18,7 @@
 		<jboss.fuse.bom.version>6.2.0.redhat-133</jboss.fuse.bom.version>
 		<infinispan.version>6.3.1.Final-redhat-1</infinispan.version> <!-- for JDG 6.5 -->
 		<camel-version>2.15.1.redhat-620133</camel-version> <!-- for Fuse 6.2 -->
+		<datagrid.version>6.5.1.Final-redhat-1</datagrid.version>
 	</properties>
 
 	<dependencyManagement>
@@ -64,6 +65,11 @@
 				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-infinispan</artifactId>
 				<version>${camel-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-jbossdatagrid</artifactId>
+				<version>${datagrid.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

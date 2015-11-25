@@ -1,6 +1,6 @@
-Using JBoss Data Grid (Infinispan) with OSGi
+Using JBoss Data Grid with OSGi
 ====================================
-This project demonstrates multiple ways to utilize JBoss Data Grid and Infinispan with JBoss Fuse.
+This project demonstrates multiple ways to utilize JBoss Data Grid with JBoss Fuse.
 
 ### Requirements:
  * JBoss Fuse 6.2.0
@@ -12,20 +12,22 @@ Bundles
 -----------------------
 The following bundles are included in this project.
 
- * **local-cache** - Embeds Infinispan as a local cache in Fuse and exposes a Cache Manager service via OSGi.
- * **local-camel-consumer** - Local Camel route that consumes events from the local Infinispan cache.
- * **local-camel-producer** - Stores and retrieves data from the local infinispan cache using Camel.
- * **local-client** - Connects to the local Infinispan cache using a bean with the Hot Rod client.
- * **remote-client** - Connects to a remote Infinispan cache using a beah with the Hot Rod client.
- * **remote-camel-producer** - Connects to a remove Infinispan cache using the camel component.
+ * **local-cache** - Embeds JBoss Data Grid as a local cache in Fuse and exposes a Cache Manager service via OSGi.
+ * **local-camel-consumer** - Local Camel route that consumes events from the local JBoss Data Grid cache.
+ * **local-camel-producer** - Stores and retrieves data from the local JBoss Data Grid cache using Camel.
+ * **local-client** - Connects to the local JBoss Data Grid cache using a bean with the Hot Rod client.
+ * **remote-client** - Connects to a remote JBoss Data Grid cache using a beah with the Hot Rod client.
+ * **remote-camel-producer** - Connects to a remove JBoss Data Grid cache using the camel component.
  * **features** - Builds the various features needed to create and run the Demos described below.
 
 Setup
 -----------------------
-Before you can get started with this project, you need to install the Infinispan features. To do run the following commands in the Fuse console.
+Before you can get started with this project, you need to install the JBoss Data Grid features. To do run the following commands in the Fuse console.
 
 	features:addUrl mvn:org.infinispan/infinispan-embedded/6.3.1.Final-redhat-1/xml/features
 	features:addUrl mvn:org.infinispan/infinispan-remote/6.3.1.Final-redhat-1/xml/features
+  features:addUrl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
+  features:install camel-jbossdatagrid
 	features:install infinispan-embedded
 	features:install infinispan-remote
 
@@ -41,13 +43,29 @@ Running the Demos
 -----------------------
 TODO
 
+Additional Reading
+-----------------------
+If you are looking for more information about integrating JBoss Data Grid and JBoss Fuse, check out the following documentation.
+
+- [Running Red Hat JBoss Data Grid in Apache Karaf (OSGi)](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Data_Grid/6.5/html/Getting_Started_Guide/sect-Running_Red_Hat_JBoss_Data_Grid_in_Karaf_OSGi.html)
+- [Running Red Hat JBoss Data Grid with Apache Camel](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Data_Grid/6.5/html/Getting_Started_Guide/chap-Running_Red_Hat_JBoss_Data_Grid_with_Apache_Camel.html)
 
 Troubleshooting
 -----------------------
 
 ### Cant Add Feature URL ###
-If you are getting the following error or a similar error when trying to deploy the Infinispan features
+If you are getting the following error or a similar error when trying to deploy the JBoss Data Grid features
 
     	Error resolving artifact org.infinispan:infinispan-embedded:xml:features:6.3.1.Final-redhat-1: Could not find artifact
 
 You Need to add the Red Hat GA Maven Repo to the Fuse Configuration file `org.ops4j.pax.url.mvn.cfg`. ATo do so append the URL `https://maven.repository.redhat.com/ga/` to the property `org.ops4j.pax.url.mvn.repositories`.
+
+### Waiting for Dependency: component=jbossdatagrid ###
+If you are getting errors like the one below when you deploy the bundles it is because you are missing the camel-jbossdatagrid component.
+
+    Bundle com.redhat.consulting.fusequickstarts.karaf.infinispan.local-camel-producer is waiting for dependencies [(&(component=infinispan)(objectClass=org.apache.camel.spi.ComponentResolver))]
+
+To resolve the issue, run the following commands to install the missing features.
+
+    features:addUrl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
+    features:install camel-jbossdatagrid

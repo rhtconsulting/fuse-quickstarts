@@ -6,29 +6,10 @@
 
 	<camelContext id="remote-producer"
 		xmlns="http://camel.apache.org/schema/blueprint">
-		<route>
-			<!-- put a value -->
-			<from uri="timer://remote?fixedRate=true&amp;period=5000" />
-
-			<setHeader headerName="CamelInfinispanKey">
-				<property>CamelTimerCounter</property>
-			</setHeader>
-			<setHeader headerName="CamelInfinispanValue">
-				<property>CamelTimerCounter</property>
-			</setHeader>
-			<to uri="infinispan://localhost" />
-			<to uri="log:remote-put?showAll=true" />
-
-			<!-- Now read the same value -->
-			<setHeader headerName="CamelInfinispanOperation">
-				<constant>CamelInfinispanOperationGet</constant>
-			</setHeader>
-			<setHeader headerName="CamelInfinispanKey">
-				<property>CamelTimerCounter</property>
-			</setHeader>
-			<to uri="infinispan://localhost" />
-			<to uri="log:remote-get?showAll=true" />
-		</route>
+		
+		<packageScan>
+			<package>com.redhat.consulting.fusequickstarts.karaf.infinispan</package>
+		</packageScan>
 	</camelContext>
 
 </blueprint>
