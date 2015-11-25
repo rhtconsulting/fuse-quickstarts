@@ -16,6 +16,8 @@
 		<version.slf4j>1.7.6</version.slf4j>
 		<version.rest-assured>2.7.0</version.rest-assured>
 		<jboss.fuse.bom.version>6.2.0.redhat-133</jboss.fuse.bom.version>
+		<infinispan.version>6.3.1.Final-redhat-1</infinispan.version> <!-- for JDG 6.5 -->
+		<camel-version>2.15.1.redhat-620133</camel-version> <!-- for Fuse 6.2 -->
 	</properties>
 
 	<dependencyManagement>
@@ -42,6 +44,26 @@
 				<artifactId>rest-assured</artifactId>
 				<version>${version.rest-assured}</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-core</artifactId>
+				<version>${infinispan.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-client-hotrod</artifactId>
+				<version>${infinispan.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-server-hotrod</artifactId>
+				<version>${infinispan.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.camel</groupId>
+				<artifactId>camel-infinispan</artifactId>
+				<version>${camel-version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
