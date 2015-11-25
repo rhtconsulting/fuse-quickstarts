@@ -12,5 +12,11 @@
 	<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service</groupId>
 	<artifactId>osgi-service-parent</artifactId>
 	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGi Service Parent</name>
+	
+	<modules>
+		<module>osgi_service_feature</module>
+		<module>osgi_service</module>
+		<module>osgi_consumer</module>
+	</modules>
 
 </project>

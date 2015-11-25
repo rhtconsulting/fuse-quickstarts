@@ -13,4 +13,11 @@
 	<artifactId>shared-component-parent</artifactId>
 	<name>Fuse Quickstart :: Karaf :: Blueprint :: Shared Component Parent</name>
 
+
+	<modules>
+		<module>shared_amq</module>
+		<module>amq_route</module>
+		<module>shared_amq_feature</module>
+	</modules>
+
 </project>
