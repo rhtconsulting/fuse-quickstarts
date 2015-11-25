@@ -19,11 +19,6 @@
 		<clustering mode="replication">
 			<sync />
 		</clustering>
-
-		<!-- <clustering mode="distribution">
-			<sync />
-			<hash numOwners="2" />
-		</clustering> -->
 	</default>
 
 </infinispan>

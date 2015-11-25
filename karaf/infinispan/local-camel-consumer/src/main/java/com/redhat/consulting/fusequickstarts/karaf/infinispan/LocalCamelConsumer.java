@@ -7,7 +7,7 @@ public class LocalCamelConsumer extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("infinispan://foo?cacheContainer=#cacheManager")
+        from("infinispan://localhost?cacheContainer=#cacheManager")
             .to("log:localCamelConsumer?showAll=true");
 
     }

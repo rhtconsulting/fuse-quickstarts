@@ -13,7 +13,7 @@ public class LocalCamelProducer extends RouteBuilder {
             .setHeader("CamelInfinispanValue", simple("${exchangeProperty.CamelTimerCounter}"))
             
             // Call Infinispan
-            .to("infinispan://foo?cacheContainer=#cacheManager")
+            .to("infinispan://localhost?cacheContainer=#cacheManager")
             
             // Log
             .to("log:localCamelProducer?showAll=true");
