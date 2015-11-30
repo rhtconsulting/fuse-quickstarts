@@ -8,7 +8,7 @@ public class LocalClientRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
                
-        from("timer://remoteClient?fixedRate=true&period=5000")
+        from("timer://localClient?fixedRate=true&period=5000")
             .to("bean:localClient?method=process('PUT', ${property.CamelTimerCounter}, ${property.CamelTimerFiredTime})")
             .to("log:localClient?showAll=true")
             .to("bean:localClient?method=process('GET', ${property.CamelTimerCounter}, '')")
