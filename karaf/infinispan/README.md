@@ -24,12 +24,12 @@ Setup
 -----------------------
 Before you can get started with this project, you need to install the JBoss Data Grid features. To do run the following commands in the Fuse console.
 
-	features:addUrl mvn:org.infinispan/infinispan-embedded/6.3.1.Final-redhat-1/xml/features
-	features:addUrl mvn:org.infinispan/infinispan-remote/6.3.1.Final-redhat-1/xml/features
-  features:addUrl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
-  features:install camel-jbossdatagrid
-	features:install infinispan-embedded
-	features:install infinispan-remote
+    features:addUrl mvn:org.infinispan/infinispan-embedded/6.3.1.Final-redhat-1/xml/features
+    features:addUrl mvn:org.infinispan/infinispan-remote/6.3.1.Final-redhat-1/xml/features
+    features:addUrl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
+    features:install camel-jbossdatagrid
+    features:install infinispan-embedded
+    features:install infinispan-remote
 
 Building
 -----------------------
