@@ -12,7 +12,7 @@ public interface MyResource {
 
     @GET
     @Path("/{id}")
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.TEXT_PLAIN })
     public Response getSampleUser(@PathParam("id") Integer id);
 
 }

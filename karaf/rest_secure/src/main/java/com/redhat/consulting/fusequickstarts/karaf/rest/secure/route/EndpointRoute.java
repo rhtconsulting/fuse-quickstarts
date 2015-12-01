@@ -23,7 +23,7 @@ public class EndpointRoute extends RouteBuilder {
             .choice() //selects what to do based on the request
                 .when(header(CxfConstants.OPERATION_NAME).isEqualTo("getSampleUser"))
                     .bean(myResourceImpl, "getSampleUser")
-                    .log(LoggingLevel.INFO, "Request Recieved") 
+                    .log(LoggingLevel.INFO, "Request Recieved")
                 .otherwise()
                     .log(LoggingLevel.WARN, "Unknown Method");
 

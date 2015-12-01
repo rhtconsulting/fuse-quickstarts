@@ -16,10 +16,12 @@ public class RequestRoute extends RouteBuilder {
     public void configure() throws Exception {
         // @formatter:off
         
-        from("timer://restRequestTimer?period=5000") //period in milliseconds
+        from("timer://restRequestTimer?period=5000")
+        //period in milliseconds
             .log(LoggingLevel.INFO, "Starting request")
             .process(requestProcessor) //set the appropriate headers
             //request to client with parameters for basic auth
-            .to("cxfrs://bean://rsClient?authUsername=admin&authPassword=admin");
+            .setHeader("Authorization", constant("Basic YWRtaW46YWRtaW4="))
+            .to("cxfrs://bean://rsClient");
     }
 }
