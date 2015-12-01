@@ -25,6 +25,9 @@ Before you can get started with this project, you need to install the JBoss Data
 
     features:addurl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
     features:install camel-jbossdatagrid
+    
+### Setup Note ###
+When you are installing the features, DO NOT install the `infinispan-embedded` and `infinispan-remote` features as stated in the JBoss Data Grid documentation. Doing so will lead deployment and runtime errors related to incompatible dependencies.
 
 Building
 -----------------------
@@ -33,10 +36,6 @@ To build the project.
      mvn clean install
 
 This will build all of the bundles and features needed for the examples.
-
-Running the Demos
------------------------
-TODO
 
 Additional Reading
 -----------------------
