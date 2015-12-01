@@ -26,7 +26,7 @@ These examples build upon the basic examples to demonstrate more advanced featur
  * [Blueprint - REST DSL using BASIC Authentication and the Fuse JAAS Realm](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/rest_dsl_basic_auth)
  * Blueprint - REST Security with Camel CXF-RS
  * Blueprint - SOAP Security with Camel CXF
- * Blueprint - Infinispan / Data Grid
+ * [Blueprint - Infinispan / Data Grid Integration](https://github.com/rhtconsulting/fuse-quickstarts/tree/master/karaf/infinispan)
  * Blueprint - Drools/BxMS
  * Declarative Services - Basic Route Deployment
  * Declarative Services - OSGi Services

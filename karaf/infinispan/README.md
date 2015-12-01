@@ -18,18 +18,13 @@ The following bundles are included in this project.
  * **local-client** - Connects to the local JBoss Data Grid cache using a bean with the Hot Rod client.
  * **remote-client** - Connects to a remote JBoss Data Grid cache using a beah with the Hot Rod client.
  * **remote-camel-producer** - Connects to a remove JBoss Data Grid cache using the camel component.
- * **features** - Builds the various features needed to create and run the Demos described below.
 
 Setup
 -----------------------
 Before you can get started with this project, you need to install the JBoss Data Grid features. To do run the following commands in the Fuse console.
 
-    features:addUrl mvn:org.infinispan/infinispan-embedded/6.3.1.Final-redhat-1/xml/features
-    features:addUrl mvn:org.infinispan/infinispan-remote/6.3.1.Final-redhat-1/xml/features
-    features:addUrl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
+    features:addurl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
     features:install camel-jbossdatagrid
-    features:install infinispan-embedded
-    features:install infinispan-remote
 
 Building
 -----------------------
@@ -54,9 +49,9 @@ Troubleshooting
 -----------------------
 
 ### Cant Add Feature URL ###
-If you are getting the following error or a similar error when trying to deploy the JBoss Data Grid features
+If you are getting the following error or a similar error when trying to deploy the Data Grid features
 
-    	Error resolving artifact org.infinispan:infinispan-embedded:xml:features:6.3.1.Final-redhat-1: Could not find artifact
+    	Error resolving artifact org.apache.camel:camel-jbossdatagrid:xml:features:6.5.0.Final-redhat-5: Could not find artifact
 
 You Need to add the Red Hat GA Maven Repo to the Fuse Configuration file `org.ops4j.pax.url.mvn.cfg`. ATo do so append the URL `https://maven.repository.redhat.com/ga/` to the property `org.ops4j.pax.url.mvn.repositories`.
 

@@ -13,10 +13,8 @@ Setup
 -----------------------
 Before you can get started with this example, you need to install the JBoss Data Grid features. To do run the following commands in the Fuse console.
 
-	features:addUrl mvn:org.infinispan/infinispan-embedded/6.3.1.Final-redhat-1/xml/features
-	features:addUrl mvn:org.infinispan/infinispan-remote/6.3.1.Final-redhat-1/xml/features
-	features:install infinispan-embedded
-	features:install infinispan-remote
+    features:addurl mvn:org.apache.camel/camel-jbossdatagrid/6.5.0.Final-redhat-5/xml/features
+    features:install camel-jbossdatagrid
 
 Building
 -----------------------
@@ -59,8 +57,8 @@ Troubleshooting
 -----------------------
 
 ### Cant Add Feature URL ###
-If you are getting the following error or a similar error when trying to deploy the Infinispan features
+If you are getting the following error or a similar error when trying to deploy the Data Grid features
 
-    	Error resolving artifact org.infinispan:infinispan-embedded:xml:features:6.3.1.Final-redhat-1: Could not find artifact
+    	Error resolving artifact org.apache.camel:camel-jbossdatagrid:xml:features:6.5.0.Final-redhat-5: Could not find artifact
 
 You Need to add the Red Hat GA Maven Repo to the Fuse Configuration file `org.ops4j.pax.url.mvn.cfg`. ATo do so append the URL `https://maven.repository.redhat.com/ga/` to the property `org.ops4j.pax.url.mvn.repositories`.
