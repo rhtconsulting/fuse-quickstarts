@@ -10,6 +10,8 @@ If you are looking for more complex solutions or larger examples, please see the
 ## Contributing a Quickstart ##
 If you have a JBoss Fuse quickstart that you would like to see added here, please feel free to contribute! Just checkout this repo, add your quickstart to it, and submit a Pull request to have it added. Once it is verified that it meets the standards below, it will be merged in. Its that easy!
 
+If you dont have anything of your own and still want to help you can see the Quickstarts that have been requested [Here](https://github.com/rhtconsulting/fuse-quickstarts/issues?q=is%3Aopen+is%3Aissue+label%3A%22example+request%22).
+
 ### Quickstart Standards ###
 In order to keep the Quickstarts working and useful, there are some standards that all quickstarts should adhere too.
 
