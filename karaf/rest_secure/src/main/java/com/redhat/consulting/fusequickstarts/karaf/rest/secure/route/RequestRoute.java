@@ -20,8 +20,6 @@ public class RequestRoute extends RouteBuilder {
         //period in milliseconds
             .log(LoggingLevel.INFO, "Starting request")
             .process(requestProcessor) //set the appropriate headers
-            //request to client with parameters for basic auth
-            .setHeader("Authorization", constant("Basic YWRtaW46YWRtaW4="))
             .to("cxfrs://bean://rsClient");
     }
 }
