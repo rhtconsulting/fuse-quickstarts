@@ -5,7 +5,7 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 	<artifactId>karaf-parent</artifactId>
-	<version>1.0.0</version>
+	<version>6.2.0</version>
 	<packaging>pom</packaging>
 
 	<name>Fuse Quickstart :: Karaf :: Blueprint :: Parent</name>

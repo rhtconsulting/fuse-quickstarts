@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.redhat.consulting.fusequickstarts.karaf.shared_component</groupId>
     <artifactId>shared-component-parent</artifactId>
-    <version>1.0.0</version>
+    <version>6.2.0</version>
   </parent>
 
   <artifactId>amq_route</artifactId>

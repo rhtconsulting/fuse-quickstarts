@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service</groupId>
     <artifactId>osgi-service-parent</artifactId>
-    <version>1.0.0</version>
+    <version>6.2.0</version>
   </parent>
 
   <artifactId>osgi_service_feature</artifactId>

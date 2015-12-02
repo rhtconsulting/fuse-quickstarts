@@ -4,7 +4,7 @@
 
   <groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
   <artifactId>eap-parent</artifactId>
-  <version>1.0.0</version>
+  <version>6.2.0</version>
   <packaging>pom</packaging>
 
   <name>eap-parent</name>
