@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.redhat.consulting.fusequickstarts.karaf.infinispan</groupId>
-		<artifactId>infinispan-parent</artifactId>
+		<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
+		<artifactId>osgi-service-adv-parent</artifactId>
 		<version>6.2.0</version>
 	</parent>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Infinispan Remote Client</name>
 
-	<artifactId>remote-client</artifactId>
+	<name>Fuse Quickstart :: Karaf :: SpringDM :: OSGi Advanced Service :: Spring Service</name>
+
 	<packaging>bundle</packaging>
-
+	<!-- Any dependencies needed by your project -->
 	<dependencies>
 		<dependency>
-			<groupId>org.infinispan</groupId>
-			<artifactId>infinispan-core</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.infinispan</groupId>
-			<artifactId>infinispan-client-hotrod</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
+			<artifactId>service_api</artifactId>
+			<version>6.2.0</version>
 		</dependency>
 	</dependencies>
 
@@ -43,19 +48,15 @@
 					<manifestLocation>target/META-INF</manifestLocation>
 					<instructions>
 						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-						<!-- Any packages to be exported for use by another bundle -->
-						<Export-Package />
-						<!-- Any packages needed by your bundle -->
 						<Import-Package>
 							org.apache.camel.*,
 							org.osgi.service.*,
-							org.infinispan.*,
-							org.slf4j
+							com.redhat.consulting.fusequickstarts.karaf.osgi_service.service.api
 						</Import-Package>
 					</instructions>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
+	<artifactId>spring_service</artifactId>
 </project>

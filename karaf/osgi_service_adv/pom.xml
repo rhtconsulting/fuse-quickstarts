@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
+		<artifactId>karaf-parent</artifactId>
+		<version>6.2.0</version>
+	</parent>
+	<packaging>pom</packaging>
+	<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
+	<artifactId>osgi-service-adv-parent</artifactId>
+	<name>Fuse Quickstart :: Karaf :: Multiple :: OSGi Advanced Service :: Parent</name>
+
+	<modules>
+		<module>blueprint_service</module>
+		<module>blueprint_consumer</module>
+		<module>blueprint_sdm_consumer</module>
+		<module>spring_service</module>
+		<module>spring_consumer</module>
+		<module>spring_bp_consumer</module>
+		<module>service_api</module>
+	</modules>
+
+</project>

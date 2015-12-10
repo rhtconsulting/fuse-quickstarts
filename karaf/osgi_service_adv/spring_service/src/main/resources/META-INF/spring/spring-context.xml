@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:context="http://www.springframework.org/schema/context/spring-context.xsd"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<!-- Configures Hello Service -->
+	<bean id="sdm-helloService"
+		class="com.redhat.consulting.fusequickstarts.karaf.osgi_service.service.impl.HelloServiceImpl">
+		<property name="message" value="This is a Default SpringDM Message" />
+	</bean>
+
+	<!-- Expose the Hello Service as an OSGI Service -->
+	<osgi:service ref="sdm-helloService"
+		interface="com.redhat.consulting.fusequickstarts.karaf.osgi_service.service.api.IHelloService">
+		<service-properties>
+			<entry key="name" value="sdm-helloService" />
+		</service-properties>
+	</osgi:service>
+</beans>
