@@ -27,6 +27,7 @@ These examples build upon the basic examples to demonstrate more advanced featur
  * [Blueprint - REST Security with Camel CXF-RS](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.0/karaf/rest_secure)
  * Blueprint - SOAP Security with Camel CXF
  * [Blueprint - OSGi Services across Frameworks](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.0/karaf/osgi_service_adv)
+ * [Blueprint - OSGi Managed Service Factory for Deploying/Configuring Camel Routes](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.0/karaf/managed_service_factory)
  * [Blueprint - Infinispan / Data Grid Integration](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.0/karaf/infinispan)
  * Blueprint - Drools/BxMS
  * Declarative Services - Basic Route Deployment
