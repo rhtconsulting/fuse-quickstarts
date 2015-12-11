@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+       xmlns:camel="http://camel.apache.org/schema/blueprint"
+       xsi:schemaLocation="
+       http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+  <cm:property-placeholder persistent-id="com.rht.clt.fq.k.msf.routefactory" update-strategy="reload">
+      <cm:default-properties>
+          <cm:property name="com.rht.clt.fq.k.msf.routefactory.pid" value="com.rht.clt.fq.k.msf.routefactory"/>
+      </cm:default-properties>
+  </cm:property-placeholder>
+
+  <camelContext id="msfContext" xmlns="http://camel.apache.org/schema/blueprint" autoStartup="true">
+  </camelContext>
+
+  <bean id="routeFactory" class="com.redhat.consulting.fusequickstarts.karaf.msf.RouteFactory" init-method="init" destroy-method="destroy">
+    <!-- This gets the Bundle Context from Blueprint -->
+    <property name="bundleContext" ref="blueprintBundleContext"/>
+    
+    <!-- Gets the PID for the Config Files -->
+    <property name="configurationPid" value="${com.rht.clt.fq.k.msf.routefactory.pid}"/>
+    
+    <!-- Gets the Camel Context for the Routes -->
+    <property name="camelContext" ref="msfContext"/>
+  </bean>
+
+</blueprint>
