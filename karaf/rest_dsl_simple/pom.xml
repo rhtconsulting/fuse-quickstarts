@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
     <artifactId>karaf-parent</artifactId>
-    <version>6.2.0</version>
+    <version>6.2.1</version>
   </parent>
 
   <groupId>com.redhat.consulting.fusequickstarts.karaf.rest.dsl.simple</groupId>

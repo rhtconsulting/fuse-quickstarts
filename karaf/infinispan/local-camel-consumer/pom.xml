@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf.infinispan</groupId>
 		<artifactId>infinispan-parent</artifactId>
-		<version>6.2.0</version>
+		<version>6.2.1</version>
 	</parent>
 	<name>Fuse Quickstart :: Karaf :: Blueprint :: Infinispan Local Camel Consumer</name>
 

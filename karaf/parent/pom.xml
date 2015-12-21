@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
-	<artifactId>karaf-main</artifactId>
+	<artifactId>karaf-parent</artifactId>
 	<version>6.2.1</version>
 	<packaging>pom</packaging>
 
-	<name>Fuse Quickstart :: Karaf :: Main</name>
+	<name>Fuse Quickstart :: Karaf :: Parent</name>
 	<description>The pom that all karaf fuse quickstart projects should inherit from either directly or via its parent pom hierarchy</description>
 
 	<properties>
@@ -17,6 +17,7 @@
 		<version.rest-assured>2.7.0</version.rest-assured>
 		<jboss.fuse.bom.version>6.2.1.redhat-084</jboss.fuse.bom.version>
 		<datagrid.version>6.5.1.Final-redhat-1</datagrid.version>
+		<infinispan.version>6.3.1.Final-redhat-1</infinispan.version> <!-- for JDG 6.5 -->
 	</properties>
 
 	<dependencyManagement>
@@ -48,6 +49,24 @@
 				<groupId>org.apache.camel</groupId>
 				<artifactId>camel-jbossdatagrid</artifactId>
 				<version>${datagrid.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-core</artifactId>
+				<version>${infinispan.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-client-hotrod</artifactId>
+				<version>${infinispan.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.infinispan</groupId>
+				<artifactId>infinispan-server-hotrod</artifactId>
+				<version>${infinispan.version}</version>
 				<scope>provided</scope>
 			</dependency>
 		</dependencies>
@@ -167,28 +186,4 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<modules>
-		<module>parent</module>
-		<module>amq</module>
-		<module>feature</module>
-		<module>infinispan</module>
-		<module>itests</module>
-		<module>jms</module>
-		<module>managed_service_factory</module>
-		<module>osgi_service</module>
-		<module>osgi_service_adv</module>
-		<module>properties</module>
-		<module>properties_encryption</module>
-		<module>rest</module>
-		<module>rest_dsl</module>
-		<module>rest_dsl_basic_auth</module>
-		<module>rest_dsl_simple</module>
-		<module>rest_secure</module>
-		<module>route_deployment</module>
-		<module>shared_component</module>
-		<module>soap</module>
-		<module>soap_client</module>
-		<module>soap_contract_first</module>
-		<module>soap_secure</module>
-	</modules>
 </project>

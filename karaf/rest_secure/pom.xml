@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
     <artifactId>karaf-parent</artifactId>
-    <version>6.2.0</version>
+    <version>6.2.1</version>
   </parent>
   <artifactId>rest_secure</artifactId>
   <name>Fuse Quickstart :: Karaf :: Blueprint :: Camel REST CXF-RS w/ Basic Auth</name>
@@ -28,7 +28,7 @@
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
-      <artifactId>camel-jetty</artifactId>
+      <artifactId>camel-jetty8</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
