@@ -190,5 +190,6 @@
 		<module>soap_client</module>
 		<module>soap_contract_first</module>
 		<module>soap_secure</module>
+		<module>annotations</module>
 	</modules>
 </project>
