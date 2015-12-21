@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
-  <artifactId>eap-parent</artifactId>
-  <version>6.2.0</version>
-  <packaging>pom</packaging>
+	<groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
+	<artifactId>eap-main</artifactId>
+	<version>6.2.1</version>
+	<packaging>pom</packaging>
 
-  <name>eap-parent</name>
-  <description>The pom that all eap fuse quick start  projects should inherit from either directly or via its parent pom hierarchy</description>
+	<name>Fuse Quickstart :: EAP :: Main</name>
 
-  <properties>
-    <version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
-    <version.slf4j>1.7.6</version.slf4j>
-  </properties>
+	<properties>
+		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
+		<version.slf4j>1.7.6</version.slf4j>
+	</properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>${version.slf4j}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${version.slf4j}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${version.slf4j}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${version.slf4j}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${version.maven.compiler.plugin}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-  
-  <repositories>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${version.maven.compiler.plugin}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<repositories>
 		<repository>
 			<id>redhat-techpreview-all-repository</id>
 			<name>Red Hat Tech Preview repository (all)</name>
@@ -143,4 +143,9 @@
 			<url>http://www.soapui.org/repository/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
+	<description>Main POM for the EAP Quickstarts. </description>
+	
+	<modules>
+		<module>parent</module>
+	</modules>
 </project>

@@ -1,70 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
-	<artifactId>karaf-main</artifactId>
-	<version>6.2.1</version>
-	<packaging>pom</packaging>
+  <groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
+  <artifactId>eap-parent</artifactId>
+  <version>6.2.1</version>
+  <packaging>pom</packaging>
 
-	<name>Fuse Quickstart :: Karaf :: Main</name>
+  <name>Fuse Quickstart :: EAP :: Parent</name>
 
-	<properties>
-		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
-		<version.slf4j>1.7.6</version.slf4j>
-		<version.rest-assured>2.7.0</version.rest-assured>
-		<jboss.fuse.bom.version>6.2.1.redhat-084</jboss.fuse.bom.version>
-		<datagrid.version>6.5.1.Final-redhat-1</datagrid.version>
-	</properties>
+  <properties>
+    <version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
+    <version.slf4j>1.7.6</version.slf4j>
+  </properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.jboss.fuse.bom</groupId>
-				<artifactId>jboss-fuse-parent</artifactId>
-				<version>${jboss.fuse.bom.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.jayway.restassured</groupId>
-				<artifactId>rest-assured</artifactId>
-				<version>${version.rest-assured}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-jbossdatagrid</artifactId>
-				<version>${datagrid.version}</version>
-				<scope>provided</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${version.slf4j}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${version.slf4j}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${version.maven.compiler.plugin}</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-
-	<repositories>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven.compiler.plugin}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  
+  <repositories>
 		<repository>
 			<id>redhat-techpreview-all-repository</id>
 			<name>Red Hat Tech Preview repository (all)</name>
@@ -165,30 +142,5 @@
 			<url>http://www.soapui.org/repository/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
-
-	<modules>
-		<module>parent</module>
-		<module>amq</module>
-		<module>feature</module>
-		<module>infinispan</module>
-		<module>itests</module>
-		<module>jms</module>
-		<module>managed_service_factory</module>
-		<module>osgi_service</module>
-		<module>osgi_service_adv</module>
-		<module>properties</module>
-		<module>properties_encryption</module>
-		<module>rest</module>
-		<module>rest_dsl</module>
-		<module>rest_dsl_basic_auth</module>
-		<module>rest_dsl_simple</module>
-		<module>rest_secure</module>
-		<module>route_deployment</module>
-		<module>shared_component</module>
-		<module>soap</module>
-		<module>soap_client</module>
-		<module>soap_contract_first</module>
-		<module>soap_secure</module>
-	</modules>
-	<description>Main POM for the Karaf Quickstarts.</description>
+	<description>Parent POM for Fuse on EAP Quickstarts. Defines all Dependencies and Plugins.</description>
 </project>

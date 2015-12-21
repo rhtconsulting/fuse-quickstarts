@@ -9,7 +9,6 @@
 	<packaging>pom</packaging>
 
 	<name>Fuse Quickstart :: Karaf :: Parent</name>
-	<description>The pom that all karaf fuse quickstart projects should inherit from either directly or via its parent pom hierarchy</description>
 
 	<properties>
 		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
@@ -186,4 +185,5 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+	<description>Parent POM for Fuse on Karaf Quickstarts. Defines all Dependencies and Plugins.</description>
 </project>
