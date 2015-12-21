@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.2.0</version>
+		<version>6.2.1</version>
 	</parent>
 
 	<artifactId>itests</artifactId>
@@ -151,6 +151,4 @@
 			</build>
 		</profile>
 	</profiles>
-
-	<name>Fuse Quickstart :: Karaf :: Blueprint ::</name>
 </project>
