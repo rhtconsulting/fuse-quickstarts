@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
+		<artifactId>karaf-parent</artifactId>
+		<version>6.2.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.redhat.consulting.fusequickstarts.karaf.annotations</groupId>
+	<artifactId>annotations-parent</artifactId>
+	<packaging>pom</packaging>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: Annotations :: Parent</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+	</dependencies>
+
+	<modules>
+		<module>annotations-model</module>
+	</modules>
+</project>
