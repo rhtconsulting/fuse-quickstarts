@@ -1,89 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
-	<artifactId>karaf-parent</artifactId>
-	<version>6.2.1</version>
-	<packaging>pom</packaging>
+  <groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
+  <artifactId>eap-parent</artifactId>
+  <version>6.2.1</version>
+  <packaging>pom</packaging>
 
-	<name>Fuse Quickstart :: Karaf :: Parent</name>
+  <name>Fuse Quickstart :: EAP :: Parent</name>
 
-	<properties>
-		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
-		<version.slf4j>1.7.6</version.slf4j>
-		<version.rest-assured>2.7.0</version.rest-assured>
-		<jboss.fuse.bom.version>6.2.1.redhat-084</jboss.fuse.bom.version>
-		<datagrid.version>6.5.1.Final-redhat-1</datagrid.version>
-		<infinispan.version>6.3.1.Final-redhat-1</infinispan.version> <!-- for JDG 6.5 -->
-	</properties>
+  <properties>
+    <version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
+    <version.slf4j>1.7.6</version.slf4j>
+  </properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.jboss.fuse.bom</groupId>
-				<artifactId>jboss-fuse-parent</artifactId>
-				<version>${jboss.fuse.bom.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.jayway.restassured</groupId>
-				<artifactId>rest-assured</artifactId>
-				<version>${version.rest-assured}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.camel</groupId>
-				<artifactId>camel-jbossdatagrid</artifactId>
-				<version>${datagrid.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-core</artifactId>
-				<version>${infinispan.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-client-hotrod</artifactId>
-				<version>${infinispan.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-server-hotrod</artifactId>
-				<version>${infinispan.version}</version>
-				<scope>provided</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${version.slf4j}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${version.slf4j}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${version.maven.compiler.plugin}</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-
-	<repositories>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven.compiler.plugin}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  
+  <repositories>
 		<repository>
 			<id>redhat-techpreview-all-repository</id>
 			<name>Red Hat Tech Preview repository (all)</name>
@@ -184,6 +142,5 @@
 			<url>http://www.soapui.org/repository/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
-
-	<description>Parent POM for Fuse on Karaf Quickstarts. Defines all Dependencies and Plugins.</description>
+	<description>Parent POM for Fuse on EAP Quickstarts. Defines all Dependencies and Plugins.</description>
 </project>
