@@ -17,6 +17,8 @@
     <version.javax.enterprise>1.2</version.javax.enterprise>
     <version.jboss.spec.javax.ejb>1.0.0.Final</version.jboss.spec.javax.ejb>
     <version.jboss.spec.javax.servlet>1.0.0.Final</version.jboss.spec.javax.servlet>
+    <maven.war.plugin.version>2.5</maven.war.plugin.version>
+    <jboss.as.plugin.version>7.6.Final</jboss.as.plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -72,14 +74,51 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${version.maven.compiler.plugin}</version>
         </plugin>
-              <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.jboss.as.plugins</groupId>
-        <artifactId>jboss-as-maven-plugin</artifactId>
-      </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${maven.war.plugin.version}</version>
+          <executions>
+            <execution>
+              <id>default-war</id>
+              <phase>package</phase>
+              <goals>
+                <goal>war</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.jboss.as.plugins</groupId>
+          <artifactId>jboss-as-maven-plugin</artifactId>
+          <version>${jboss.as.plugin.version}</version>
+          <executions>
+            <execution>
+              <id>deploy-app</id>
+              <phase>install</phase>
+              <goals>
+                <goal>deploy</goal>
+              </goals>
+              <configuration>
+                <username>admin</username>
+                <password>Password1!</password>
+                <skip>true</skip>
+              </configuration>
+            </execution>
+          </executions>
+          <configuration>
+            <username>admin</username>
+            <password>password</password>
+            <skip>false</skip>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>

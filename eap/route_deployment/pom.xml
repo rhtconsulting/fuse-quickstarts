@@ -51,43 +51,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-          <version>2.5</version>
-          <executions>
-            <execution>
-              <id>default-war</id>
-              <phase>package</phase>
-              <goals>
-                <goal>war</goal>
-              </goals>
-            </execution>
-          </executions>
-          <configuration>
-            <failOnMissingWebXml>false</failOnMissingWebXml>
-          </configuration>
       </plugin>
       <plugin>
         <groupId>org.jboss.as.plugins</groupId>
         <artifactId>jboss-as-maven-plugin</artifactId>
-        <version>7.6.Final</version>
-          <executions>
-            <execution>
-              <id>deploy-app</id>
-              <phase>install</phase>
-              <goals>
-                <goal>deploy</goal>
-              </goals>
-              <configuration>
-                <username>admin</username>
-                <password>Password1!</password>
-                <skip>false</skip>
-              </configuration>
-            </execution>
-          </executions>
-          <configuration>
-            <username>admin</username>
-            <password>password</password>
-            <skip>false</skip>
-          </configuration>
       </plugin>
     </plugins>
   </build>

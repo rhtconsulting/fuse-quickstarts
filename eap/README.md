@@ -1,6 +1,11 @@
 # JBoss Fuse on EAP Quickstarts #
 This is a collection of Quick Starts designed to be run on JBoss Fuse on EAP. All of these projects are written using JEE and the Java DSL unless otherwise noted.
 
+## Prerequisites ##
+To run these examples you will need to have JBoss EAP 6.4 with the JBoss Fuse 6.2.1 installer. Refer here for directions on setting up EAP to have camel.
+
+https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2.1/html/Installation_on_JBoss_EAP/Installing_Red_Hat_JBoss_Fuse_on_EAP.html
+
 ## Basic Examples ##
 These examples are designed to demonstrate a single component or feature without much advanced or complex functionality. This is a good place for beginners to start.
 

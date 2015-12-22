@@ -7,8 +7,8 @@ import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
 
-/**
- * Another Sample Route. This one will be picked up via Package Scanning.
+/*
+ * Annotation below are required for EAP to pick up the camel route
  */
 @Startup
 @ApplicationScoped

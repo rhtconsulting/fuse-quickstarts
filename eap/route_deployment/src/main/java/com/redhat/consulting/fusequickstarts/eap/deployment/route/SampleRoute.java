@@ -7,6 +7,9 @@ import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
 
+/*
+ * Annotation below are required for EAP to pick up the camel route
+ */
 @Startup
 @ApplicationScoped
 @ContextName("cxf-camel-context")
