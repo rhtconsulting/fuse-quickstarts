@@ -5,6 +5,7 @@
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
 		<version>6.2.1</version>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>itests</artifactId>
