@@ -2,29 +2,45 @@
 This is a collection of Quick Starts designed to be run on JBoss Fuse on EAP. All of these projects are written using JEE and the Java DSL unless otherwise noted.
 
 ## Prerequisites ##
-To run these examples you will need to have JBoss EAP 6.4 with the JBoss Fuse 6.2.1 installer. Refer here for directions on setting up EAP to have camel.
+To run these examples you will need to have JBoss EAP 6.4 with JBoss Fuse 6.2.1 installed on top.
 
-https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2.1/html/Installation_on_JBoss_EAP/Installing_Red_Hat_JBoss_Fuse_on_EAP.html
+JBoss Fuse must be installed on JBoss EAP 6.4. If you need to install JBoss EAP 6.4, download it from [JBoss EAP 6.4 Installer Download](https://access.redhat.com/jbossnetwork/restricted/softwareDetail.html?softwareId=37383&product=appplatform&version=6.4&downloadType=distributions). See JBoss [EAP 6.4 Installation Guide](https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html/Installation_Guide/index.html) for installation instructions.
+
+Once you have EAP 6.4 installed, you can following the steps below to install JBoss Fuse 6.2.1 on top of EAP.
+
+1. Download the JBoss Fuse 6.2.1 EAP Installer from [https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=41301](https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=41301)
+2. Navigate to `$EAP_HOME` of a clean instance of JBoss EAP. `EAP_HOME` refers to the root directory of the Red Hat JBoss Enterprise Application Platform installation on which JBoss Fuse is deployed.
+3. Run the installer with the following command:
+
+		java -jar temporary location/fuse-eap-installer-6.2.1.redhat-084.jar
+
+You need to start the JBoss Enterprise Application Platform instance for JBoss Fuse to run. This is because the JBoss Fuse components run on the JBoss Enterprise Application Platform container. You can start the instance by running:
+
+	$EAP_HOME/bin/standalone.sh
+
+Additional installation information can be found here [https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2.1/html/Installation_on_JBoss_EAP/index.html](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Fuse/6.2.1/html/Installation_on_JBoss_EAP/index.html)
 
 ## Basic Examples ##
 These examples are designed to demonstrate a single component or feature without much advanced or complex functionality. This is a good place for beginners to start.
 
- * Camel on EAP - Basic Route Deployment
+ * [Camel on EAP - Basic Route Deployment w/ CDI](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.1/eap/route_deployment)
  * Camel on EAP - JMS using a Message Driven Bean
  * Camel on EAP - JMS using Camel-JMS
  * Camel on EAP - A-MQ using a Message Driven Bean
  * Camel on EAP - A-MQ using Camel-ActiveMQ
- * Camel on EAP - REST DSL
- * Camel on EAP - REST with JAX-RS
- * Camel on EAP - SOAP with JAX-WS (Contract First)
- * Camel on EAP - SOAP with JAX-WS (Code First)
+ * Camel on EAP - JAX-RS Consumer with the Camel REST DSL
+ * Camel on EAP - JAX-RS Consumer with CamelProxy
+ * Camel on EAP - JAX-WS Consumer with CamelProxy (Contract First)
+ * Camel on EAP - JAX-WS Consumer with CamelProxy (Code First)
  * Camel on EAP - JPA
 
 ## Advanced Examples ##
 These examples build upon the basic examples to demonstrate more advanced features or functionality. These examples assume a basic understanding of Fuse and its components.
 
- * Camel on EAP - REST Security with JAX-RS
- * Camel on EAP - SOAP Security with JAX-WS
- * Camel on EAP - Infinispan / Data Grid
- * Camel on EAP - Drools/BxMS
+ * Camel on EAP - JAX-RS Security
+ * Camel on EAP - JAX-WS Security
+ * Camel on EAP - JMS Transactions using Camel-JMS
+ * Camel on EAP - JNDI Integration
+ * Camel on EAP - Infinispan / JBoss Data Grid
+ * Camel on EAP - Drools / JBoss BxMS
  * Arquillian Integration Test Suite

@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstarts.eap.deployment.route.scan;
+package com.redhat.consulting.fusequickstarts.eap.deployment.route;
 
 import javax.ejb.Startup;
 import javax.enterprise.context.ApplicationScoped;
@@ -8,19 +8,20 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
 
 /*
- * Annotation below are required for EAP to pick up the camel route
+ * The Annotations below are required for EAP to find and start the Camel Route.
  */
 @Startup
 @ApplicationScoped
-@ContextName("cxf-camel-context")
+@ContextName("route-deployment")
 public class AnotherSampleRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
 
         // Logs Goodbye World every 2000 milliseconds
-        from("timer://myOtherEapTimer?fixedRate=true&period=2000").log(LoggingLevel.INFO, "com.redhat.consulting.fusequickstarts.eap.deployment.route.scan", "Goodbye World").to(
-            "log:GoodbyeWorldLog?level=INFO");
+        from("timer://myOtherEapTimer?fixedRate=true&period=2000")
+            .log(LoggingLevel.INFO, "com.redhat.consulting.fusequickstarts.eap.deployment.route", "Goodbye World")
+            .to("log:GoodbyeWorldLog?level=INFO");
 
     }
 

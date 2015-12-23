@@ -8,16 +8,15 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
 
 /*
- * Annotation below are required for EAP to pick up the camel route
+ * The Annotations below are required for EAP to find and start the Camel Route.
  */
 @Startup
 @ApplicationScoped
-@ContextName("cxf-camel-context")
+@ContextName("route-deployment")
 public class SampleRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        // @formatter:off
         
         // Logs Hello World every 2000 milliseconds
         from("timer://myEapTimer?fixedRate=true&period=2000")
