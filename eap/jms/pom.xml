@@ -6,11 +6,10 @@
     <artifactId>eap-parent</artifactId>
     <version>6.2.1</version>
   </parent>
-  <artifactId>eap-deployment</artifactId>
+  <artifactId>eap-jms</artifactId>
   <packaging>war</packaging>
-  <name>Fuse Quickstart :: EAP :: Route Deployment</name>
-  
-    <!-- Any dependencies needed by your project -->
+  <name>Fuse Quickstart :: EAP :: JMS</name>
+      <!-- Any dependencies needed by your project -->
   <dependencies>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -23,6 +22,14 @@
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jms</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-camel</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.camel</groupId>
@@ -40,6 +47,16 @@
       <groupId>org.jboss.spec.javax.servlet</groupId>
       <artifactId>jboss-servlet-api_3.1_spec</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-test</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>

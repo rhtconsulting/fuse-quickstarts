@@ -19,9 +19,8 @@ public class AnotherSampleRoute extends RouteBuilder {
     public void configure() throws Exception {
 
         // Logs Goodbye World every 2000 milliseconds
-        from("timer://myOtherEapTimer?fixedRate=true&period=2000")
-            .log(LoggingLevel.INFO, "com.redhat.consulting.fusequickstarts.eap.deployment.route", "Goodbye World")
-            .to("log:GoodbyeWorldLog?level=INFO");
+        from("timer://myEapTimer?fixedRate=true&period=2000").log(LoggingLevel.INFO, "com.redhat.consulting.fusequickstarts.eap.deployment.route", "Goodbye World").to(
+            "log:GoodbyeWorldLog?level=INFO");
 
     }
 
