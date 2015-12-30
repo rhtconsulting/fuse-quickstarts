@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstarts.eap.jms;
+package com.redhat.consulting.fusequickstarts.eap.jms.route;
 
 import javax.annotation.Resource;
 import javax.ejb.Startup;

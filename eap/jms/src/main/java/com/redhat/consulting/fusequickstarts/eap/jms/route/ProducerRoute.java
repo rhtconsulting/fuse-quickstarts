@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstarts.eap.jms;
+package com.redhat.consulting.fusequickstarts.eap.jms.route;
 
 import javax.annotation.Resource;
 import javax.ejb.Startup;
@@ -26,8 +26,6 @@ public class ProducerRoute extends RouteBuilder {
     public void configure() throws Exception {
         JmsComponent component = new JmsComponent();
         component.setConnectionFactory(connectionFactory);
-
-        // getContext().addComponent("jms", component);
 
         // @formatter:off
         from("timer://myEapJmsTimer?fixedRate=true&period=2000")
