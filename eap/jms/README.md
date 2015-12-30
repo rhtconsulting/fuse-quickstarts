@@ -1,6 +1,6 @@
-Route Deployment Camel EAP example
+Route Deployment Camel EAP JMS example
 ====================================
-This example deploys two basic Camel routes using the Camel Subsystem in EAP.
+This example deploys two basic Camel routes using the Camel Subsystem in EAP. The first one produces a simple text message and sends it to the queue. The second route picks up the message from the queue and logs it.
 
 ### Requirements:
  * JBoss Fuse 6.2.1
@@ -18,10 +18,14 @@ This will build the war including the dependencies.
 
 Building and Deploying to JBoss EAP
 -----------------------
+To have the war deploy successfully you will need to add your queue to the JBoss configuration.  You can do this by editting jboss/standalone/configuration/standalone-full.xml .  You need to add the following to the jms-destinations section:
+      <jms-queue name="eapJmsTestQueue">
+           <entry name="java:/jms/queue/eapJmsTestQueue"/>
+      </jms-queue>
 
-To start up EAP browse to your EAP install directory. Then run
+To start up EAP browse to your EAP install directory. Then run the following to ensure you have all the subsystems needed for this example. 
 
-     /bin/standalone.sh
+     /bin/standalone.sh -c standalone-full.xml
 
 This will bring up EAP. Once you see logging like this, EAP is up:
 
@@ -32,7 +36,7 @@ If you do not already have a user set up for the JBoss Management console you ca
 
 ### To Deploy your war:
 
-From the management console navigate to the Runtime tab and select 'Management Deployments' on the left hand side. Once here, select 'Add' and browse to your war file. You can either use the one in your .m2 directory or the one in `fuse-quickstarts/eap/route_deployment/target`. After choosing the war file, click the 'En/Disable' button to start it. 
+From the management console navigate to the Runtime tab and select 'Management Deployments' on the left hand side. Once here, select 'Add' and browse to your war file. You can either use the one in your .m2 directory or the one in `fuse-quickstarts/eap/eap-jms/target`. After choosing the war file, click the 'En/Disable' button to start it. 
 
 Alternatively you can deploy your code using the jboss-as-maven-plugin. To do so go into `eap/parent/pom.xml` and change the configuration of the `jboss-as-maven-plugin` to use your management user's `username` and `password` and switch `<skip>` to `false`.  Then run:
 
@@ -41,10 +45,8 @@ Alternatively you can deploy your code using the jboss-as-maven-plugin. To do so
 
 Results
 -----------------------
-Once you have the route started you should be able to look in jboss/standalone/log/server.log and see the following logging:
+Once you have the routes started you should be able to look in jboss/standalone/log/server.log and see the following logging:
 
-	14:39:21,130 INFO  [com.redhat.consulting.fusequickstarts.eap.deployment.route] (Camel (cxf-camel-context) thread #1 - timer://myEapTimer) Hello World
-	14:39:21,135 INFO  [HelloWorldLog] (Camel (cxf-camel-context) thread #1 - timer://myEapTimer) Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
-	14:39:21,135 INFO  [GoodbyeWorldLog] (Camel (cxf-camel-context) thread #0 - timer://myOtherEapTimer) Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
-	14:39:23,109 INFO  [com.redhat.consulting.fusequickstarts.eap.deployment.route.scan] (Camel (cxf-camel-context) thread #0 - timer://myOtherEapTimer) Goodbye World
+     12:41:37,844 INFO  [eapDirectJmsProducer] (Camel (eap-jms) thread #1 - timer://myEapJmsTimer) Created Message: Sample JMS Message
+     12:41:37,935 INFO  [eapJmsConsumerLog] (Camel (eap-jms) thread #0 - JmsConsumer[eapJmsTestQueue]) Exchange[ExchangePattern: InOnly, BodyType: String, Body: Received Message: Sample JMS Message]
 
