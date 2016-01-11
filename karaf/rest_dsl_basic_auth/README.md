@@ -1,6 +1,6 @@
 Rest DSL w/ Basic Auth Example
 ====================================
-This project demonstrates how to publish a GET and POST REST Webservice using the DSL with Basic Authentication using Fuse's JAAS Realms. It also shows how to work with JSON Objects and marshall them to a Pojos. In addition it has seperate route that demonstrate how to call a REST endpoint using the HTTP4 Component and Basic Auth. 
+This project demonstrates how to publish a GET and POST REST Webservice using the DSL with Basic Authentication using Fuse's JAAS Realms. It uses basic authentication from the karaf context.  It also shows how to work with JSON Objects and marshall them to a Pojos. In addition it has seperate route that demonstrate how to call a REST endpoint using the HTTP4 Component and Basic Auth. 
  
 ### Requirements:
  * JBoss Fuse 6.2.0 
