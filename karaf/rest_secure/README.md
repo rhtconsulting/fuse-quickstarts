@@ -1,6 +1,6 @@
 Rest CXF RS with Basic Auth Camel OSGi example
 ====================================
- This project demonstrates how to publish a  Webservice using CXF RS Basic Authentication using Fuse's JAAS Realms as well as how call those services. It also has seperate routes that demonstrate how to call a the cxf rs endpoint and also how to receive the request and process it.  Take note of the fact that the interface is used ONLY for service definition, not implementation.  The implementation of the rest service must be called explicitly from the route iteself.  
+ This project demonstrates how to publish a  Webservice using CXF RS Basic Authentication using Fuse's JAAS Realms as well as how call those services. It uses basic authentication from the karaf context. It also has seperate routes that demonstrate how to call a the cxf rs endpoint and also how to receive the request and process it.  Take note of the fact that the interface is used ONLY for service definition, not implementation.  The implementation of the rest service must be called explicitly from the route iteself.  
  
 ### Requirements:
  * JBoss Fuse 6.2.0 
