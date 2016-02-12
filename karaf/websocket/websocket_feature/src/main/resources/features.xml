@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<features name="features-${project.version}" version="${project.version}">
+
+  <!-- You can put configuration here and use it the same way as the properties project uses a specific file -->
+  <feature name="fuseWebsocketConfig" version="${project.version}">
+    <config name="custom">
+      default.timer=300000
+    </config>
+  </feature>
+  
+  <!-- A feature for the dependencies of the services -->
+  <feature name="fuseWebsocketDependencies" version="${project.version}">
+    <feature>camel-core</feature>
+    <feature>camel-websocket</feature>
+  </feature>
+  
+  <!-- Your services to install -->
+  <feature name="fuseWebSocket" version="${project.version}">
+    <feature>fuseWebsocketDependencies</feature>
+    <bundle>mvn:com.redhat.consulting.fusequickstarts.karaf.websocket/websocket_route/${project.version}</bundle>
+  </feature>
+
+</features>

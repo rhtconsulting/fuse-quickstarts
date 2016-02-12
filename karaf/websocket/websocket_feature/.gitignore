@@ -28,6 +28,4 @@ data
 /data/
 data/
 data/
-
-# OS Specific
-.DS_Store
+/target/
