@@ -14,14 +14,15 @@ import org.slf4j.LoggerFactory;
 import com.redhat.consulting.fusequickstarts.karaf.osgi_ds.api.IHelloService;
 
 /*
- * This route is triggered by a Timer and called the Hello Service that is exposed from the other bundle.
+ * Registers a new Declarative Service component with a custom Camel Context. This allows for the consumed OSGi service
+ * to be added to the Camel bean registry. A route is also defined where the it is triggered by a Timer to invoke
+ * the Hello Service that is exposed from the other bundle.
  */
-
 @Component(name="com.redhat.consulting.fusequickstarts.karaf.osgi_ds.route")
-public class ConsumerRoute extends DefaultCamelContext {
+public class ConsumerCamelContext extends DefaultCamelContext {
 
 	private static final Logger LOGGER = LoggerFactory
-			.getLogger(ConsumerRoute.class);
+			.getLogger(ConsumerCamelContext.class);
 
     private IHelloService helloService;
 

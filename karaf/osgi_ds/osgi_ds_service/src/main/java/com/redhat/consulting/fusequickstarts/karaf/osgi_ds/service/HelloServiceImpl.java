@@ -9,6 +9,12 @@ import org.osgi.service.component.annotations.Deactivate;
 
 import com.redhat.consulting.fusequickstarts.karaf.osgi_ds.api.IHelloService;
 
+/*
+    Declaring the class a Declarative Service component. Included is the definition to 
+    provide an optional configuration file specified by the ConfigurationPolicy.OPTIONAL annotation
+    parameter which dictates that an optional configuration file can be used to override the default service message.
+    The configurationPid specifies the name of the file that should be placed in the $FUSE_HOME/etc folder
+*/
 @Component(name="com.redhat.consulting.fusequickstarts.karaf.osgi_ds.service",
 		configurationPolicy=ConfigurationPolicy.OPTIONAL, 
 		configurationPid="com.redhat.consulting.fusequickstarts.karaf.osgi_ds.service")

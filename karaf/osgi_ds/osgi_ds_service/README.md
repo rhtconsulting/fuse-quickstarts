@@ -31,4 +31,16 @@ This will bring up the fuse console. Once in the console you will be able to ins
  The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
 
      karaf@root> osgi:start <bundleId>
+     
+
+Customizing the service message
+------------------------
+
+By default, the message returned by the service is OSGi service is "This is a Default Message". To customize this message, you can create a file called `com.redhat.consulting.fusequickstarts.karaf.osgi_ds.service.cfg` and place it in the `$FUSE_ROOT/etc` folder for the Config Admin Service
+
+The file should have the following content:
+
+```
+message=<custom_message>
+```
 
