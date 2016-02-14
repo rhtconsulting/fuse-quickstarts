@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<features name="features-${project.version}" version="${project.version}">
+
+  <!-- A feature for the dependencies of the services -->
+  <feature name="sharedOsgiDeclarativeServiceDependencies" version="${project.version}">
+    <feature>camel-core</feature>
+  </feature>
+  
+  <!-- Your services to install -->
+  <feature name="camelOsgiDS" version="${project.version}">
+    <feature>sharedOsgiDeclarativeServiceDependencies</feature>
+    <bundle>mvn:com.redhat.consulting.fusequickstarts.karaf.osgi_ds/osgi_ds_api/${project.version}</bundle>
+    <bundle>mvn:com.redhat.consulting.fusequickstarts.karaf.osgi_ds/osgi_ds_service/${project.version}</bundle>
+    <bundle>mvn:com.redhat.consulting.fusequickstarts.karaf.osgi_ds/osgi_ds_consumer/${project.version}</bundle>
+  </feature>
+
+</features>

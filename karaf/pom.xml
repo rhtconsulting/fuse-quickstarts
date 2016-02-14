@@ -19,6 +19,7 @@
 		<module>itests</module>
 		<module>jms</module>
 		<module>managed_service_factory</module>
+		<module>osgi_ds</module>
 		<module>osgi_service</module>
 		<module>osgi_service_adv</module>
 		<module>properties</module>
@@ -34,6 +35,7 @@
 		<module>soap_client</module>
 		<module>soap_contract_first</module>
 		<module>soap_secure</module>
+		<module>websocket</module>
 	</modules>
 
 </project>

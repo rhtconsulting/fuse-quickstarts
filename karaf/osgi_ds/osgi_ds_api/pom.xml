@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_ds</groupId>
+		<artifactId>osgi-ds-parent</artifactId>
+		<version>6.2.1</version>
+	</parent>
+
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGi Declarative Services :: API</name>
+
+	<packaging>bundle</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<!-- Bundle plugin which builds the bundle to install on karaf -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<manifestLocation>target/META-INF</manifestLocation>
+					<instructions>
+						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+						<!-- Any packages to be exported for use by another bundle -->
+						<Export-Package>
+                            com.redhat.consulting.fusequickstarts.karaf.osgi_ds.api
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<artifactId>osgi_ds_api</artifactId>
+</project>
