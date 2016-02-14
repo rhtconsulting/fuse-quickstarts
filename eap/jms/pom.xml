@@ -5,6 +5,7 @@
     <groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
     <artifactId>eap-parent</artifactId>
     <version>6.2.1</version>
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
   <artifactId>eap-jms</artifactId>
   <packaging>war</packaging>
