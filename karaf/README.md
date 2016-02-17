@@ -16,7 +16,7 @@ These examples are designed to demonstrate a single component or feature without
  * [Blueprint - SOAP with Camel CXF (Code First)](soap)
  * [Blueprint - SOAP Client](soap_client)
  * [Blueprint - WebSocket](websocket)
- * Blueprint - JPA
+ * [Blueprint - JPA](jpa)
 
 ## Advanced Examples ##
 These examples build upon the basic examples to demonstrate more advanced features or functionality. These examples assume a basic understanding of Fuse and its components.
