@@ -2,7 +2,7 @@
 OSGi Config Admin Service example
 ====================================
 
- This project is a simple Hello World Camel route the pulls properties from the OSGi Config Admin Service. It is an osgi bundle that can be install on Fuse Karaf. It is very minimal and configured with Blueprint.
+ This project is a simple Hello World Camel route the pulls properties from the OSGi Config Admin Service as well as System Properties. It is an osgi bundle that can be install on Fuse Karaf. It is very minimal and configured with Blueprint.
 
 ### Requirements:
  * JBoss Fuse 6.2.0
@@ -34,9 +34,9 @@ To start up Fuse Karaf browse to your fuse install directory. Then run
 This will bring up the fuse console.  Once in the console you will be able to install your bundle.
 Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2  repository in fuse in the `fuse/etc/org.ops4j.pax.url.mvn.cfg` file.  Then you can use the mvn syntax below.
 
-     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/properties/1.0.0/properties-1.0.0.jar
+     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/properties/6.2.1/properties-6.2.1.jar
         OR
-     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/properties/1.0.0
+     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/properties/6.2.1
 
  The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
 
@@ -47,8 +47,10 @@ Testing
 
 Once you have the route started you should be able to look in fuse/data/log/fuse.log and see the following logging:
 
-    2015-11-03 15:15:36,947 | INFO  |  timer://myTimer | PropertiesLog    | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.foo': Hello]
-	2015-11-03 15:15:36,948 | INFO  |  timer://myTimer | PropertiesLog    | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620133 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.bar': World]
+    2016-02-18 09:32:06,685 | INFO  |  timer://myTimer | PropertiesLog  | 198 - org.apache.camel.camel-core - 2.15.1.redhat-621084 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.foo': Hello]
+	2016-02-18 09:32:06,686 | INFO  |  timer://myTimer | PropertiesLog  | 198 - org.apache.camel.camel-core - 2.15.1.redhat-621084 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading Property 'test.bar': World]
+	2016-02-18 09:32:06,686 | INFO  |  timer://myTimer | PropertiesLog  | 198 - org.apache.camel.camel-core - 2.15.1.redhat-621084 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading System Property 'java.class.path': /home/bsaunder/install/j...
+	2016-02-18 09:32:06,687 | INFO  |  timer://myTimer | PropertiesLog  | 198 - org.apache.camel.camel-core - 2.15.1.redhat-621084 | Exchange[ExchangePattern: InOnly, BodyType: String, Body: Reading System Property 'os.name': Linux]
 
 You can test the Auto Reload for the properties by making changes to the property file either directly or through the fuse console. The following commands can be used to edit the property inside the console:
 
