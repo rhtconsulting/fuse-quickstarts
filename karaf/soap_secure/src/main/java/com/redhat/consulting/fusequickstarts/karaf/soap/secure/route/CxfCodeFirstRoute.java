@@ -13,8 +13,14 @@ public class CxfCodeFirstRoute extends RouteBuilder {
     public void configure() throws Exception {
 
         // Process the Requests coming in to the Endpoint
-        from("cxf:bean:customerOrderEndpoint").log("Got a SOAP Message: ${body}").choice().when(simple("${in.header.operationName} == 'placeOrder'")).to("direct:placeOrder")
-            .when(simple("${in.header.operationName} == 'getOrder'")).to("direct:getOrder").endChoice();
+        from("cxf:bean:customerOrderEndpoint")
+            .routeId("customerOrderEndpoint")
+            .log("Got a SOAP Message: ${body}")
+            .choice()
+                .when(simple("${in.header.operationName} == 'placeOrder'"))
+                    .to("direct:placeOrder")
+                .when(simple("${in.header.operationName} == 'getOrder'"))
+                    .to("direct:getOrder").endChoice();
 
         // Processing Route for Place Order Operation
         from("direct:placeOrder").log("Executing Place Order Operation").log("Order: ${body}")

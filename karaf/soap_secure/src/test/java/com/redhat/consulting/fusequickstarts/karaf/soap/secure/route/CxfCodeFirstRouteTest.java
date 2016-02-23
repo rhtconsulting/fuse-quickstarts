@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstarts.karaf.soap.route;
+package com.redhat.consulting.fusequickstarts.karaf.soap.secure.route;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.ExchangePattern;
@@ -11,8 +11,8 @@ import org.apache.cxf.message.MessageContentsList;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.redhat.consulting.fusequickstarts.karaf.soap.model.CustomerOrder;
-import com.redhat.consulting.fusequickstarts.karaf.soap.model.CustomerOrderResponse;
+import com.redhat.consulting.fusequickstarts.karaf.soap.secure.model.CustomerOrder;
+import com.redhat.consulting.fusequickstarts.karaf.soap.secure.model.CustomerOrderResponse;
 
 public class CxfCodeFirstRouteTest extends CamelTestSupport {
 	
@@ -103,5 +103,7 @@ public class CxfCodeFirstRouteTest extends CamelTestSupport {
         Assert.assertEquals("Order was not completed",cor.isCompleted(), true);
     }
 
+
+    
 
 }
