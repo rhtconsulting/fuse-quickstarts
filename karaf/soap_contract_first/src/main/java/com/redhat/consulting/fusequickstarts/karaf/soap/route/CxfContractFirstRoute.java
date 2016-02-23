@@ -14,6 +14,7 @@ public class CxfContractFirstRoute extends RouteBuilder{
         
         // Process the Requests coming in to the Endpoint
         from("cxf:bean:customerOrderEndpoint")
+            .routeId("customerOrderEndpoint")
             .log("Got a SOAP Message: ${body}")
             .choice()
                 .when(simple("${in.header.operationName} == 'placeOrder'"))
