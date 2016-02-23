@@ -14,6 +14,7 @@ public class CxfCodeFirstRoute extends RouteBuilder{
         
         // Process the Requests coming in to the Endpoint
         from("cxf:bean:customerOrderEndpoint")
+        	.routeId("customerOrderEndpoint")
             .log("Got a SOAP Message: ${body}")
             .choice()
                 .when(simple("${in.header.operationName} == 'placeOrder'"))
@@ -24,6 +25,7 @@ public class CxfCodeFirstRoute extends RouteBuilder{
         
         // Processing Route for Place Order Operation
         from("direct:placeOrder")
+        	//.routeId("placeOrder")
             .log("Executing Place Order Operation")
             .log("Order: ${body}")
             // Inline Processor to Create a Response Object
@@ -44,6 +46,7 @@ public class CxfCodeFirstRoute extends RouteBuilder{
         
         // Processing Route for Get Order Operation
         from("direct:getOrder")
+        	//.routeId("getOrder")
             .log("Executing Get Order Operation")
             .log("Order: ${body}")
             // Inline Processor to Create a Response Object

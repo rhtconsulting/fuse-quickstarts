@@ -23,9 +23,9 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the Fuse console and from there you can install your bundle. To install the bundle, use one of the following commands:
  
-	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap/1.0.0/soap-1.0.0.jar
+	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap/1.0.0/soap-6.2.1.jar
         OR
-	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap/1.0.0
+	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap/6.2.1
  
 The `-s` indicates that the bundle should be started after it is installed. If you leave it off you can start the bundle using the following command:
     
