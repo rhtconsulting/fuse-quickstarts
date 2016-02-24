@@ -4,6 +4,11 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
 import org.apache.camel.model.rest.RestBindingMode;
 
+/**
+ *  @author lberetta
+ *
+ */
+
 @ContextName("rest-dsl")
 public class RestRoutes extends RouteBuilder {
 

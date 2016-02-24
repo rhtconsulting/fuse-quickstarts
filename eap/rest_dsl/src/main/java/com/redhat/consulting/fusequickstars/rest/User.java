@@ -1,5 +1,10 @@
 package com.redhat.consulting.fusequickstars.rest;
 
+/**
+ *  @author lberetta
+ *
+ */
+
 public class User {
 
     private Integer id;

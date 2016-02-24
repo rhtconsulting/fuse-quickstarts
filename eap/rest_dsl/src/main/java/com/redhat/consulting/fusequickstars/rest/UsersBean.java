@@ -4,11 +4,16 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 import java.util.ArrayList;
 
-/*
-    Users storage for testing the Rest CRUD functionality.
+/**
+ *   Users storage for testing the Rest CRUD functionality.
+ *
+ *   It's basic, doesn't check duplicates id's and in case of update, updates the first found.
+ *
+ */
 
-    It's basic, doesn't check duplicates id's and in case of update, updates the first found.
-
+/**
+ *  @author lberetta
+ *
  */
 
 @Singleton

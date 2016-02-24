@@ -14,5 +14,6 @@
 		<module>parent</module>
         <module>route_deployment</module>
         <module>jms</module>
+		<module>rest_dsl</module>
 	</modules>
 </project>

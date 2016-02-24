@@ -9,7 +9,7 @@
     </parent>
     <artifactId>eap-rest-dsl</artifactId>
     <packaging>war</packaging>
-    <name>Fuse Quickstart :: EAP :: JAX-RS Consumer with the Camel REST DSL</name>
+    <name>Fuse Quickstart :: EAP :: Camel REST DSL</name>
 
     <!-- Any dependencies needed by your project -->
     <dependencies>
