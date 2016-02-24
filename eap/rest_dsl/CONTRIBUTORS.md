@@ -1,4 +1,4 @@
 Contributors
 ------------
 
-* Leandro Beretta <lberetta@redhat.com>
+* Leandro Beretta - <lberetta@redhat.com>
