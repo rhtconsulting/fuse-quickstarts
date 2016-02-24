@@ -4,6 +4,13 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 import java.util.ArrayList;
 
+/*
+    Users storage for testing the Rest CRUD functionality.
+
+    It's basic, doesn't check duplicates id's and in case of update, updates the first found.
+
+ */
+
 @Singleton
 @Named("usersBean")
 public class UsersBean {
