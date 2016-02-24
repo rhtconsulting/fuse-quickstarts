@@ -22,6 +22,10 @@ target/
 .classpath
 *.classpath
 
+# Idea Files
+.idea
+*.iml
+
 # Project Specific
 data
 /data
