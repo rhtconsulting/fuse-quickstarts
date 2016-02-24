@@ -45,7 +45,7 @@ Results
 -----------------------
 Once you have the war deployed with the routes started, you should be able to use the Rest services with a Rest client (Postman).
 
-#### Base path
+### Base Path
 
     http://localhost:8080/eap-rest-dsl-6.2.1/rest/
 
