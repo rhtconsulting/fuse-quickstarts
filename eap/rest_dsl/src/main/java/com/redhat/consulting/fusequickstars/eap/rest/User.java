@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstars.rest;
+package com.redhat.consulting.fusequickstars.eap.rest;
 
 /**
  *  @author lberetta
