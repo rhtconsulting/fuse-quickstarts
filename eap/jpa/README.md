@@ -45,7 +45,7 @@ Results
 -----------------------
 Once you have the war deployed with the routes started, you should see the following in the JBoss console:
 
-12:03:27,543 INFO  [route21] (Camel (jpa) thread #15 - timer://timeToPersist) Inserting new user
-12:03:27,804 INFO  [route22] (Camel (jpa) thread #16 - jpa://com.redhat.consulting.fusequickstars.eap.jpa.model.User) Retrieving user: User [id=58, username=leandro]
+    12:03:27,543 INFO  [route21] (Camel (jpa) thread #15 - timer://timeToPersist) Inserting new user
+    12:03:27,804 INFO  [route22] (Camel (jpa) thread #16 - jpa://com.redhat.consulting.fusequickstars.eap.jpa.model.User) Retrieving user: User [id=58, username=leandro]
 
 
