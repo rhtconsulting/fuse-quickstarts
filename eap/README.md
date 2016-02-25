@@ -28,11 +28,11 @@ These examples are designed to demonstrate a single component or feature without
  * Camel on EAP - JMS using Camel-JMS
  * Camel on EAP - A-MQ using a Message Driven Bean
  * Camel on EAP - A-MQ using Camel-ActiveMQ
- * Camel on EAP - JAX-RS Consumer with the Camel REST DSL
+ * [Camel on EAP - JAX-RS Consumer with the Camel REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.1/eap/rest_dsl)
  * Camel on EAP - JAX-RS Consumer with CamelProxy
  * Camel on EAP - JAX-WS Consumer with CamelProxy (Contract First)
  * Camel on EAP - JAX-WS Consumer with CamelProxy (Code First)
- * Camel on EAP - JPA
+ * [Camel on EAP - JPA](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.1/eap/jpa)
 
 ## Advanced Examples ##
 These examples build upon the basic examples to demonstrate more advanced features or functionality. These examples assume a basic understanding of Fuse and its components.
