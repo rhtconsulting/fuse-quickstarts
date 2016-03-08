@@ -1,4 +1,4 @@
-package com.redhat.consulting.fusequickstars.rest;
+package com.redhat.consulting.fusequickstars.eap.rest;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
