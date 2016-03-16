@@ -3,8 +3,10 @@ package com.redhat.consulting.fusequickstarts.karaf.amq.route;
 import org.apache.camel.builder.RouteBuilder;
 
 /*
- * This route picks up from the activemq queue and logs the body of
- * the message.
+ * This route uses an Idempotent Consumer and consumes messages from the Queue.
+ * It uses a Custom Idempotent Repository based on Guava to Cache the Keys and then
+ * Expire them after 60 seconds. This has the effect of only removing Duplicates for a 
+ * 60 second period.
  */
 
 public class ConsumerRoute extends RouteBuilder {

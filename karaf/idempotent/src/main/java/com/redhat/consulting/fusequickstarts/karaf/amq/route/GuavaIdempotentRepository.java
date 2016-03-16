@@ -13,6 +13,10 @@ import org.apache.camel.api.management.ManagedResource;
 import org.apache.camel.spi.IdempotentRepository;
 import org.apache.camel.support.ServiceSupport;
 
+/**
+ * This is an Idempotent Repository for use with the Camel Idempotent Consumer.
+ * It is based on a Guava Cache with a Time Expiration.
+ */
 @ManagedResource(description = "Memory based idempotent repository using Guava Cache")
 public class GuavaIdempotentRepository extends ServiceSupport implements IdempotentRepository<String> {
 
@@ -20,7 +24,6 @@ public class GuavaIdempotentRepository extends ServiceSupport implements Idempot
 
     public GuavaIdempotentRepository(int milliseconds) {
         cache = CacheBuilder.newBuilder().expireAfterWrite(milliseconds, TimeUnit.MILLISECONDS).build();
-        System.out.println("<<<>>> Cache Created");
     }
 
     /**
@@ -36,11 +39,9 @@ public class GuavaIdempotentRepository extends ServiceSupport implements Idempot
     @ManagedOperation(description = "Adds the key to the store")
     public boolean add(String key) {
         if(this.contains(key)){
-            System.out.println("<<<>>> Key Found, Skipping Add: " + key);
             return false;
         } else {
             this.cache.put(key, key);
-            System.out.println("<<<>>> Key Added: " + key);
             return true;
         }
     }
@@ -52,33 +53,28 @@ public class GuavaIdempotentRepository extends ServiceSupport implements Idempot
 
     @ManagedOperation(description = "Does the store contain the given key")
     public boolean contains(String key) {
-        System.out.println("<<<>>> Searching for Key: " + key);
         try {
             this.cache.get(key, new Callable<String>() {
                 public String call() throws Exception {
-                    System.out.println("<<<>>> In Callable");
+                    // Throw an Exception so that we do not create a new Entry for the key since it was not found.
                     throw new ExecutionException(new IllegalArgumentException());
                 }
             });
         } catch (ExecutionException e) {
-            System.out.println("<<<>>> Does Not Contain Key: " + key);
             return false;
         }
         
-        System.out.println("<<<>>> Key Found: " + key);
         return true;
     }
 
     @ManagedOperation(description = "Remove the key from the store")
     public boolean remove(String key) {
-        System.out.println("<<<>>> Removed Key: " + key);
         this.cache.invalidate(key);
         return true;
     }
 
     @Override
     protected void doStart() throws Exception {
-        System.out.println("<<<>>> Do Start");
         if (this.cache == null) {
             this.cache = CacheBuilder.newBuilder().expireAfterWrite(60000, TimeUnit.MILLISECONDS).build();
         }
@@ -86,7 +82,6 @@ public class GuavaIdempotentRepository extends ServiceSupport implements Idempot
 
     @Override
     protected void doStop() throws Exception {
-        System.out.println("<<<>>> Do Stop");
         this.cache.invalidateAll();
         this.cache.cleanUp();
 
@@ -94,7 +89,6 @@ public class GuavaIdempotentRepository extends ServiceSupport implements Idempot
 
     @ManagedOperation(description = "Clear the store")
     public void clear() {
-        System.out.println("<<<>>> Clearing Cache");
         this.cache.invalidateAll();
     }
 

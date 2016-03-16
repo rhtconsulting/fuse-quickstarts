@@ -11,7 +11,7 @@
 	</parent>
 
 	<artifactId>idempotent</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGI A-MQ (ActiveMQ) :: Idempotent Consumer</name>
+	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGI A-MQ :: Idempotent Consumer</name>
 
 	<packaging>bundle</packaging>
 	<!-- Any dependencies needed by your project -->

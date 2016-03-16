@@ -4,7 +4,7 @@ import org.apache.camel.builder.RouteBuilder;
 
 /*
  * This route runs based on a timer.  It creates a message with 
- * a simple text body and send it to an activemq queue.
+ * a simple text body and header and sends it to an activemq queue.
  */
 
 public class ProducerRoute extends RouteBuilder {
