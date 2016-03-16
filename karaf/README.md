@@ -33,3 +33,4 @@ These examples build upon the basic examples to demonstrate more advanced featur
  * Blueprint - Drools/BxMS
  * [Declarative Services - OSGi Services and Basic Route Deployment](osgi_ds)
  * [Pax Exam Integration Test Suite](itests)
+ * [Idempotent Consumer with Guava based Idempotent Repository](idempotent)
