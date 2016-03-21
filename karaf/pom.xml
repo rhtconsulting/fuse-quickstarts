@@ -17,6 +17,7 @@
 		<module>feature</module>
 		<module>infinispan</module>
 		<module>itests</module>
+                <module>idempotent</module>
 		<module>jms</module>
 		<module>managed_service_factory</module>
 		<module>osgi_ds</module>
