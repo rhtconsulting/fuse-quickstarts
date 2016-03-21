@@ -31,6 +31,7 @@ public class EndpointRouteTest extends CamelTestSupport {
 
     @Override
     public void setUp() throws Exception {
+    	
         replaceRouteFromWith("restEndpointConsumer", "direct:restTestEndpoint");
         super.setUp();
     }

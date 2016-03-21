@@ -5,6 +5,9 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
+import org.eclipse.jetty.security.ConstraintMapping;
+import org.eclipse.jetty.security.ConstraintSecurityHandler;
+import org.eclipse.jetty.security.authentication.BasicAuthenticator;
 
 public class RestDslRoute extends RouteBuilder {
 
@@ -20,7 +23,7 @@ public class RestDslRoute extends RouteBuilder {
         // Configure the Rest DSL to use Jetty
         restConfiguration().component("jetty")
             .host("localhost").port(8183)
-            .bindingMode(RestBindingMode.json)
+           .bindingMode(RestBindingMode.json)
             .endpointProperty("handlers", "securityHandler"); // Specifying This is Critical to get the Security Working
 
         // Configure the Root URL of the Endpoint

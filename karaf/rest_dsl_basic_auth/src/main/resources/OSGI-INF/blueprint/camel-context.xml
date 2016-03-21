@@ -47,15 +47,10 @@
 		<property name="identityService" ref="identityService" />
 	</bean>
 
-	<!-- <bean id="jetty" class="org.apache.camel.component.jetty.JettyHttpComponent">
-		<property name="handlers" value="securityHandler" />
-	</bean> -->
-
 	<!-- The camel context which registers the route -->
 	<camel:camelContext id="fusequickstart-restdsl-camel"
 		xmlns="http://camel.apache.org/schema/blueprint">
-
-		<!-- Package Scanning finds the Routes -->
+				<!-- Package Scanning finds the Routes -->
 		<packageScan>
 			<package>com.redhat.consulting.fusequickstarts.karaf.rest.auth.basic.dsl.route</package>
 		</packageScan>
