@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <parent>
+		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
+		<artifactId>karaf-parent</artifactId>
+		<version>6.2.1</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+
+  <artifactId>camel-jpa-jta</artifactId>
+  <packaging>bundle</packaging>
+  <name>Fuse Quickstart :: Karaf :: Blueprint :: Camel JPA w/ Hibernate and JTA</name>
+
+  <dependencyManagement>
+    <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${version.slf4j}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${version.slf4j}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.jayway.restassured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${version.rest-assured}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-core</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-jpa</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.geronimo.specs</groupId>
+    <artifactId>geronimo-jpa_2.0_spec</artifactId>
+    <version>1.1</version>
+  </dependency>
+</dependencies>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>maven-bundle-plugin</artifactId>
+      <extensions>true</extensions>
+      <configuration>
+        <manifestLocation>target/META-INF</manifestLocation>
+        <instructions>
+          <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+          <!-- Any packages to be exported for use by another bundle -->
+          <Export-Package/>
+          <!-- Any packages needed by your bundle -->
+          <Import-Package>
+            org.apache.camel.*,
+            org.osgi.service.*,
+            org.slf4j,
+            javax.persistence,
+            org.hibernate.proxy,
+            javassist.util.proxy,
+            *
+          </Import-Package>
+          <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
+        </instructions>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <version>1.8</version>
+      <executions>
+        <execution>
+          <id>attach-artifacts</id>
+          <phase>package</phase>
+          <goals>
+            <goal>attach-artifact</goal>
+          </goals>
+          <configuration>
+            <artifacts>
+              <artifact>
+                <file>target/classes/datasources/h2-ds.xml</file>
+                <type>xml</type>
+                <classifier>h2</classifier>
+              </artifact>
+              <artifact>
+                <file>target/classes/datasources/postgresql-ds.xml</file>
+                <type>xml</type>
+                <classifier>postgres</classifier>
+              </artifact>
+              <artifact>
+                <file>target/classes/datasources/oracle-ds.xml</file>
+                <type>xml</type>
+                <classifier>oracle</classifier>
+              </artifact>
+              <artifact>
+                <file>target/classes/scripts/deploy.karaf</file>
+                <type>karaf</type>
+              </artifact>
+            </artifacts>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+
+<description>Uses Container Managed JPA in a Bean</description>
+
+</project>
