@@ -1,7 +1,5 @@
 # JBoss Fuse Quick Starts
 
-![Build Status](https://travis-ci.org/rhtconsulting/fuse-quickstarts.svg?branch=jboss-fuse-6.2.1)
-
 This project contains multiple Quick Starts intended for use with JBoss Fuse. These Quick starts are intended to be beginner level projects that demonstrate a single concept at a time. In some cases more Advanced Quick Starts are included that build upon the basic Quick Start to demonstrate more complex features. The quickstarts are designed to get someone started quickly with a given component and are not designed to be full solutions. Quick starts are provided for both Fuse on Karaf as well as Fuse on EAP.
 
  * [JBoss Fuse on Karaf Examples](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.1/karaf)
