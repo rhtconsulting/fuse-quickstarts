@@ -23,16 +23,16 @@ Additional installation information can be found here [https://access.redhat.com
 ## Basic Examples ##
 These examples are designed to demonstrate a single component or feature without much advanced or complex functionality. This is a good place for beginners to start.
 
- * [Camel on EAP - Basic Route Deployment w/ CDI](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.1/eap/route_deployment)
+ * [Camel on EAP - Basic Route Deployment w/ CDI](route_deployment)
  * Camel on EAP - JMS using a Message Driven Bean
  * Camel on EAP - JMS using Camel-JMS
- * Camel on EAP - A-MQ using a Message Driven Bean
+ * [Camel on EAP - A-MQ using a Message Driven Bean](amq_mdb)
  * Camel on EAP - A-MQ using Camel-ActiveMQ
- * [Camel on EAP - JAX-RS Consumer with the Camel REST DSL](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.1/eap/rest_dsl)
+ * [Camel on EAP - JAX-RS Consumer with the Camel REST DSL](rest_dsl)
  * Camel on EAP - JAX-RS Consumer with CamelProxy
  * Camel on EAP - JAX-WS Consumer with CamelProxy (Contract First)
  * Camel on EAP - JAX-WS Consumer with CamelProxy (Code First)
- * [Camel on EAP - JPA](https://github.com/rhtconsulting/fuse-quickstarts/tree/jboss-fuse-6.2.1/eap/jpa)
+ * [Camel on EAP - JPA](jpa)
 
 ## Advanced Examples ##
 These examples build upon the basic examples to demonstrate more advanced features or functionality. These examples assume a basic understanding of Fuse and its components.
