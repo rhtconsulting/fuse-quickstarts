@@ -11,7 +11,7 @@
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-  <artifactId>camel-jpa-jta</artifactId>
+  <artifactId>jpa-jta</artifactId>
   <packaging>bundle</packaging>
   <name>Fuse Quickstart :: Karaf :: Blueprint :: Camel JPA w/ Hibernate and JTA</name>
 
@@ -95,20 +95,6 @@
                 <file>target/classes/datasources/h2-ds.xml</file>
                 <type>xml</type>
                 <classifier>h2</classifier>
-              </artifact>
-              <artifact>
-                <file>target/classes/datasources/postgresql-ds.xml</file>
-                <type>xml</type>
-                <classifier>postgres</classifier>
-              </artifact>
-              <artifact>
-                <file>target/classes/datasources/oracle-ds.xml</file>
-                <type>xml</type>
-                <classifier>oracle</classifier>
-              </artifact>
-              <artifact>
-                <file>target/classes/scripts/deploy.karaf</file>
-                <type>karaf</type>
               </artifact>
             </artifacts>
           </configuration>
