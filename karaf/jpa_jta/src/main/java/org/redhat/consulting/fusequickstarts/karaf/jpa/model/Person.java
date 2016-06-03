@@ -2,13 +2,13 @@ package org.redhat.consulting.fusequickstarts.karaf.jpa.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Person {
 
     @Id
-    @GeneratedValue
     private long id;
 
     private String name;
@@ -17,7 +17,8 @@ public class Person {
         
     }
     
-    public Person(String pName){
+    public Person(long pId, String pName){
+        this.id = pId;
         this.name = pName;
     }
 
