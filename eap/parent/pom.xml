@@ -20,6 +20,7 @@
     <version.jboss.spec.javax.servlet>1.0.0.Final</version.jboss.spec.javax.servlet>
     <maven.war.plugin.version>2.5</maven.war.plugin.version>
     <jboss.as.plugin.version>7.6.Final</jboss.as.plugin.version>
+    <version.jboss.jaxrs-api.spec>1.0.1.Final</version.jboss.jaxrs-api.spec>
   </properties>
 
   <dependencyManagement>
@@ -88,6 +89,12 @@
         <version>${version.jboss.spec.javax.servlet}</version>
         <scope>provided</scope>
       </dependency>
+      <dependency>
+		<groupId>org.jboss.spec.javax.ws.rs</groupId>
+		<artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
+		<version>${version.jboss.jaxrs-api.spec}</version>
+        <scope>provided</scope>
+	  </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-log4j12</artifactId>
