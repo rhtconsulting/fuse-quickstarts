@@ -29,7 +29,7 @@ These examples are designed to demonstrate a single component or feature without
  * [Camel on EAP - A-MQ using a Message Driven Bean](amq_mdb)
  * Camel on EAP - A-MQ using Camel-ActiveMQ
  * [Camel on EAP - JAX-RS Consumer with the Camel REST DSL](rest_dsl)
- * Camel on EAP - JAX-RS Consumer with CamelProxy
+ * [Camel on EAP - JAX-RS Consumer with CamelProxy](jaxrs_proxy)
  * Camel on EAP - JAX-WS Consumer with CamelProxy (Contract First)
  * Camel on EAP - JAX-WS Consumer with CamelProxy (Code First)
  * [Camel on EAP - JPA](jpa)
