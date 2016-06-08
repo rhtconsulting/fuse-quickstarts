@@ -43,8 +43,8 @@ Testing
 -----------------------
 Once you have the application deployed, you can test it by using the following URLs
 
-http://localhost:8080/jaxrs-proxy/rest/customer - Returns 3 Customers
-http://localhost:8080/jaxrs-proxy/rest/customer/0 - Returns the customer Bob Winston
-http://localhost:8080/jaxrs-proxy/rest/customer/4 - Returns Error because the ID does not Exist (And we Coded no Error Handling)
+ * http://localhost:8080/jaxrs-proxy/rest/customer - Returns 3 Customers
+ * http://localhost:8080/jaxrs-proxy/rest/customer/0 - Returns the customer Bob Winston
+ * http://localhost:8080/jaxrs-proxy/rest/customer/4 - Returns Error because the ID does not Exist (And we Coded no Error Handling)
 
 
