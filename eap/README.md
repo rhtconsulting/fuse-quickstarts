@@ -25,7 +25,7 @@ These examples are designed to demonstrate a single component or feature without
 
  * [Camel on EAP - Basic Route Deployment w/ CDI](route_deployment)
  * Camel on EAP - JMS using a Message Driven Bean
- * Camel on EAP - JMS using Camel-JMS
+ * [Camel on EAP - JMS using Camel-JMS](jms)
  * [Camel on EAP - A-MQ using a Message Driven Bean](amq_mdb)
  * Camel on EAP - A-MQ using Camel-ActiveMQ
  * [Camel on EAP - JAX-RS Consumer with the Camel REST DSL](rest_dsl)
