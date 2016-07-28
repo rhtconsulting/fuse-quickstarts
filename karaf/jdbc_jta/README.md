@@ -1,5 +1,7 @@
 Build Application
 
+- copy `src/main/resources/datasources/create.sql` in your user folder.
+
 Start Fuse
 
 Install Dependencies
