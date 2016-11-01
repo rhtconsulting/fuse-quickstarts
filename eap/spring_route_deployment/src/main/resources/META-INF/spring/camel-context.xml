@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring 
+         http://camel.apache.org/schema/spring/camel-spring.xsd
+         http://www.springframework.org/schema/context
+		 http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+		 
+    <!-- The context scan and annotation config elements allow the use of the Component annotation to pick up the routes -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.redhat.consulting.fusequickstarts.eap.deployment.route"/>
+	
+	 <camel:camelContext id="spring-camel-eap" xmlns="http://camel.apache.org/schema/spring">
+			<contextScan/>
+	</camel:camelContext>
+	
+</beans>
