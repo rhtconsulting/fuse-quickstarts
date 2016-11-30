@@ -1,0 +1,3 @@
+<jboss-web>
+    <context-root>eap-route-deployment</context-root>
+</jboss-web>
