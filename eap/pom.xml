@@ -18,6 +18,7 @@
 	  <module>rest_dsl</module>
 	  <module>jpa</module>
           <module>amq_mdb</module>
+          <module>jms_mdb</module>
           <module>jaxrs_proxy</module>
 	</modules>
 </project>
