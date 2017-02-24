@@ -4,7 +4,7 @@ This bundle exposes a single route that demonstrates the Producer functionality 
 
 ### Requirements: ###
 
- * JBoss Fuse 6.2.0
+ * JBoss Fuse 6.3.0
  * JBoss Data Grid 6.5.0
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
@@ -39,9 +39,9 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the fuse console. Once in the console you will be able to install your bundle. Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file. Then you can use the mvn syntax below.
 
-     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/infinispan/local-camel-producer/1.0.0/local-camel-producer-1.0.0.jar
+     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/infinispan/local-camel-producer/6.3/local-camel-producer-6.3.jar
         OR
-     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf.infinispan/local-camel-producer/1.0.0
+     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf.infinispan/local-camel-producer/6.3
 
  The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
 
@@ -51,8 +51,8 @@ Results
 -----------------------
 Once you have the bundle deployed and started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
-    2015-11-30 20:10:25,178 | INFO  | calCamelProducer | localCamelConsumer  | ?      ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-39053-1448930964732-8-4, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Mon Nov 30 20:10:25 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route9, node=to18]], CamelToEndpoint=log://localCamelConsumer?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-39053-1448930964732-8-3}, BodyType: null, Body: [Body is null], OutHeaders: {CamelInfinispanCacheName=___defaultcache, CamelInfinispanEventType=CACHE_ENTRY_CREATED, CamelInfinispanIsPre=false, CamelInfinispanKey=1}, OutBodyType: null, OutBody: [Body is null]]
-    2015-11-30 20:10:25,178 | INFO  | calCamelProducer | localCamelProducer    | ?     ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-39053-1448930964732-7-2, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Mon Nov 30 20:10:25 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route8, node=setHeader9], DefaultMessageHistory[routeId=route8, node=setHeader10], DefaultMessageHistory[routeId=route8, node=to16], DefaultMessageHistory[routeId=route8, node=to17]], CamelTimerCounter=1, CamelTimerFiredTime=Mon Nov 30 20:10:25 EST 2015, CamelTimerName=localCamelProducer, CamelTimerPeriod=5000, CamelToEndpoint=log://localCamelProducer?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-39053-1448930964732-7-1, CamelInfinispanKey=1, CamelInfinispanOperationResult=null, CamelInfinispanValue=1, firedTime=Mon Nov 30 20:10:25 EST 2015}, BodyType: null, Body: [Body is null], Out: null: ]
+    2015-11-30 20:10:25,178 | INFO  | calCamelProducer | localCamelConsumer  | ?      ? | 198 - org.apache.camel.camel-core - 2.17.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-39053-1448930964732-8-4, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Mon Nov 30 20:10:25 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route9, node=to18]], CamelToEndpoint=log://localCamelConsumer?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-39053-1448930964732-8-3}, BodyType: null, Body: [Body is null], OutHeaders: {CamelInfinispanCacheName=___defaultcache, CamelInfinispanEventType=CACHE_ENTRY_CREATED, CamelInfinispanIsPre=false, CamelInfinispanKey=1}, OutBodyType: null, OutBody: [Body is null]]
+    2015-11-30 20:10:25,178 | INFO  | calCamelProducer | localCamelProducer    | ?     ? | 198 - org.apache.camel.camel-core - 2.17.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-39053-1448930964732-7-2, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Mon Nov 30 20:10:25 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route8, node=setHeader9], DefaultMessageHistory[routeId=route8, node=setHeader10], DefaultMessageHistory[routeId=route8, node=to16], DefaultMessageHistory[routeId=route8, node=to17]], CamelTimerCounter=1, CamelTimerFiredTime=Mon Nov 30 20:10:25 EST 2015, CamelTimerName=localCamelProducer, CamelTimerPeriod=5000, CamelToEndpoint=log://localCamelProducer?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-39053-1448930964732-7-1, CamelInfinispanKey=1, CamelInfinispanOperationResult=null, CamelInfinispanValue=1, firedTime=Mon Nov 30 20:10:25 EST 2015}, BodyType: null, Body: [Body is null], Out: null: ]
 
 
 Troubleshooting

@@ -4,7 +4,7 @@ This bundle exposes a single route that uses a Bean and the Hot Rod client to co
 
 ### Requirements: ###
 
- * JBoss Fuse 6.2.0
+ * JBoss Fuse 6.3.0
  * JBoss Data Grid 6.5.0
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
@@ -37,9 +37,9 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the fuse console. Once in the console you will be able to install your bundle. Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file. Then you can use the mvn syntax below.
 
-     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/infinispan/local-client/1.0.0/local-client-1.0.0.jar
+     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/infinispan/local-client/6.3/local-client-6.3.jar
         OR
-     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf.infinispan/local-client/1.0.0
+     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf.infinispan/local-client/6.3
 
  The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
 
@@ -51,7 +51,7 @@ Once you have the bundle deployed and started you should be able to look in `$FU
 
     2015-11-30 20:15:54,712 | INFO  | er://localClient | LocalClient  | ?  ? | 279 - com.redhat.consulting.fusequickstarts.karaf.infinispan.local-client - 1.0.0 | Local PUT 1 : Mon Nov 30 20:15:54 EST 2015
     2015-11-30 20:15:54,713 | INFO  | er://localClient | LocalCacheListener  | ?  ? | 276 - com.redhat.consulting.fusequickstarts.karaf.infinispan.local-cache - 1.0.0 | Infinispan event received: CACHE_ENTRY_CREATED with key: 1
-    2015-11-30 20:15:54,714 | INFO  | er://localClient | localClient  | ?  ? | 198 - org.apache.camel.camel-core - 2.15.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-39053-1448930964732-9-2, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Mon Nov 30 20:15:54 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route10, node=to19], DefaultMessageHistory[routeId=route10, node=to20]], CamelTimerCounter=1, CamelTimerFiredTime=Mon Nov 30 20:15:54 EST 2015, CamelTimerName=localClient, CamelTimerPeriod=5000, CamelToEndpoint=log://localClient?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-39053-1448930964732-9-1, firedTime=Mon Nov 30 20:15:54 EST 2015}, BodyType: null, Body: [Body is null], Out: null: ]
+    2015-11-30 20:15:54,714 | INFO  | er://localClient | localClient  | ?  ? | 198 - org.apache.camel.camel-core - 2.17.1.redhat-620153 | Exchange[Id: ID-localhost-localdomain-39053-1448930964732-9-2, ExchangePattern: InOnly, Properties: {CamelCreatedTimestamp=Mon Nov 30 20:15:54 EST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route10, node=to19], DefaultMessageHistory[routeId=route10, node=to20]], CamelTimerCounter=1, CamelTimerFiredTime=Mon Nov 30 20:15:54 EST 2015, CamelTimerName=localClient, CamelTimerPeriod=5000, CamelToEndpoint=log://localClient?showAll=true}, Headers: {breadcrumbId=ID-localhost-localdomain-39053-1448930964732-9-1, firedTime=Mon Nov 30 20:15:54 EST 2015}, BodyType: null, Body: [Body is null], Out: null: ]
 
 
 Troubleshooting

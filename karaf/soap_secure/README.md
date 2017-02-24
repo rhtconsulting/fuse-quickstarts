@@ -3,7 +3,7 @@ Camel-CXF SOAP Secure (Code First) example
 This project creates a simple Customer Order Secure SOAP service with 2 operations and exposes them via CXF. It uses a code-first approach that allows the WSDL to be automatically generated at run-time.  It uses basic authentication from the karaf context. 
  
 ### Requirements:
- * JBoss Fuse 6.2.0 
+ * JBoss Fuse 6.3.0 
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
  
@@ -23,9 +23,9 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the Fuse console and from there you can install your bundle. To install the bundle, use one of the following commands:
  
-	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap_secure/1.0.0/soap_secure-1.0.0.jar
+	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap_secure/6.3/soap_secure-6.3.jar
         OR
-	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap_secure/1.0.0
+	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap_secure/6.3
  
 The `-s` indicates that the bundle should be started after it is installed. If you leave it off you can start the bundle using the following command:
     

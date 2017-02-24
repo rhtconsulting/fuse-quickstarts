@@ -49,7 +49,7 @@ public class FuseTestUtil {
     // Set Maven Coordinates for Fuse Zip
     public static final String GROUP_ID = "org.jboss.fuse";
     public static final String ARTIFACT_ID = "jboss-fuse";
-    public static final String VERSION = "6.2.0.GA";
+    public static final String VERSION = "6.3.0.GA";
 
     // Adjust ports so they don't conflict with other tests/running versions of Fuse
     public static final String RMI_SERVER_PORT = "44445";

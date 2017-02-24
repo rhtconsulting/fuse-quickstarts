@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
 		<artifactId>osgi-service-adv-parent</artifactId>
-		<version>6.2.1</version>
+		<version>6.3</version>
 	</parent>
 
 	<name>Fuse Quickstart :: Karaf :: SpringDM :: OSGi Advanced Service :: Spring Service</name>
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
 			<artifactId>service_api</artifactId>
-			<version>6.2.1</version>
+			<version>6.3</version>
 		</dependency>
 	</dependencies>
 

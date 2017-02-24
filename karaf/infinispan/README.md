@@ -3,7 +3,7 @@ Using JBoss Data Grid with OSGi
 This project demonstrates multiple ways to utilize JBoss Data Grid with JBoss Fuse.
 
 ### Requirements:
- * JBoss Fuse 6.2.0
+ * JBoss Fuse 6.3.0
  * JBoss Data Grid 6.5
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
