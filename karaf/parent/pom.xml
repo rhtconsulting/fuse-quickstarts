@@ -5,7 +5,7 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 	<artifactId>karaf-parent</artifactId>
-	<version>6.2.1</version>
+	<version>6.3</version>
 	<packaging>pom</packaging>
 
 	<name>Fuse Quickstart :: Karaf :: Parent</name>
@@ -14,7 +14,7 @@
 		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
 		<version.slf4j>1.7.6</version.slf4j>
 		<version.rest-assured>2.7.0</version.rest-assured>
-		<jboss.fuse.bom.version>6.2.1.redhat-084</jboss.fuse.bom.version>
+		<jboss.fuse.bom.version>6.3.0.redhat-224</jboss.fuse.bom.version>
 		<datagrid.version>6.5.1.Final-redhat-1</datagrid.version>
 		<infinispan.version>6.3.1.Final-redhat-1</infinispan.version> <!-- for JDG 6.5 -->
 	</properties>

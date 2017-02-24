@@ -3,7 +3,7 @@ JAX-RS Service with CamelProxy EAP example
 This example deploys two JAX-RS Endpoints to EAP and then uses a CamelProxy to redirect the requests to a Camel Route for Processing.
 
 ### Requirements:
- * JBoss Fuse 6.2.1
+ * JBoss Fuse 6.3.0
  * JBoss EAP 6.4.0
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8

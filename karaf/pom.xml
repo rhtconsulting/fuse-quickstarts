@@ -5,7 +5,7 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 	<artifactId>karaf-main</artifactId>
-	<version>6.2.1</version>
+	<version>6.3</version>
 	<packaging>pom</packaging>
 
 	<name>Fuse Quickstart :: Karaf :: Main</name>
@@ -18,7 +18,7 @@
 		<module>feature</module>
 		<module>infinispan</module>
 		<module>itests</module>
-                <module>idempotent</module>
+        <module>idempotent</module>
 		<module>jms</module>
 		<module>managed_service_factory</module>
 		<module>osgi_ds</module>

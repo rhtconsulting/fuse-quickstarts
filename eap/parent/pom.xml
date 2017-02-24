@@ -5,7 +5,7 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
 	<artifactId>eap-parent</artifactId>
-	<version>6.2.1</version>
+	<version>6.3</version>
 	<packaging>pom</packaging>
 
 	<name>Fuse Quickstart :: EAP :: Parent</name>
@@ -14,7 +14,7 @@
 		<version.activemq>5.11.0.redhat-621084</version.activemq>
 		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
 		<version.slf4j>1.7.6</version.slf4j>
-		<camel.version>2.15.1.redhat-621084</camel.version>
+		<camel.version>2.17.0.redhat-630187</camel.version>
 		<version.javax.enterprise>1.2</version.javax.enterprise>
 		<version.jboss.spec.javax.ejb>1.0.0.Final</version.jboss.spec.javax.ejb>
 		<version.jboss.spec.javax.servlet>1.0.0.Final</version.jboss.spec.javax.servlet>

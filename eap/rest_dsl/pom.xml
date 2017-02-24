@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
         <artifactId>eap-parent</artifactId>
-        <version>6.2.1</version>
+        <version>6.3</version>
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
     <artifactId>eap-rest-dsl</artifactId>

@@ -5,7 +5,7 @@ This example deploys basic routes using JPA in EAP with the Camel Subsystem.
 
 ### Requirements:
 
- * JBoss Fuse 6.2.1
+ * JBoss Fuse 6.3
  * JBoss EAP 6.4.0 (With the ExampleDS default datasource configured)
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8

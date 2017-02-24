@@ -5,7 +5,7 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
 	<artifactId>eap-main</artifactId>
-	<version>6.2.1</version>
+	<version>6.3</version>
 	<packaging>pom</packaging>
 
 	<name>Fuse Quickstart :: EAP :: Main</name>
@@ -15,10 +15,11 @@
 	  <module>parent</module>
           <module>route_deployment</module>
           <module>jms</module>
-	  <module>rest_dsl</module>
-	  <module>jpa</module>
+  	  <module>rest_dsl</module>
+          <module>jpa</module>
           <module>amq_mdb</module>
           <module>jms_mdb</module>
           <module>jaxrs_proxy</module>
+          <module>spring_route_deployment</module>
 	</modules>
 </project>
