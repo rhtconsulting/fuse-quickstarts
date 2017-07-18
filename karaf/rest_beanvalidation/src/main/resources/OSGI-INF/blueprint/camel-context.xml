@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+	xmlns:jaxws="http://cxf.apache.org/blueprint/jaxws" xmlns:camel="http://camel.apache.org/schema/blueprint"
+    xmlns:cxf="http://camel.apache.org/schema/blueprint/cxf" xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+	xsi:schemaLocation="
+             http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+             http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+             http://cxf.apache.org/blueprint/jaxws http://cxf.apache.org/schemas/blueprint/jaxws.xsd
+             http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
+             http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
+             ">
+
+	<!-- The camel context which registers the route -->
+	<camel:camelContext id="fusequickstart-cxf-rest"
+		xmlns="http://camel.apache.org/schema/blueprint">
+		<!-- Package Scanning finds the Routes -->
+		<packageScan>
+			<package>com.redhat.consulting.fusequickstarts.karaf.rest.beanvalidation.route</package>
+		</packageScan>
+	</camel:camelContext>
+  
+     <!-- RS Client for requests to endpoint -->
+     <cxf:rsClient id="rsClient" address="http://localhost:8183"
+                   serviceClass="com.redhat.consulting.fusequickstarts.karaf.rest.beanvalidation.resource.MyResource" loggingFeatureEnabled="true"/>
+     
+     <!-- RS Service for consuming from the endpoint -->
+     <cxf:rsServer id="rsServer" address="http://localhost:8183"
+                   loggingFeatureEnabled="true">
+
+		<cxf:serviceBeans>
+			<bean class="com.redhat.consulting.fusequickstarts.karaf.rest.beanvalidation.resource.MyResourceImpl"/>
+		</cxf:serviceBeans>
+
+		<cxf:providers>
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+		</cxf:providers>
+		<!-- Ban validation cxf feature -->
+		<cxf:features>
+			<bean class="org.apache.cxf.validation.BeanValidationFeature">
+				<property name="provider" ref="beanValidationProvider"/>
+			</bean>
+		</cxf:features>
+	</cxf:rsServer>
+
+	<bean id="beanValidationProvider" class="org.apache.cxf.validation.BeanValidationProvider">
+		<argument ref="validationProviderResolver"/>
+	</bean>
+
+	<!-- Ban validation resolver -->
+	<bean id="validationProviderResolver" class="com.redhat.consulting.fusequickstarts.karaf.rest.beanvalidation.resolver.HibernateValidationProviderResolver"/>
+
+</blueprint>
