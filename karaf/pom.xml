@@ -27,6 +27,7 @@
 		<module>properties</module>
 		<module>properties_encryption</module>
 		<module>rest</module>
+		<module>rest_beanvalidation</module>
 		<module>rest_dsl</module>
 		<module>rest_dsl_basic_auth</module>
 		<module>rest_dsl_simple</module>
