@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.camel.CamelContext;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceRegistration;

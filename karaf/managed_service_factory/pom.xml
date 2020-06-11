@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>managed_service_factory</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Managed Service Factory</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: Managed Service Factory</name>
 
 	<packaging>bundle</packaging>
 
@@ -39,8 +39,8 @@
 
 		<!-- Commons -->
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
 
 

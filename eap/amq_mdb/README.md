@@ -3,8 +3,8 @@ Route Deployment Camel EAP example
 This example deploys two basic Camel routes using the Camel Subsystem in EAP. A Message Driven Bean (MDB) is used to move the message to the Consumer route.
 
 ### Requirements:
- * JBoss Fuse 6.3.0
- * JBoss EAP 6.4.0
+ * Red Hat Fuse 7.6.0
+ * JBoss EAP 7.2.5
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
  * ActiveMQ Resource Adapter (http://activemq.apache.org/resource-adapter.html)
@@ -24,9 +24,9 @@ Configuring the ActiveMQ Resource Adapter
 https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_A-MQ/6.1/html/Integrating_with_JBoss_Enterprise_Application_Platform/DeployRar-InstallRar.html
 
 
-Installing JBoss Fuse
+Installing Red Hat Fuse
 -----------------------
-Download JBoss Fuse from here: https://www.jboss.org/products/fuse/overview/ and extract the Archive.
+Download Red Hat Fuse from [here](https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=jboss.fuse&downloadType=distributions) and extract the Archive.
 
 To start up Fuse browse to your fuse install directory. Then run
 

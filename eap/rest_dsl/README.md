@@ -5,8 +5,8 @@ This example deploys a basic Rest service using Rest DSL with JAX-RS in EAP with
 
 ### Requirements:
 
- * JBoss Fuse 6.3.0
- * JBoss EAP 6.4.0
+ * Red Hat Fuse 7.6.0
+ * JBoss EAP 7.2.5
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
@@ -47,7 +47,7 @@ Once you have the war deployed with the routes started, you should be able to us
 
 ### Base Path
 
-    http://localhost:8080/eap-rest-dsl-6.3/rest/
+    http://localhost:8080/eap-rest-dsl-7.6/rest/
 
 ### Rest Services
 

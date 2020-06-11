@@ -3,8 +3,8 @@ Route Deployment Camel EAP example
 This example deploys two basic Camel routes using the Camel Subsystem in EAP.
 
 ### Requirements:
- * JBoss Fuse 6.3.0
- * JBoss EAP 6.4.0
+ * Red Hat Fuse 7.6.0
+ * JBoss EAP 7.2.5
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 

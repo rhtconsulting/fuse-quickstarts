@@ -4,7 +4,7 @@ This project is a simple Rest DSL Camel route. It is an osgi bundle that can be 
 Fuse. It is very minimal and configured with Blueprint. 
 
 ### Requirements:
- * JBoss Fuse 6.3.0 
+ * Red Hat Fuse 7.6.0 
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
@@ -17,7 +17,7 @@ To build the project.
 
 This will build the bundle including the manifest information. 
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 
 To start up Fuse Karaf browse to your fuse install directory. Then run
@@ -30,9 +30,9 @@ bundle to install we can just install it using the file by the following command
 your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file.  Then you can use the 
 mvn syntax below.
 
-	 karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-dsl-simple/6.3/rest-dslt-6.3.jar
+	 karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-dsl-simple/7.6/rest-dslt-7.6.jar
     OR
-	 karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf.rest.dsl.simple/rest-dsl-simple/6.3
+	 karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf.rest.dsl.simple/rest-dsl-simple/7.6
 
 The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
 
@@ -59,7 +59,7 @@ Additional information about using the REST DSL with Fuse can be found here:
 
 Troubleshooting
 -----------------------
-If you run into any problems starting the Quickstart, check out some of the solutions below to get them working.
+If you run into any problems starting the Quick Start, check out some of the solutions below to get them working.
 
 ### No bean could be found in the registry for: restlet
 If you encounter errors similar to the one below when starting the route it is because you do not have the `camel-restlet` features installed.

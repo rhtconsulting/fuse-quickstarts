@@ -3,7 +3,7 @@ WebSockets
 This project demonstrates how to consume and produce WebSockets in Fuse. A web based chat application is also provided to demonstrate the functionality of the application.
 
 ### Requirements:
- * JBoss Fuse 6.3.0
+ * Red Hat Fuse 7.6.0
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
  * Internet browser supporting WebSockets
@@ -23,7 +23,7 @@ To build the project.
 
 This will build the feature file.
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 
 To start up Fuse browse to your fuse install directory. Then run
@@ -32,7 +32,7 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the fuse console. Once in the console you will be able to install your bundle. Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file. Then you can use the mvn syntax below.
 
-     karaf@root> features:addurl mvn:com.redhat.consulting.fusequickstarts.karaf.websocket/websocket_feature/6.3/xml/features
+     karaf@root> features:addurl mvn:com.redhat.consulting.fusequickstarts.karaf.websocket/websocket_feature/7.6/xml/features
      karaf@root> features:install -v fuseWebSocket
 
  The -v here stands for verbose and is optional.
@@ -42,7 +42,7 @@ Results
 After running the above commands you should see your services started:
 
     [ 286] [Active     ] [            ] [       ] [   50] camel-websocket (2.17.1.redhat-621084)
-    [ 287] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: Websocket :: Route (6.3)
+    [ 287] [Active     ] [Created     ] [       ] [   80] Fuse Quick Start :: Karaf :: Blueprint :: Websocket :: Route (7.6)
 
 Testing
 ---------------------

@@ -43,7 +43,6 @@ public class RestDslRouteTest extends CamelTestSupport {
     	BasicAuthenticator basicAuthenticator=new BasicAuthenticator();
     	securityHandler.setAuthenticator(basicAuthenticator);
     	securityHandler.addConstraintMapping(cm);
-    	securityHandler.setStrict(false);
       	HashLoginService loginService = new HashLoginService("TestRealm", "src/test/resources/testRealm.properties");
         securityHandler.setLoginService(loginService);
         

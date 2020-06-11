@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>soap</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Camel-CXF SOAP (Code First)</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: Camel-CXF SOAP (Code First)</name>
 
 	<packaging>bundle</packaging>
 

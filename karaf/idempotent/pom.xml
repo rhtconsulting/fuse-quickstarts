@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>idempotent</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGI A-MQ :: Idempotent Consumer</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: OSGI A-MQ :: Idempotent Consumer</name>
 
 	<packaging>bundle</packaging>
 	<!-- Any dependencies needed by your project -->

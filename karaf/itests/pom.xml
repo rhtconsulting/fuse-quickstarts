@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>itests</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Integration Test Suite</name>
+	<artifactId>karaf-itests</artifactId>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: Integration Test Suite</name>
 
 	<dependencies>
 

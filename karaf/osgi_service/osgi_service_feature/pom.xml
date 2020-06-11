@@ -6,11 +6,11 @@
   <parent>
     <groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service</groupId>
     <artifactId>osgi-service-parent</artifactId>
-    <version>6.3</version>
+    <version>7.6</version>
   </parent>
 
   <artifactId>osgi_service_feature</artifactId>
-  <name>Fuse Quickstart :: Karaf :: Blueprint :: OSGi Service :: Feature</name>
+  <name>Fuse Quick Start :: Karaf :: Blueprint :: OSGi Service :: Feature</name>
 
   <packaging>jar</packaging>
   <build>

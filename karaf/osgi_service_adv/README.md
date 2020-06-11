@@ -4,7 +4,7 @@ Publishing and Consuming an OSGi Service between Spring and Blueprint Bundles
 This project demonstrates how to expose a class as an OSGi Service and then reference it in a seperate bundle. Specifically it demonstrates the use of services published by Blueprint or Spring and then used by both frameworks.
 
 ### Requirements:
- * JBoss Fuse 6.3.0
+ * Red Hat Fuse 7.6.0
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
@@ -28,7 +28,7 @@ To build the project.
 
 This will build the feature file.
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 
 To start up Fuse browse to your fuse install directory. Then run

@@ -5,11 +5,11 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
 	<artifactId>eap-main</artifactId>
-	<version>6.3</version>
+	<version>7.6</version>
 	<packaging>pom</packaging>
 
-	<name>Fuse Quickstart :: EAP :: Main</name>
-	<description>Main POM for the EAP Quickstarts. </description>
+	<name>Fuse Quick Start :: EAP :: Main</name>
+	<description>Main POM for the EAP Quick Starts. </description>
 	
 	<modules>
 	  <module>parent</module>

@@ -5,11 +5,11 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts</groupId>
 	<artifactId>main</artifactId>
-	<version>6.3</version>
+	<version>7.6</version>
 	<packaging>pom</packaging>
 
-	<name>Fuse Quickstart :: Main</name>
-	<description>Main POM for the Quickstarts.</description>
+	<name>Fuse Quick Start :: Main</name>
+	<description>Main POM for the Fuse Quick Starts.</description>
 
 	<modules>
 		<module>karaf</module>

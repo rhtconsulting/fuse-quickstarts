@@ -6,11 +6,11 @@
   <parent>
     <groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_ds</groupId>
     <artifactId>osgi-ds-parent</artifactId>
-    <version>6.3</version>
+    <version>7.6</version>
   </parent>
 
   <artifactId>osgi_ds_consumer</artifactId>
-  <name>Fuse Quickstart :: Karaf :: Blueprint :: OSGi Declarative Services :: Consumer</name>
+  <name>Fuse Quick Start :: Karaf :: Blueprint :: OSGi Declarative Services :: Consumer</name>
   
   <packaging>bundle</packaging>
     <!-- Any dependencies needed by your project -->
@@ -30,10 +30,6 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.camel</groupId>

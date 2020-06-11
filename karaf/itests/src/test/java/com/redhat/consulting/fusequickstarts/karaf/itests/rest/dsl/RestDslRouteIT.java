@@ -44,6 +44,9 @@ public class RestDslRouteIT {
     @Test
     public void testRestGet() throws Exception {
 
+        // Give camel a little time to start listening
+        Thread.sleep(1000);
+
         // Configure HTTP Client
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpget = new HttpGet("http://localhost:8182/rest/message");
@@ -81,6 +84,10 @@ public class RestDslRouteIT {
      */
     @Test
     public void testRestPost() throws Exception {
+
+        // Give camel a little time to start listening
+        Thread.sleep(1000);
+
         // Configure HTTP Client
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpPost httppost = new HttpPost("http://localhost:8182/rest/message");

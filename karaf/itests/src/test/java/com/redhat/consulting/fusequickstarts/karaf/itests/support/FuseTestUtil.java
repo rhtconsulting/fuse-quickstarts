@@ -2,11 +2,7 @@ package com.redhat.consulting.fusequickstarts.karaf.itests.support;
 
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
-import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
-import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
-import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
-import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
-import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
+import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -49,7 +45,7 @@ public class FuseTestUtil {
     // Set Maven Coordinates for Fuse Zip
     public static final String GROUP_ID = "org.jboss.fuse";
     public static final String ARTIFACT_ID = "jboss-fuse";
-    public static final String VERSION = "6.3.0.GA";
+    public static final String VERSION = "7.6.0.GA";
 
     // Adjust ports so they don't conflict with other tests/running versions of Fuse
     public static final String RMI_SERVER_PORT = "44445";
@@ -90,7 +86,7 @@ public class FuseTestUtil {
                 karafDistributionConfiguration()
                         // Extract/Install Fuse
                         .frameworkUrl(maven().groupId(GROUP_ID).artifactId(ARTIFACT_ID).version(VERSION).type("zip"))
-                        .karafVersion("2.3.0").useDeployFolder(false).name("JBoss Fuse")
+                        .karafVersion("4.2.6").useDeployFolder(false).name("Red Hat Fuse")
                         .unpackDirectory(new File("target/paxexam/unpack")),
                 configureConsole().ignoreLocalConsole(),
 
@@ -123,8 +119,9 @@ public class FuseTestUtil {
                 // Set Logging Level
                 logLevel(LogLevelOption.LogLevel.INFO),
 
-                // Uncomment to keep Exploded Fuse Installation Directory after Testing
-                // keepRuntimeFolder(),
+                // Comment to remove Exploded Fuse Installation Directory after Testing
+                // (otherwise, leaving it in will assume mvn clean is responsible for removing the directory)
+                keepRuntimeFolder(),
 
         };
     };

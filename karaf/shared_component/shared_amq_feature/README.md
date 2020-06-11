@@ -3,7 +3,7 @@ Shared AMQ Component Feature
 This builds the feature file for deploying the Shared AMQ Component and Route Bundles.
 
 ### Requirements:
- * JBoss Fuse 6.3.0
+ * Red Hat Fuse 7.6.0
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
@@ -23,7 +23,7 @@ To build the project.
 
 This will build the feature file.
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 
 To start up Fuse browse to your fuse install directory. Then run
@@ -32,7 +32,7 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the fuse console. Once in the console you will be able to install your bundle. Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file. Then you can use the mvn syntax below.
 
-     karaf@root> features:addurl mvn:com.redhat.consulting.fusequickstarts.karaf.shared_component/shared_amq_feature/6.3/xml/features
+     karaf@root> features:addurl mvn:com.redhat.consulting.fusequickstarts.karaf.shared_component/shared_amq_feature/7.6/xml/features
        
      karaf@root> features:install -v sharedAmqExample
 
@@ -42,8 +42,8 @@ Results
 -----------------------
 After running the above commands you should see your services started:
 
-	[ 286] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: Shared Component :: OSGI Shared A-MQ (ActiveMQ) Routes (6.3)
-	[ 287] [Active     ] [Created     ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: Shared Component :: OSGI Shared A-MQ (ActiveMQ) Component (6.3)
+	[ 286] [Active     ] [Created     ] [       ] [   80] Fuse Quick Start :: Karaf :: Blueprint :: Shared Component :: OSGI Shared A-MQ (ActiveMQ) Routes (7.6)
+	[ 287] [Active     ] [Created     ] [       ] [   80] Fuse Quick Start :: Karaf :: Blueprint :: Shared Component :: OSGI Shared A-MQ (ActiveMQ) Component (7.6)
 
 Once you have the route started you should be able to look in `$FUSE_HOME/data/log/fuse.log` and see the following logging:
 
@@ -67,6 +67,6 @@ Troubleshooting
 
 **Error resolving artifact com.redhat.consulting.fusequickstarts.karaf**
 
-If you get this error it means that you need to build the missing quickstart so that it will be installed into your local maven repository. Otherwise the Feature will not be able to locate the bundle to install it.
+If you get this error it means that you need to build the missing Quick Start so that it will be installed into your local maven repository. Otherwise the Feature will not be able to locate the bundle to install it.
 
 

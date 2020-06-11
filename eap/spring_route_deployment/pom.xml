@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
 		<artifactId>eap-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>spring-route-deployment</artifactId>
 	<packaging>war</packaging>
-	<name>Fuse Quickstart :: EAP :: Spring Route Deployment</name>
+	<name>Fuse Quick Start :: EAP :: Spring Route Deployment</name>
 	<!-- Any dependencies needed by your project -->
 	<!-- With spring the dependencies often need to be packaged with the war to avoid classloading issues in EAP -->
 	<dependencies>

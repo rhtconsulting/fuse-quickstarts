@@ -1,8 +1,10 @@
-# JBoss Fuse on Karaf Quickstarts #
-This is a collection of Quick Starts designed to be run on JBoss Fuse on Karaf. All of these projects are written using Blueprint and the Java DSL unless otherwise noted.
+# Red Hat Fuse on Karaf Quick Starts #
+This is a collection of Quick Starts designed to be run on Red Hat Fuse on Karaf. All of
+these projects are written using Blueprint and the Java DSL unless otherwise noted.
 
 ## Basic Examples ##
-These examples are designed to demonstrate a single component or feature without much advanced or complex functionality. This is a good place for beginners to start.
+These examples are designed to demonstrate a single component or feature without much
+advanced or complex functionality. This is a good place for beginners to start.
 
  * [Blueprint - Basic Route Deployment](route_deployment)
  * [Blueprint - OSGi Services](osgi_service)
@@ -19,7 +21,8 @@ These examples are designed to demonstrate a single component or feature without
  * [Blueprint - JPA](jpa)
 
 ## Advanced Examples ##
-These examples build upon the basic examples to demonstrate more advanced features or functionality. These examples assume a basic understanding of Fuse and its components.
+These examples build upon the basic examples to demonstrate more advanced features
+or functionality. These examples assume a basic understanding of Fuse and its components.
 
  * [Blueprint - Encrypting Properties with Jasypt](properties_encryption)
  * [Blueprint - REST DSL with Transformations](rest_dsl)
@@ -34,3 +37,7 @@ These examples build upon the basic examples to demonstrate more advanced featur
  * [Declarative Services - OSGi Services and Basic Route Deployment](osgi_ds)
  * [Pax Exam Integration Test Suite](itests)
  * [Idempotent Consumer with Guava based Idempotent Repository](idempotent)
+
+## See Also
+
+Additional Fuse Quick Starts on Karaf may be found at https://github.com/jboss-fuse/karaf-quickstarts/
