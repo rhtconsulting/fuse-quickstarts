@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxws:bindings
+        xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+        wsdlLocation="../resources/wsdl/command-example.wsdl">
+
+    <!-- Move service class to the following package (pom.xml moves all other classes to a .model package -->
+    <jaxws:package name="com.redhat.consulting.jaxws.commandexample"/>
+
+    <!-- No body data to handle; so use wrapper style for more straightforward method signatures -->
+    <jaxws:enableWrapperStyle>true</jaxws:enableWrapperStyle>
+
+</jaxws:bindings>

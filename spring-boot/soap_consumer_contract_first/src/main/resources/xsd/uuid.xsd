@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://consulting.redhat.com/common/xsd/uuid.xsd"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="uuid-type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

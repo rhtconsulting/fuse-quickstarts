@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd">
+
+    <cxf:cxfEndpoint id="customerOrderExampleWebService"
+                     address="/customerOrderExample"
+                     wsdlURL="classpath:wsdl/customer-order-example.wsdl"
+                     serviceClass="com.redhat.consulting.jaxws.customerorderexample.CustomerOrderExample"/>
+
+    <cxf:cxfEndpoint id="commandExampleWebService"
+                     address="/commandExample"
+                     wsdlURL="classpath:wsdl/command-example.wsdl"
+                     serviceClass="com.redhat.consulting.jaxws.commandexample.CommandExample"/>
+
+</beans>

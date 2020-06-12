@@ -14,6 +14,7 @@
 	<modules>
 		<module>karaf</module>
 		<module>eap</module>
+		<module>spring-boot</module>
 	</modules>
 
 </project>
