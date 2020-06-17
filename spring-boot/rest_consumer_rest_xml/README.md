@@ -7,6 +7,14 @@ automatically scanned by Camel in the Spring Boot context.
  * Maven 3.0 or greater (http://maven.apache.org)
  * Java 8
 
+## Notes About Quick Start Implementation ##
+
+Files within the [classpath:camel-rest/*.xml](src/main/resources/camel-rest) directory are automatically scanned and
+included into the Camel context. (This is configurable in the [application.yaml](src/main/resources/config/application.yaml)
+file.)
+
+For this Quick Start, the REST XML is implemented in the file named [user-management.xml](src/main/resources/camel-rest/user-management.xml).
+
 ## Building ##
 To build the project, run the command:
 

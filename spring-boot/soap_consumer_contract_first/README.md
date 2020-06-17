@@ -7,6 +7,31 @@ running on Spring Boot.
  * Maven 3.0 or greater (http://maven.apache.org)
  * Java 8
 
+## Notes About Quick Start Implementation ##
+
+The WSDL files used for contract-first development are contained in the
+[classpath:wsdl/*](src/main/resources/wsdl) directory:
+
+ * [command-example.wsdl](src/main/resources/wsdl/command-example.wsdl)
+ * [customer-order-example.wsdl](src/main/resources/wsdl/customer-order-example.wsdl)
+
+From the `customer-order-example.wsdl`, reference is made to an external XSD to demonstrate shared
+XSDs and custom XML value types:
+
+ * [uuid.xsd](src/main/resources/xsd/uuid.xsd)
+
+To aid in the customization of Java class generation from this contract-first development, several XJB
+files are available in the [src/main/xjb](src/main/xjb) directory and referenced from the `pom.xml`.
+Note that the binding list within `pom.xml` must also include any externally referenced XSD in order
+to generate properly.
+
+After the Java classes are generated from the WSDLs, they are declared to Camel in
+a [Spring configuration file](src/main/resources/config/cxf-endpoint-beans.xml). Once the beans are
+declared, they are usable from Camel routes:
+
+ * [CommandExampleRoute.java](src/main/java/com/redhat/consulting/fusequickstarts/springboot/soapconsumer/contractfirst/CommandExampleRoute.java)
+ * [CustomerOrderExampleRoute.java](src/main/java/com/redhat/consulting/fusequickstarts/springboot/soapconsumer/contractfirst/CustomerOrderExampleRoute.java)
+
 ## Building ##
 To build the project, run the command:
 

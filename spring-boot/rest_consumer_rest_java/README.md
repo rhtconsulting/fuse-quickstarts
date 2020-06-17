@@ -6,6 +6,10 @@ This Quick Start demonstrates a REST consumer implemented using Camel's REST Jav
  * Maven 3.0 or greater (http://maven.apache.org)
  * Java 8
 
+## Notes About Quick Start Implementation ##
+
+The REST Java DSL is implemented in [UserManagementRoute.java](src/main/java/com/redhat/consulting/fusequickstarts/springboot/restconsumer/restjavadsl/UserManagementRoute.java)
+
 ## Building ##
 To build the project, run the command:
 

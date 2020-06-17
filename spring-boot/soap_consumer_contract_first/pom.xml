@@ -136,15 +136,13 @@
                                     <validateWsdl>true</validateWsdl>
                                     <packagenames>
                                         <!-- Binding File will move web service classes to a different package -->
-                                        <packagename>com.redhat.consulting.jaxws.customerorderexample.model
-                                        </packagename>
+                                        <packagename>com.redhat.consulting.jaxws.customerorderexample.model</packagename>
                                     </packagenames>
                                     <extraargs>
                                         <extraarg>-verbose</extraarg>
                                     </extraargs>
                                     <bindingFiles>
-                                        <bindingFile>${project.basedir}/src/main/xjb/customer-order-example.xjb
-                                        </bindingFile>
+                                        <bindingFile>${project.basedir}/src/main/xjb/customer-order-example.xjb</bindingFile>
                                         <bindingFile>${project.basedir}/src/main/xjb/global.xjb</bindingFile>
                                         <bindingFile>${project.basedir}/src/main/xjb/uuid.xjb</bindingFile>
                                         <!-- External XSDs must also be listed as binding files -->
