@@ -20,6 +20,7 @@
         <version.maven-surefire-plugin>2.12.4</version.maven-surefire-plugin>
         <version.maven-failsafe-plugin>2.12.4</version.maven-failsafe-plugin>
         <version.jacoco>0.8.5</version.jacoco>
+        <version.commons-collections4>4.4</version.commons-collections4>
 
         <!-- versions copied from parent poms -->
         <version.cxf>3.2.7.fuse-sb2-760024-redhat-00001</version.cxf>
@@ -34,6 +35,11 @@
                 <version>${version.fuse}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${version.commons-collections4}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

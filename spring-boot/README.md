@@ -11,4 +11,6 @@ All of these projects are written using the Java DSL unless otherwise noted.
 These examples are designed to demonstrate a single component or feature without much advanced
 or complex functionality. This is a good place for beginners to start.
 
+ * [Camel on Spring Boot - REST Consumer (using REST Java DSL)](rest_consumer_rest_java)
+ * [Camel on Spring Boot - REST Consumer (using REST XML)](rest_consumer_rest_xml)
  * [Camel on Spring Boot - SOAP WebService Consumer (Contract First)](soap_consumer_contract_first)
