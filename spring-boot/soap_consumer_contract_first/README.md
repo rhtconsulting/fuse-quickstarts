@@ -32,12 +32,25 @@ For example:
 This will launch the application using an embedded Undertow server (as configured in
 the `pom.xml`). Once the application is ready, you should see log messages similar to the following:
 
-    22:48:04.250 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8080 (http) with context path ''
-    22:48:04.366 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
-    22:48:04.366 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 111 ms
-    22:48:04.406 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
-    22:48:04.468 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8081 (http) with context path ''
-    22:48:04.471 [main] INFO  c.r.c.f.s.s.c.Application - Started Application in 5.686 seconds (JVM running for 9.193)
+    19:10:35.487 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://consulting.redhat.com/wsdl/command-example-service.wsdl}CommandExampleService from WSDL: classpath:wsdl/command-example.wsdl
+    19:10:35.608 [main] INFO  org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be /commandExample
+    19:10:35.667 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean - Creating Service {http://consulting.redhat.com/wsdl/customer-order-example-service.wsdl}CustomerOrderExampleService from WSDL: classpath:wsdl/customer-order-example.wsdl
+    19:10:35.703 [main] INFO  org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be /customerOrderExample
+    19:10:35.730 [main] INFO  o.a.camel.spring.SpringCamelContext - Route: commandExampleEndpoint started and consuming from: cxf://bean:commandExampleWebService?dataFormat=POJO
+    19:10:35.730 [main] INFO  o.a.camel.spring.SpringCamelContext - Route: commandExampleExecuteNow started and consuming from: direct://commandExampleExecuteNow
+    19:10:35.731 [main] INFO  o.a.camel.spring.SpringCamelContext - Route: customerOrderExampleEndpoint started and consuming from: cxf://bean:customerOrderExampleWebService?dataFormat=POJO
+    19:10:35.732 [main] INFO  o.a.camel.spring.SpringCamelContext - Route: customerOrderExamplePlaceOrder started and consuming from: direct://customerOrderExamplePlaceOrder
+    19:10:35.732 [main] INFO  o.a.camel.spring.SpringCamelContext - Route: customerOrderExampleGetOrder started and consuming from: direct://customerOrderExampleGetOrder
+    19:10:35.732 [main] INFO  o.a.camel.spring.SpringCamelContext - Total 5 routes, of which 5 are started
+    ...
+    ...
+    ...
+    19:10:35.785 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8080 (http) with context path ''
+    19:10:35.836 [main] INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+    19:10:35.837 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 49 ms
+    19:10:35.856 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+    19:10:35.899 [main] INFO  o.s.b.w.e.u.UndertowServletWebServer - Undertow started on port(s) 8081 (http) with context path ''
+    19:10:35.901 [main] INFO  c.r.c.f.s.s.c.Application - Started Application in 3.656 seconds (JVM running for 4.108)
 
 ## Manual Testing ##
 Manual testing may be performed while running the application. The list of deployed SOAP Web Services

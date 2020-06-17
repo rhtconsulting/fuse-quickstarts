@@ -30,13 +30,13 @@ import static org.junit.Assert.assertThat;
 public class CommandExampleRouteIntegrationTest {
 
     private static final ObjectFactory COMMAND_FACTORY = new ObjectFactory();
+
     @EndpointInject(uri = "mock:stub:direct:execute-command-now")
     MockEndpoint mockEndpoint;
+
     @LocalServerPort
     private int localServerPort;
     private WebServiceTemplate webServiceTemplate;
-    @Autowired
-    private CamelContext camelContext;
 
     @Before
     public void setUp() throws Exception {
@@ -56,8 +56,6 @@ public class CommandExampleRouteIntegrationTest {
                         .toUriString())
                 .build();
         webServiceTemplate.afterPropertiesSet();
-
-        camelContext.setAutoStartup(false);
     }
 
     @Test
