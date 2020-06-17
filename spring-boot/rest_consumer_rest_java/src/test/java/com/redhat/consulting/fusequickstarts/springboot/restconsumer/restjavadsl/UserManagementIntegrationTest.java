@@ -43,12 +43,10 @@ public class UserManagementIntegrationTest {
 
     @Before
     public void setUp() throws Exception {
+        // Set autoStartup to true on routes within the groups specified by INCLUDED_ROUTE_GROUPS
+        // Note: You could similarly filter on routeDefinition.getId() for the route ID.
         camelContext.getRouteDefinitions()
-                .stream()
-                // Set autoStartup to true on routes within the groups specified by INCLUDED_ROUTE_GROUPS
-                // Note: You could similarly filter on routeDefinition.getId() for the route ID.
-                .filter(routeDefinition -> INCLUDED_ROUTE_GROUPS.contains(routeDefinition.getGroup()))
-                .forEach(routeDefinition -> routeDefinition.autoStartup(true));
+                .forEach(routeDefinition -> routeDefinition.autoStartup(INCLUDED_ROUTE_GROUPS.contains(routeDefinition.getGroup())));
 
         // Start with empty user list (not restarting context between tests; per @DirtiesContext above)
         userService.getUsersById().clear();

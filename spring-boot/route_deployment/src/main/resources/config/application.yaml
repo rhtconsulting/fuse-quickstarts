@@ -1,0 +1,13 @@
+logging:
+  config: classpath:config/logback.xml
+
+camel:
+  springboot:
+    name: Basic Route Deployment
+
+    # Since spring-boot-starter-web is not included, this config lets Camel keep the container running
+    # Without this, the container would shutdown as soon as it finishes initializing
+    main-run-controller: true
+
+    # Default is classpath:camel/*.xml
+    xml-routes: classpath:camel-routes/*.xml

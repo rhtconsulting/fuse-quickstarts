@@ -1,0 +1,7 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="routeOne" group="camelXmlRoutes">
+        <from uri="timer:routeOneTimer?fixedRate=true&amp;period=5s"/>
+        <log message="Timer triggered in routeOne (from route-one.xml)"/>
+        <to uri="stub:routeEnd"/>
+    </route>
+</routes>
