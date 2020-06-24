@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
+		<version.maven.compiler.plugin>3.8.0</version.maven.compiler.plugin>
 		<version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
 		<version.maven.bundle.plugin>4.2.1</version.maven.bundle.plugin>
 		<version.cxf-codegen-plugin>3.2.7.fuse-760026-redhat-00001</version.cxf-codegen-plugin>
@@ -72,6 +72,10 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${version.maven.compiler.plugin}</version>
+					<configuration>
+            			<source>1.8</source>
+            			<target>1.8</target>
+        			</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>

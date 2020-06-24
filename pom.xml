@@ -10,7 +10,6 @@
 
 	<name>Fuse Quick Start :: Main</name>
 	<description>Main POM for the Fuse Quick Starts.</description>
-
 	<modules>
 		<module>karaf</module>
 		<module>eap</module>

@@ -12,7 +12,6 @@
 
   <artifactId>amq</artifactId>
   <name>Fuse Quick Start :: Karaf :: Blueprint :: OSGI A-MQ (ActiveMQ)</name>
-  
   <packaging>bundle</packaging>
     <!-- Any dependencies needed by your project -->
     <dependencies>

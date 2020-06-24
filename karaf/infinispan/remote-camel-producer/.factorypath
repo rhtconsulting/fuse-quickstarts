@@ -1,0 +1,26 @@
+<factorypath>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/camel/camel-jbossdatagrid/6.5.1.Final-redhat-1/camel-jbossdatagrid-6.5.1.Final-redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/infinispan/infinispan-embedded/6.3.1.Final-redhat-1/infinispan-embedded-6.3.1.Final-redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final-redhat-2/jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/infinispan/infinispan-remote/6.3.1.Final-redhat-1/infinispan-remote-6.3.1.Final-redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/infinispan/infinispan-remote-query-client/6.3.1.Final-redhat-1/infinispan-remote-query-client-6.3.1.Final-redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/infinispan/infinispan-commons/6.3.1.Final-redhat-1/infinispan-commons-6.3.1.Final-redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/jboss/logging/jboss-logging/3.4.0.Final-redhat-00001/jboss-logging-3.4.0.Final-redhat-00001.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/osgi/org.osgi.core/6.0.0/org.osgi.core-6.0.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/osgi/org.osgi.compendium/4.3.1/org.osgi.compendium-4.3.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/infinispan/protostream/protostream/3.0.2.Final-redhat-1/protostream-3.0.2.Final-redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/google/protobuf/protobuf-java/2.6.0.redhat-1/protobuf-java-2.6.0.redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/squareup/protoparser/3.1.4.redhat-1/protoparser-3.1.4.redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/commons-cli/commons-cli/1.2.redhat-4/commons-cli-1.2.redhat-4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/infinispan/infinispan-query-dsl/6.3.1.Final-redhat-1/infinispan-query-dsl-6.3.1.Final-redhat-1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/camel/apt/2.21.0.fuse-760027-redhat-00001/apt-2.21.0.fuse-760027-redhat-00001.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/camel/spi-annotations/2.21.0.fuse-760027-redhat-00001/spi-annotations-2.21.0.fuse-760027-redhat-00001.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/camel/json-simple-ordered/2.21.0.fuse-760027-redhat-00001/json-simple-ordered-2.21.0.fuse-760027-redhat-00001.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/camel/camel-core/2.21.0.fuse-760027-redhat-00001/camel-core-2.21.0.fuse-760027-redhat-00001.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/slf4j-api/1.7.22.redhat-2/slf4j-api-1.7.22.redhat-2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/slf4j/slf4j-log4j12/1.7.22.redhat-2/slf4j-log4j12-1.7.22.redhat-2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/log4j/log4j/1.2.17.redhat-3/log4j-1.2.17.redhat-3.jar" enabled="true" runInBatchMode="false"/>
+</factorypath>
