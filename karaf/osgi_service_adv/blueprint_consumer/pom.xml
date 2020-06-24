@@ -7,10 +7,10 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
 		<artifactId>osgi-service-adv-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 	</parent>
 
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGi Advanced Service :: Blueprint Consumer</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: OSGi Advanced Service :: Blueprint Consumer</name>
 	<artifactId>blueprint_consumer</artifactId>
   
   <packaging>bundle</packaging>

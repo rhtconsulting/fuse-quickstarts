@@ -5,16 +5,21 @@
 
 	<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 	<artifactId>karaf-parent</artifactId>
-	<version>6.3</version>
+	<version>7.6</version>
 	<packaging>pom</packaging>
 
-	<name>Fuse Quickstart :: Karaf :: Parent</name>
+	<name>Fuse Quick Start :: Karaf :: Parent</name>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 		<version.maven.compiler.plugin>3.2</version.maven.compiler.plugin>
-		<version.slf4j>1.7.6</version.slf4j>
-		<version.rest-assured>2.7.0</version.rest-assured>
-		<jboss.fuse.bom.version>6.3.0.redhat-224</jboss.fuse.bom.version>
+		<version.maven-surefire-plugin>2.22.2</version.maven-surefire-plugin>
+		<version.maven.bundle.plugin>4.2.1</version.maven.bundle.plugin>
+		<version.cxf-codegen-plugin>3.2.7.fuse-760026-redhat-00001</version.cxf-codegen-plugin>
+		<version.build-helper-maven-plugin>1.9.1</version.build-helper-maven-plugin>
+		<redhat.fuse.bom.version>7.6.0.fuse-760027-redhat-00001</redhat.fuse.bom.version>
 		<datagrid.version>6.5.1.Final-redhat-1</datagrid.version>
 		<infinispan.version>6.3.1.Final-redhat-1</infinispan.version> <!-- for JDG 6.5 -->
 	</properties>
@@ -22,27 +27,16 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.jboss.fuse.bom</groupId>
-				<artifactId>jboss-fuse-parent</artifactId>
-				<version>${jboss.fuse.bom.version}</version>
+				<groupId>org.jboss.redhat-fuse</groupId>
+				<artifactId>fuse-karaf-bom</artifactId>
+				<version>${redhat.fuse.bom.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${version.slf4j}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.jayway.restassured</groupId>
-				<artifactId>rest-assured</artifactId>
-				<version>${version.rest-assured}</version>
-				<scope>test</scope>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+				<version>1.1.3</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.camel</groupId>
@@ -79,111 +73,63 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${version.maven.compiler.plugin}</version>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${version.maven-surefire-plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>${version.maven.bundle.plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.cxf</groupId>
+					<artifactId>cxf-codegen-plugin</artifactId>
+					<version>${version.cxf-codegen-plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>${version.build-helper-maven-plugin}</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
 
 	<repositories>
 		<repository>
-			<id>redhat-techpreview-all-repository</id>
-			<name>Red Hat Tech Preview repository (all)</name>
-			<url>http://maven.repository.redhat.com/techpreview/all/</url>
+			<id>redhat-ga-repository</id>
+			<name>Red Hat General Availability repository (all)</name>
+			<url>https://maven.repository.redhat.com/ga/</url>
 			<layout>default</layout>
 			<releases>
 				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>redhat-ea-repository</id>
-			<name>Red Hat Early Access repository (all)</name>
-			<url>https://maven.repository.redhat.com/earlyaccess/all/</url>
-			<layout>default</layout>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>fusesource.releases</id>
-			<name>FuseSource Release Repository</name>
-			<url>http://repo.fusesource.com/nexus/content/repositories/releases</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>fusesource.public</id>
-			<name>FuseSource Release Repository</name>
-			<url>http://repo.fusesource.com/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
 			</snapshots>
 		</repository>
 	</repositories>
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>redhat-techpreview-all-repository</id>
-			<name>Red Hat Tech Preview repository (all)</name>
-			<url>http://maven.repository.redhat.com/techpreview/all/</url>
+			<id>redhat-ga-repository</id>
+			<name>Red Hat General Availability repository (all)</name>
+			<url>https://maven.repository.redhat.com/ga/</url>
 			<layout>default</layout>
 			<releases>
 				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
 			</releases>
 			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>redhat-ea-repository</id>
-			<name>Red Hat Early Access repository (all)</name>
-			<url>https://maven.repository.redhat.com/earlyaccess/all/</url>
-			<layout>default</layout>
-			<releases>
 				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
 			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>fusesource.releases</id>
-			<name>FuseSource Release Repository</name>
-			<url>http://repo.fusesource.com/nexus/content/repositories/releases</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>fusesource.public</id>
-			<name>FuseSource Release Repository</name>
-			<url>http://repo.fusesource.com/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>eviwarePluginRepository</id>
-			<url>http://www.soapui.org/repository/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
-	<description>Parent POM for Fuse on Karaf Quickstarts. Defines all Dependencies and Plugins.</description>
+	<description>Parent POM for Fuse on Karaf Quick Starts. Defines all Dependencies and Plugins.</description>
 </project>

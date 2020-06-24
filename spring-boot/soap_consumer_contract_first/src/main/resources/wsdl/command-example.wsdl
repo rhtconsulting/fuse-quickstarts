@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://consulting.redhat.com/wsdl/command-example-service.wsdl"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  name="CommandExample"
+                  targetNamespace="http://consulting.redhat.com/wsdl/command-example-service.wsdl">
+
+    <wsdl:documentation><![CDATA[
+        This describes a service that has one operation with no input and no output. This
+        might be useful for triggering a process, for example.
+    ]]></wsdl:documentation>
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://consulting.redhat.com/wsdl/command-example-service.wsdl">
+            <xs:element name="executeNow">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="ExecuteNowRequest">
+        <wsdl:part name="in" element="tns:executeNow"/>
+    </wsdl:message>
+
+    <wsdl:portType name="CommandExample">
+        <wsdl:operation name="executeNow">
+            <wsdl:input message="tns:ExecuteNowRequest"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="CommandExampleSoapBinding" type="tns:CommandExample">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="executeNow">
+            <soap:operation style="document"
+                            soapAction="http://consulting.redhat.com/wsdl/command-example-service.wsdl"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="CommandExampleService">
+        <wsdl:port binding="tns:CommandExampleSoapBinding" name="CommandExamplePort">
+            <soap:address location="http://consulting.redhat.com/soap/commandExample"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>

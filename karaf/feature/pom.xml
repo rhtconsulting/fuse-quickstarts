@@ -6,12 +6,12 @@
   <parent>
     <groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
     <artifactId>karaf-parent</artifactId>
-    <version>6.3</version>
+    <version>7.6</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
   <artifactId>feature</artifactId>
-  <name>Fuse Quickstart :: Karaf :: Blueprint :: OSGI Feature</name>
+  <name>Fuse Quick Start :: Karaf :: Blueprint :: OSGI Feature</name>
 
   <packaging>jar</packaging>
   <build>

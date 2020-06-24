@@ -3,7 +3,7 @@ Camel Idempotent Consumer example
 This example deploys two basic Camel routes using ActiveMQ. Both are deployed using package scanning. The first one produces a simple text message with header and sends it to the queue. The second route uses an Idempotent Consumer with a custom Idempotent Repository to retrieve the messages and eliminate duplicated within a given timeframe.
 
 ### Requirements:
- * JBoss Fuse 6.3
+ * Red Hat Fuse 7.6
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
@@ -15,7 +15,7 @@ To build the project.
 
 This will build the bundle including the manifest information.
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 
 To start up Fuse browse to your fuse install directory. Then run
@@ -24,7 +24,7 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the fuse console. Once in the console you will be able to install your bundle. Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file. Then you can use the mvn syntax below.
 
-     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/idempotent/6.3/idempotent-<VERSION>.jar
+     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/idempotent/7.6/idempotent-<VERSION>.jar
         OR
      karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/idempotent/<VERSION>
 

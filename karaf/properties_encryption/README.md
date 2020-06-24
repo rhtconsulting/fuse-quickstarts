@@ -5,7 +5,7 @@ OSGi Config Admin Service with Jasypt Encryption example
  This project is a simple Camel route the pulls encrypted properties from the OSGi Config Admin Service and then logs the decrypted value. It is an osgi bundle that can be installed on Fuse Karaf. It is very minimal and configured with Blueprint.
 
 ### Requirements:
- * JBoss Fuse 6.3.0
+ * Red Hat Fuse 7.6.0
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
@@ -53,13 +53,13 @@ At this point Fuse is configured for using Jasypt. Follow the steps in the next 
 
 > **Note:** In a production (or possible even QA/Test) environment you should unset the `$JASYPT_ENCRYPTION_PASSWORD` Environment Variable after starting Fuse. This ensures there will be minimum risk of exposing the master password. The Jasypt library retains the master password in encrypted form in memory.
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2  repository in fuse in the `fuse/etc/org.ops4j.pax.url.mvn.cfg` file.  Then you can use the mvn syntax below.
 
-     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/properties-encrypted/6.3/properties-encrypted-6.3.jar
+     karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/properties-encrypted/7.6/properties-encrypted-7.6.jar
         OR
-     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/properties-encrypted/6.3
+     karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/properties-encrypted/7.6
 
  The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
 

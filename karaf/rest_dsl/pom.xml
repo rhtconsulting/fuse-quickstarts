@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>rest-dsl</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Camel REST DSL</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: Camel REST DSL</name>
 
 	<packaging>bundle</packaging>
 	<!-- Any dependencies needed by your project -->

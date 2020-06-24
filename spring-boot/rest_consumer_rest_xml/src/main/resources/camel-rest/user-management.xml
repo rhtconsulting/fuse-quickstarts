@@ -1,0 +1,48 @@
+<rests xmlns="http://camel.apache.org/schema/spring">
+    <rest path="/user" bindingMode="json">
+        <get produces="application/json">
+            <route id="listUsers" group="userManagement">
+                <log message="GET /user/ request received!"/>
+                <bean ref="userService" method="getUsers"/>
+            </route>
+        </get>
+        <get uri="/{id}"
+             produces="application/json">
+            <route id="getUser" group="userManagement">
+                <log message="GET /user/${header.id} request received!"/>
+                <transform>
+                    <simple>${header.id}</simple>
+                </transform>
+                <bean ref="userService" method="getUser"/>
+            </route>
+        </get>
+        <post consumes="application/json"
+              produces="application/json"
+              type="com.redhat.consulting.fusequickstarts.springboot.restconsumer.restxml.User">
+            <route id="createUser" group="userManagement">
+                <log message="POST /user/ request received!"/>
+                <bean ref="userService" method="createUser"/>
+                <setHeader headerName="CamelHttpResponseCode">
+                    <constant>201</constant>
+                </setHeader>
+            </route>
+        </post>
+        <put consumes="application/json"
+             produces="application/json"
+             type="com.redhat.consulting.fusequickstarts.springboot.restconsumer.restxml.User">
+            <route id="updateUser" group="userManagement">
+                <log message="PUT /user/ request received!"/>
+                <bean ref="userService" method="updateUser"/>
+            </route>
+        </put>
+        <delete uri="/{id}">
+            <route id="deleteUser" group="userManagement">
+                <log message="DELETE /user/${header.id} request received!"/>
+                <transform>
+                    <simple>${header.id}</simple>
+                </transform>
+                <bean ref="userService" method="deleteUser"/>
+            </route>
+        </delete>
+    </rest>
+</rests>

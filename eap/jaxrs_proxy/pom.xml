@@ -4,12 +4,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.eap</groupId>
 		<artifactId>eap-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 	<artifactId>jaxrs-proxy</artifactId>
 	<packaging>war</packaging>
-	<name>Fuse Quickstart :: EAP :: JAX-RS Service with CamelProxy</name>
+	<name>Fuse Quick Start :: EAP :: JAX-RS Service with CamelProxy</name>
 
 	<!-- Any dependencies needed by your project -->
 	<dependencies>

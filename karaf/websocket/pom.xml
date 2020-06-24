@@ -6,13 +6,13 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 	<packaging>pom</packaging>
 	<groupId>com.redhat.consulting.fusequickstarts.karaf.websocket</groupId>
 	<artifactId>websocket-parent</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Websocket Parent</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: Websocket Parent</name>
 	
 	<modules>
 		<module>websocket_route</module>

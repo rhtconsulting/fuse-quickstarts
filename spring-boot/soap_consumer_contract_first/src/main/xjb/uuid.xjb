@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<jxb:bindings
+        xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        schemaLocation="../resources/xsd/uuid.xsd"
+        node="//xs:schema[@targetNamespace='http://consulting.redhat.com/common/xsd/uuid.xsd']"
+        version="2.1">
+
+    <!-- Handle UUID types -->
+    <jxb:bindings node="//xs:simpleType[@name='uuid-type']">
+        <jxb:javaType name="java.util.UUID"
+                      parseMethod="java.util.UUID.fromString"
+                      printMethod="java.util.Objects.toString"/>
+    </jxb:bindings>
+
+</jxb:bindings>

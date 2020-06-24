@@ -110,19 +110,16 @@ public class PropertiesIT extends CamelTestSupport {
                     }
                 });
 
-        // Start Context
-        // Since we are using AdviceWith, Starting/Stopping the Context must be done Manually.
-        camelContext.start();
-
         // Set Assertions on Mock Endpoint
         getMockEndpoint("mock:log:PropertiesLog").expectedBodiesReceived(
                 "Reading Property 'test.foo': Hello",
                 "Reading Property 'test.bar': World");
 
-        // Wait for Message to be Sent by Timer
-        Thread.sleep(1000);
+        // Start Context
+        // Since we are using AdviceWith, Starting/Stopping the Context must be done Manually.
+        camelContext.start();
 
-        // Assert Conditions Met
+        // Assert Conditions Met -- endpoints will wait and become satisfied immediately upon receiving the last message
         assertMockEndpointsSatisfied();
 
         // Stop Context

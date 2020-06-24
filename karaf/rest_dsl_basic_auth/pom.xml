@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf</groupId>
 		<artifactId>karaf-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>rest-dsl-basic-auth</artifactId>
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Camel REST DSL w/ Basic Auth</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: Camel REST DSL w/ Basic Auth</name>
 
 	<packaging>bundle</packaging>
 	<!-- Any dependencies needed by your project -->
@@ -30,7 +30,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-jetty8</artifactId>
+			<artifactId>camel-jetty9</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>

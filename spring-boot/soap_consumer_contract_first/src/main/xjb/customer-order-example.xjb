@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxws:bindings
+        xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+        xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        wsdlLocation="../resources/wsdl/customer-order-example.wsdl">
+
+    <!-- Move service class to the following package (pom.xml moves all other classes to a .model package -->
+    <jaxws:package name="com.redhat.consulting.jaxws.customerorderexample"/>
+
+    <!-- Make it easier to handle body data; all inputs will be in one object -->
+    <jaxws:enableWrapperStyle>false</jaxws:enableWrapperStyle>
+
+    <!-- Target models that are specified directly in the WSDL -->
+    <jaxws:bindings
+            node="wsdl:definitions/wsdl:types/xs:schema[@targetNamespace='http://consulting.redhat.com/wsdl/customer-order-example-service.wsdl']">
+
+        <!-- Example to set specific options on the getOrder element -->
+        <jxb:bindings node="//xs:element[@name='getOrder']">
+            <!-- Settings would go in here -->
+        </jxb:bindings>
+    </jaxws:bindings>
+
+</jaxws:bindings>

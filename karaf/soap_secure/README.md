@@ -3,7 +3,7 @@ Camel-CXF SOAP Secure (Code First) example
 This project creates a simple Customer Order Secure SOAP service with 2 operations and exposes them via CXF. It uses a code-first approach that allows the WSDL to be automatically generated at run-time.  It uses basic authentication from the karaf context. 
  
 ### Requirements:
- * JBoss Fuse 6.3.0 
+ * Red Hat Fuse 7.6.0 
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
  
@@ -15,7 +15,7 @@ To build the project run the following Maven command:
  
 This will build the bundle including all of the manifest information. 
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 To start up Fuse browse to your fuse install directory. Then run
      
@@ -23,9 +23,9 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the Fuse console and from there you can install your bundle. To install the bundle, use one of the following commands:
  
-	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap_secure/6.3/soap_secure-6.3.jar
+	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/soap_secure/7.6/soap_secure-7.6.jar
         OR
-	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap_secure/6.3
+	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/soap_secure/7.6
  
 The `-s` indicates that the bundle should be started after it is installed. If you leave it off you can start the bundle using the following command:
     
@@ -87,7 +87,7 @@ More information about creating a Code First SOAP Web Service can be found here:
 
 Troubleshooting
 -----------------------
-If you run into any problems starting the Quickstart, check out some of the solutions below to get them working.
+If you run into any problems starting the Quick Start, check out some of the solutions below to get them working.
 
 ### javax.jws Wiring Error
 If you are seeing the following error

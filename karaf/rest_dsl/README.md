@@ -3,7 +3,7 @@ Rest DSL Camel OSGi example
  This project demonstrates how to publish a GET and POST REST Webservice using the DSL as well as how to work with JSON Objects and marshall them to a Pojo. It also has seperate routes that demonstrate how to call a REST endpoint using the HTTP4 Component. 
  
 ### Requirements:
- * JBoss Fuse 6.3.0 
+ * Red Hat Fuse 7.6.0 
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
  
@@ -16,7 +16,7 @@ To build the project.
  
 This will build the bundle including the manifest information. 
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
  
 To start up Fuse Karaf browse to your fuse install directory. Then run
@@ -26,9 +26,9 @@ To start up Fuse Karaf browse to your fuse install directory. Then run
 This will bring up the fuse console.  Once in the console you will be able to install your bundle.
 Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file.  Then you can use the mvn syntax below.
  
-	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-dsl/6.3/rest-dsl-6.3.jar
+	karaf@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-dsl/7.6/rest-dsl-7.6.jar
         OR
-	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/rest-dsl/6.3
+	karaf@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/rest-dsl/7.6
  
 The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
     
@@ -61,7 +61,7 @@ Information about Calling a REST Endpoint using HTTP4 can be found here:
 
 Troubleshooting
 -----------------------
-If you run into any problems starting the Quickstart, check out some of the solutions below to get them working.
+If you run into any problems starting the Quick Start, check out some of the solutions below to get them working.
 
 ### No bean could be found in the registry for: restlet
 If you encounter errors similar to the one below when starting the route it is because you do not have the `camel-restlet` features installed.

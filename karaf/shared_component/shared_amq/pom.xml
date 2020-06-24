@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf.shared_component</groupId>
 		<artifactId>shared-component-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 	</parent>
 	<packaging>bundle</packaging>
 	<artifactId>shared_amq</artifactId>
 
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: Shared Component :: OSGI Shared A-MQ (ActiveMQ) Component</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: Shared Component :: OSGI Shared A-MQ (ActiveMQ) Component</name>
 
 	<!-- Any dependencies needed by your project -->
 	<dependencies>

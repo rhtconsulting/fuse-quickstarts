@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://consulting.redhat.com/wsdl/customer-order-example-service.wsdl"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  name="CustomerOrderExample"
+                  targetNamespace="http://consulting.redhat.com/wsdl/customer-order-example-service.wsdl">
+
+    <wsdl:documentation><![CDATA[
+        This describes a service that has operations with some input and output values.
+    ]]></wsdl:documentation>
+
+    <wsdl:types xmlns:uuid="http://consulting.redhat.com/common/xsd/uuid.xsd">
+
+        <xs:schema targetNamespace="http://consulting.redhat.com/wsdl/customer-order-example-service.wsdl">
+            <xs:import namespace="http://consulting.redhat.com/common/xsd/uuid.xsd"
+                       schemaLocation="../xsd/uuid.xsd"/>
+
+            <xs:element name="placeOrder">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="item" type="xs:string"/>
+                        <xs:element name="quantity" type="xs:positiveInteger"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="placeOrderResult">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="orderId" type="uuid:uuid-type"/>
+                        <xs:element name="orderTime" type="xs:dateTime"/>
+                        <xs:element name="item" type="xs:string"/>
+                        <xs:element name="quantity" type="xs:positiveInteger"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="getOrder">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="orderId" type="uuid:uuid-type"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="getOrderResult">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="orderId" type="uuid:uuid-type"/>
+                        <xs:element name="orderTime" type="xs:dateTime"/>
+                        <xs:element name="item" type="xs:string"/>
+                        <xs:element name="quantity" type="xs:positiveInteger"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="CustomerOrderExamplePlaceOrderRequest">
+        <wsdl:part name="in" element="tns:placeOrder"/>
+    </wsdl:message>
+
+    <wsdl:message name="CustomerOrderExamplePlaceOrderResponse">
+        <wsdl:part name="out" element="tns:placeOrderResult"/>
+    </wsdl:message>
+
+    <wsdl:message name="CustomerOrderExampleGetOrderRequest">
+        <wsdl:part name="in" element="tns:getOrder"/>
+    </wsdl:message>
+
+    <wsdl:message name="CustomerOrderExampleGetOrderResponse">
+        <wsdl:part name="out" element="tns:getOrderResult"/>
+    </wsdl:message>
+
+    <wsdl:portType name="CustomerOrderExample">
+        <wsdl:operation name="placeOrder">
+            <wsdl:input message="tns:CustomerOrderExamplePlaceOrderRequest"/>
+            <wsdl:output message="tns:CustomerOrderExamplePlaceOrderResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOrder">
+            <wsdl:input message="tns:CustomerOrderExampleGetOrderRequest"/>
+            <wsdl:output message="tns:CustomerOrderExampleGetOrderResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="CustomerOrderExampleSoapBinding" type="tns:CustomerOrderExample">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="placeOrder">
+            <soap:operation style="document"
+                            soapAction="http://consulting.redhat.com/wsdl/customer-order-example-service.wsdl"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOrder">
+            <soap:operation style="document"
+                            soapAction="http://consulting.redhat.com/wsdl/customer-order-example-service.wsdl"/>
+            <wsdl:input>
+                <soap:body parts="in" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body parts="out" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="CustomerOrderExampleService">
+        <wsdl:port binding="tns:CustomerOrderExampleSoapBinding" name="CustomerOrderExamplePort">
+            <soap:address location="http://consulting.redhat.com/soap/customerOrderExample"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,39 @@
+logging:
+  config: classpath:config/logback.xml
+
+camel:
+  springboot:
+    name: REST Consumer (REST Java DSL)
+  component:
+    servlet:
+      mapping:
+        # Set context root for camel servlet (default is /camel/*)
+        context-path: /camel-rest/*
+
+server:
+  port: 8080
+management:
+  # Run management server on separate port
+  server:
+    port: 8081
+
+  # Only enable specific actuator endpoints
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - camelroutes
+          - camelroutecontroller
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+    camelroutes:
+      enabled: true
+      read-only: true
+    camelroutecontroller:
+      enabled: true

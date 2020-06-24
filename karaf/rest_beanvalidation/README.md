@@ -4,7 +4,7 @@ Rest CXF RS and bean validation Camel OSGi example
  Take note of the fact that the interface and his implementation are used ONLY for service definition, not implementation (i.e. the implementation method never get called). The implementation of the rest service must be called explicitly from the route iteself.
  
 ### Requirements:
- * JBoss Fuse 6.2.1
+ * Red Hat Fuse 7.6
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
  
@@ -17,7 +17,7 @@ To build the project.
  
 This will build the bundle including the manifest information. 
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
  
 To start up Fuse Karaf browse to your fuse install directory. Then run
@@ -28,10 +28,10 @@ This will bring up the fuse console.  Once in the console you will be able to in
 Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file.  Then you can use the mvn syntax below.
 
 	admin@root> features:install cxf-bean-validation hibernate-validator cxf-jaxrs
-    admin@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/rest-beanvalidation/6.2.1
+    admin@root> osgi:install -s mvn:com.redhat.consulting.fusequickstarts.karaf/rest-beanvalidation/7.6
         OR
     admin@root> features:install cxf-bean-validation hibernate-validator cxf-jaxrs
-    admin@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-beanvalidation-6.2.1.jar
+    admin@root> osgi:install -s file:/home/yourUser/.m2/repository/com/redhat/consulting/fusequickstarts/karaf/rest-beanvalidation-7.6.jar
  
 The -s here indicates to also start the bundle.  Alternatively you can omit the -s and after the install run
     

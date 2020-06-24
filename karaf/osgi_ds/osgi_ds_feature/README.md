@@ -3,7 +3,7 @@ OSGi Declarative Services Feature
 This builds the feature file for deploying the Camel OSGi Declarative Services Bundles.
 
 ### Requirements:
- * JBoss Fuse 6.3
+ * Red Hat Fuse 7.6
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
 
@@ -24,7 +24,7 @@ To build the project.
 
 This will build the project.
 
-Deploying to JBoss Fuse
+Deploying to Red Hat Fuse
 -----------------------
 
 To start up Fuse browse to your fuse install directory. Then run
@@ -33,7 +33,7 @@ To start up Fuse browse to your fuse install directory. Then run
 
 This will bring up the fuse console. Once in the console you will be able to install your bundle. Usually we would install multiple bundles using a feature file, but in this case since we only have one bundle to install we can just install it using the file by the following command. Another option is to set up your local m2 repository in fuse in the fuse/etc/org.ops4j.pax.url.mvn.cfg file. Then you can use the mvn syntax below.
 
-     karaf@root> features:addurl mvn:com.redhat.consulting.fusequickstarts.karaf.osgi_ds/osgi_ds_feature/6.3/xml/features
+     karaf@root> features:addurl mvn:com.redhat.consulting.fusequickstarts.karaf.osgi_ds/osgi_ds_feature/7.6/xml/features
 
      karaf@root> features:install -v camelOsgiDS
 
@@ -43,9 +43,9 @@ Results
 -----------------------
 After running the above commands you should see your services started:
 
-    [ 283] [Active     ] [            ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: OSGi Declarative Services :: API (6.3)
-    [ 284] [Active     ] [            ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: OSGi Declarative Services :: Shared Service (6.3)
-    [ 285] [Active     ] [            ] [       ] [   80] Fuse Quickstart :: Karaf :: Blueprint :: OSGi Declarative Services :: Consumer (6.3)
+    [ 283] [Active     ] [            ] [       ] [   80] Fuse Quick Start :: Karaf :: Blueprint :: OSGi Declarative Services :: API (7.6)
+    [ 284] [Active     ] [            ] [       ] [   80] Fuse Quick Start :: Karaf :: Blueprint :: OSGi Declarative Services :: Shared Service (7.6)
+    [ 285] [Active     ] [            ] [       ] [   80] Fuse Quick Start :: Karaf :: Blueprint :: OSGi Declarative Services :: Consumer (7.6)
 
 
 Validate the services are registered and active in the service component registry

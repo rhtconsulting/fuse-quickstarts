@@ -6,10 +6,10 @@
 	<parent>
 		<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
 		<artifactId>osgi-service-adv-parent</artifactId>
-		<version>6.3</version>
+		<version>7.6</version>
 	</parent>
 
-	<name>Fuse Quickstart :: Karaf :: Blueprint :: OSGi Advanced Service :: Blueprint Service</name>
+	<name>Fuse Quick Start :: Karaf :: Blueprint :: OSGi Advanced Service :: Blueprint Service</name>
 
 	<packaging>bundle</packaging>
 	<!-- Any dependencies needed by your project -->
@@ -29,7 +29,7 @@
 		<dependency>
 			<groupId>com.redhat.consulting.fusequickstarts.karaf.osgi_service_adv</groupId>
 			<artifactId>service_api</artifactId>
-			<version>6.3</version>
+			<version>7.6</version>
 		</dependency>
 	</dependencies>
 

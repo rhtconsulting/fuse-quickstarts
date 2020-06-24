@@ -1,9 +1,9 @@
 Using JBoss Data Grid with OSGi
 ====================================
-This project demonstrates multiple ways to utilize JBoss Data Grid with JBoss Fuse.
+This project demonstrates multiple ways to utilize JBoss Data Grid with Red Hat Fuse.
 
 ### Requirements:
- * JBoss Fuse 6.3.0
+ * Red Hat Fuse 7.6.0
  * JBoss Data Grid 6.5
  * Maven 3.0 or Greater (http://maven.apache.org/)
  * Java 8
@@ -39,7 +39,7 @@ This will build all of the bundles and features needed for the examples.
 
 Additional Reading
 -----------------------
-If you are looking for more information about integrating JBoss Data Grid and JBoss Fuse, check out the following documentation.
+If you are looking for more information about integrating JBoss Data Grid and Red Hat Fuse, check out the following documentation.
 
 - [Running Red Hat JBoss Data Grid in Apache Karaf (OSGi)](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Data_Grid/6.5/html/Getting_Started_Guide/sect-Running_Red_Hat_JBoss_Data_Grid_in_Karaf_OSGi.html)
 - [Running Red Hat JBoss Data Grid with Apache Camel](https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Data_Grid/6.5/html/Getting_Started_Guide/chap-Running_Red_Hat_JBoss_Data_Grid_with_Apache_Camel.html)

@@ -1,7 +1,5 @@
 package com.redhat.consulting.fusequickstarts.karaf.rest.beanvalidation.resource;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import javax.validation.constraints.Pattern;
 import javax.ws.rs.core.Response;
 
