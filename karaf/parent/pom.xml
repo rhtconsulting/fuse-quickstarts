@@ -21,7 +21,7 @@
 		<version.build-helper-maven-plugin>1.9.1</version.build-helper-maven-plugin>
 		<redhat.fuse.bom.version>7.6.0.fuse-760027-redhat-00001</redhat.fuse.bom.version>
 		<datagrid.version>6.5.1.Final-redhat-1</datagrid.version>
-		<infinispan.version>6.3.1.Final-redhat-1</infinispan.version> <!-- for JDG 6.5 -->
+		<infinispan.version>11.0.6.Final</infinispan.version> <!-- for JDG 6.5 -->
 	</properties>
 
 	<dependencyManagement>
